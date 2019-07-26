@@ -13,17 +13,20 @@
 
     <link rel="icon" href="favicon.ico?v=2" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
     <title>Piroll</title>
   </head>
   <body>
     <header id="main-header">
       <div class="opacity-2"></div>
-
       <nav id="navbar">
+          
         <a href="index.html"
           ><img class="nav-brand" src="img/image1.png" alt=""
         /></a>
-        <ul>
+        <div id="mySidebar" class="sidebar">
+          <ul>
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Work</a></li>
@@ -32,7 +35,13 @@
           <li><a href="#">Testimonials</a></li>
           <li><a href="#">contact</a></li>
         </ul>
+      </div>
+
+              <button class="openbtn main" onclick="openNav()"><div></div></button> 
+        
+   
       </nav>
+      
       <div class="showcase">
         <div class="showcase-content">
           <h1 class="l-heading">
@@ -47,10 +56,26 @@
         </div>
       </div>
     </header>
+
+    
+
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
+
+    <script>
+     /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById("mySidebar").style.width = "100%";
+
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+
+}</script>
   </body>
 </html>
