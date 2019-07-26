@@ -16,32 +16,31 @@
     <link rel="stylesheet" href="css/media.css" />
     <title>Piroll</title>
   </head>
-  <body>
+  <body id="home">
+    <!-- Header, navbar and showcase -->
     <header id="main-header">
       <div class="opacity-2"></div>
       <nav id="navbar">
-          
         <a href="index.html"
-          ><img class="nav-brand" src="img/image1.png" alt=""
+          ><img id="aboutChanger" class="nav-brand" src="img/image1.png"
         /></a>
         <div id="mySidebar" class="sidebar">
           <ul>
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Work</a></li>
-          <li><a href="#">Process</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Testimonials</a></li>
-          <li><a href="#">contact</a></li>
-        </ul>
-      </div>
-
-              <button class="openbtn main" onclick="openNav()"><div></div></button> 
-        
-   
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+              >&times;</a
+            >
+            <li><a href="#home" onclick="changeLogoToOriginal()">Home</a></li>
+            <li><a href="#about-section" onclick="changeLogo()">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <button class="openbtn main" onclick="openNav()"><div></div></button>
       </nav>
-      
+
       <div class="showcase">
         <div class="showcase-content">
           <h1 class="l-heading">
@@ -57,7 +56,39 @@
       </div>
     </header>
 
-    
+    <section id="about-section">
+      <div class="about">
+        <ul>
+          <li><h1 class="m-heading mt-2 mb-1">About Us</h1></li>
+          <li>
+            <p class="lead-m">
+              Divide have don't man wherein air fourth. Own itself make have
+              night won't make. A you under Seed appear which good give. Own
+              give air without fowl moveth dry first haven fruit, dominion she'd
+              won't very all.
+            </p>
+          </li>
+          <li class="signature mb-3 mt-0"></li>
+        </ul>
+      </div>
+      <div class="skills text-white mt-3">
+        <div>
+          <h1 class="m-heading text-white">Professional Skills</h1>
+          <h5>UI/UX DESIGN 75%</h5>
+          <div class="progress">
+            <div style="width:75%"></div>
+          </div>
+          <h5>UI/UX DESIGN 90%</h5>
+          <div class="progress">
+            <div style="width:90%"></div>
+          </div>
+          <h5>UI/UX DESIGN 65%</h5>
+          <div class="progress">
+            <div style="width:65%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -66,16 +97,37 @@
     ></script>
 
     <script>
-     /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-function openNav() {
-  document.getElementById("mySidebar").style.width = "100%";
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "100%";
+      }
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+      }
 
-}
+      const items = document.querySelectorAll("#timeline li");
 
-/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
+      const run = () =>
+        items.forEach(item => {
+          if (isInViewport(item)) {
+            item.classList.add("show");
+          }
+        });
 
-}</script>
+      // Events
+      window.addEventListener("load", run);
+      window.addEventListener("resize", run);
+      window.addEventListener("scroll", run);
+
+      window.addEventListener("scroll", () => {
+        var scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrollTop > 0 && scrollTop <= 700) {
+          document.getElementById("aboutChanger").src = "img/image1.png";
+          console.log(2);
+        } else if (scrollTop > 700 && scrollTop <= 1000) {
+          document.getElementById("aboutChanger").src = "img/image1.1.png";
+        }
+      });
+    </script>
   </body>
 </html>

@@ -5,7 +5,9 @@
   --secondary-color: #ac3b61;
   --grey-color: #bab2b5;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 * {
   box-sizing: border-box;
 }
@@ -23,8 +25,11 @@ a {
     font-size: 1.3rem;
     margin-bottom: 2rem;
 }
+.lead-m{
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
 .btn{
-    z-index:3;
     display: inline-block;
     color: var(--white-color);
     background: var(--main-color);
@@ -40,7 +45,42 @@ a {
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
+.m-heading{
+  color: #000;
+  font-size: 2rem;
+  -webkit-animation: fadeIn1 0.9s 1;
+  animation: fadeIn1 0.9s 1;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
 
+.mt-0{
+  margin-top: 0;
+}
+.mt-1{
+margin-top: 1rem;
+}
+.mt-2{
+margin-top: 2rem;
+}
+.mt-3{
+  margin-top: 3rem;
+}
+.mb-0{
+  margin-bottom: 0;
+}
+.mb-1{
+margin-bottom: 1rem;
+}
+.mb-2{
+margin-bottom: 2rem;
+}
+.mb-3{
+  margin-bottom: 2rem;
+}
+.text-white{
+  color: #fff;
+}
 /* Main Header Img And Opacity */
 #main-header {
   position: relative;
@@ -194,6 +234,65 @@ li:nth-child(5n + 8) {
 }
 
 
+/* About & Skills section */
+
+#about-section{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  background: #eee;
+}
+.about{
+  position: relative;
+  width: 60%;
+  height: 45vh;
+}
+.about ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.signature{
+  width: 55%;
+  height: 20vh;
+  background: url('../img/signature.png') no-repeat center center/cover;
+}
+.skills{
+  position: relative;
+  height: 55vh;
+  width: 100%;
+  background: url('../img/image8.jpg');
+  background-color: #000102;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+.skills > div{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+  padding-left: 2.5rem;
+}
+.progress {
+  width: 45%;
+  overflow: hidden;
+  height: 4px;
+  background: #ccc;
+  border-radius: 5px;
+  margin-bottom: 0.6rem; }
+  
+.progress div {
+    height: 100%;
+    background: var(--secondary-color); }
 
 
 
