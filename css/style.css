@@ -124,6 +124,16 @@ a {
 .togglerBtn {
   display: none;
 }
+/* Button Clases on Scroll */
+.allATagsWhite{
+  color: #fff !important;
+}
+.homeScrolling{
+  color: var(--main-color) !important;
+}
+.aboutScrolling{
+  color: var(--secondary-color) !important;
+}
 /* Navbar & Animation */
 #navbar {
   display: flex;
@@ -311,15 +321,7 @@ li:nth-child(5n + 8) {
   height: 100%;
   background: var(--secondary-color);
 }
-.allATagsWhite{
-  color: #fff !important;
-}
-.homeScrolling{
-  color: var(--main-color) !important;
-}
-.aboutScrolling{
-  color: var(--secondary-color) !important;
-}
+
 /* Animation */
 @keyframes fadeIn {
   0% {
