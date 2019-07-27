@@ -131,7 +131,8 @@
       window.addEventListener("load", run);
       window.addEventListener("resize", run);
       window.addEventListener("scroll", run);
-
+          let navbarAttrChanging = document.querySelectorAll(".colorChange");
+       
       window.addEventListener("scroll", mainFunct);
       function mainFunct() {
         var scrollTop =
@@ -140,11 +141,10 @@
 
         if (scrollTop > 0 && scrollTop <= 700) {
           document.getElementById("aboutChanger").src = "img/image1.png";
-          let homeColorChanging = document.querySelectorAll(".colorChange");
-          homeColorChanging[0].classList.add("homeScrolling");
-          homeColorChanging[1].classList.remove("aboutScrolling");
+          navbarAttrChanging[0].classList.add("homeScrolling");
+          navbarAttrChanging[1].classList.remove("aboutScrolling");
 
-          homeColorChanging.forEach(function(e) {
+          navbarAttrChanging.forEach(function(e) {
             e.addEventListener("mouseover", function(event) {
               event.target.style.color = "#16406e";
               e.addEventListener("mouseout", function(event) {
@@ -155,14 +155,16 @@
 
           document.getElementsByClassName("openbtn")[0].style.backgroundColor =
             "#16406e";
+            navbarAttrChanging[0].classList.remove('allATagsWhite')
             var j = window.matchMedia("(max-width: 996px)");
           if (j.matches) {
             document.getElementById("mySidebar").style.backgroundColor =
               "#16406e";
-              homeColorChanging[0].classList.remove('homeScrolling')
-              homeColorChanging[0].classList.add('allATagsWhite')
-              console.log(homeColorChanging[0].classList)
-              homeColorChanging.forEach(function(e) {
+              navbarAttrChanging[1].classList.remove('aboutScrolling')
+              navbarAttrChanging[0].classList.remove('homeScrolling')
+              navbarAttrChanging[0].classList.add('allATagsWhite')
+              console.log(navbarAttrChanging[0].classList)
+              navbarAttrChanging.forEach(function(e) {
               e.addEventListener("mouseover", function(event) {
                 event.target.style.color = "#eee";
                 e.addEventListener("mouseout", function(event) {
@@ -170,19 +172,13 @@
                 });
               });
             });
-          }
-          else{
-            homeColorChanging[0].classList.remove('allATagsWhite')
-          }
-
-            
+          } 
         } else if (scrollTop > 700 && scrollTop <= 1000) {
           document.getElementById("aboutChanger").src = "img/image1.1.png";
-          let aboutColorChanging = document.querySelectorAll(".colorChange");
-          aboutColorChanging[0].classList.remove("homeScrolling");
-          aboutColorChanging[1].classList.add("aboutScrolling");
+          navbarAttrChanging[0].classList.remove("homeScrolling");
+          navbarAttrChanging[1].classList.add("aboutScrolling");
 
-          aboutColorChanging.forEach(function(e) {
+          navbarAttrChanging.forEach(function(e) {
             e.addEventListener("mouseover", function(event) {
               event.target.style.color = "#ac3b61";
               e.addEventListener("mouseout", function(event) {
@@ -193,15 +189,37 @@
 
           document.getElementsByClassName("openbtn")[0].style.backgroundColor =
             "#ac3b61";
-
+            navbarAttrChanging[1].classList.remove("allATagsWhite");
           var g = window.matchMedia("(max-width: 996px)");
           if (g.matches) {
             document.getElementById("mySidebar").style.backgroundColor =
               "#ac3b61";
-            aboutColorChanging[0].classList.remove("homeScrolling");
-            aboutColorChanging[1].classList.remove("aboutScrolling");
-            aboutColorChanging[1].classList.add("allATagsWhite");
-            aboutColorChanging.forEach(function(e) {
+            navbarAttrChanging[0].classList.remove("homeScrolling");
+            navbarAttrChanging[1].classList.remove("aboutScrolling");
+            navbarAttrChanging[1].classList.add("allATagsWhite");
+            navbarAttrChanging.forEach(function(e) {
+              e.addEventListener("mouseover", function(event) {
+                event.target.style.color = "#eee";
+                e.addEventListener("mouseout", function(event) {
+                  event.target.style.color = "";
+                });
+              });
+            });
+          }
+
+        }
+        setTimeout(mainFunct, 1000);
+      }
+
+      window.addEventListener('resize',()=>{
+        var j = window.matchMedia("(max-width: 996px)");
+          if (j.matches) {
+            document.getElementById("mySidebar").style.backgroundColor =
+              "#16406e";
+              navbarAttrChanging[0].classList.remove('homeScrolling')
+              navbarAttrChanging[0].classList.add('allATagsWhite')
+              console.log(navbarAttrChanging[0].classList)
+              navbarAttrChanging.forEach(function(e) {
               e.addEventListener("mouseover", function(event) {
                 event.target.style.color = "#eee";
                 e.addEventListener("mouseout", function(event) {
@@ -211,11 +229,10 @@
             });
           }
           else{
-            aboutColorChanging[1].classList.remove("allATagsWhite");
+            navbarAttrChanging[0].classList.add('homeScrolling')
+              navbarAttrChanging[0].classList.remove('allATagsWhite')
           }
-        }
-        setTimeout(mainFunct, 1000);
-      }
+          })
     </script>
   </body>
 </html>
