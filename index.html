@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/media.css" />
     <title>Piroll</title>
   </head>
-  <body id="home" class="scrollspy">
+  <body id="home" class="scrollspy mainScroll">
     <!-- Header, navbar and showcase -->
     <header id="main-header">
       <div class="opacity-2"></div>
@@ -30,20 +30,12 @@
               >&times;</a
             >
             <li>
-              <a
-                class="colorChange"
-                id="active"
-                href="#home"
-                onclick="changeLogoToOriginal()"
+              <a class="colorChange homeScrolling" id="active" href="#home"
                 >Home</a
               >
             </li>
             <li>
-              <a
-                class="colorChange"
-                id="active1"
-                href="#about-section"
-                onclick="changeLogo()"
+              <a class="colorChange" id="active1" href="#about-section"
                 >About</a
               >
             </li>
@@ -140,24 +132,19 @@
       window.addEventListener("resize", run);
       window.addEventListener("scroll", run);
 
-      var body = document.body,
-        html = document.documentElement;
-
-      var height = Math.max(
-        body.scrollHeight,
-        body.offsetHeight,
-        html.clientHeight,
-        html.scrollHeight,
-        html.offsetHeight
-      );
-      let homeElement = document.getElementById("active");
-      let aboutElement = document.getElementById("active1");
-      window.addEventListener("scroll", () => {
+      window.addEventListener("scroll", mainFunct);
+      function mainFunct() {
         var scrollTop =
           document.documentElement.scrollTop || document.body.scrollTop;
+        var e = window.matchMedia("(max-width: 996px)");
+
         if (scrollTop > 0 && scrollTop <= 700) {
           document.getElementById("aboutChanger").src = "img/image1.png";
-          document.querySelectorAll(".colorChange").forEach(function(e) {
+          let homeColorChanging = document.querySelectorAll(".colorChange");
+          homeColorChanging[0].classList.add("homeScrolling");
+          homeColorChanging[1].classList.remove("aboutScrolling");
+
+          homeColorChanging.forEach(function(e) {
             e.addEventListener("mouseover", function(event) {
               event.target.style.color = "#16406e";
               e.addEventListener("mouseout", function(event) {
@@ -166,27 +153,36 @@
             });
           });
 
-          
-          document.getElementsByClassName('openbtn')[0].style.backgroundColor = '#16406e'
+          document.getElementsByClassName("openbtn")[0].style.backgroundColor =
+            "#16406e";
+            var j = window.matchMedia("(max-width: 996px)");
+          if (j.matches) {
+            document.getElementById("mySidebar").style.backgroundColor =
+              "#16406e";
+              homeColorChanging[0].classList.remove('homeScrolling')
+              homeColorChanging[0].classList.add('allATagsWhite')
+              console.log(homeColorChanging[0].classList)
+              homeColorChanging.forEach(function(e) {
+              e.addEventListener("mouseover", function(event) {
+                event.target.style.color = "#eee";
+                e.addEventListener("mouseout", function(event) {
+                  event.target.style.color = "";
+                });
+              });
+            });
+          }
+          else{
+            homeColorChanging[0].classList.remove('allATagsWhite')
+          }
 
-
-          var e = window.matchMedia("(max-width: 996px)");
-            if (e.matches) {
-              // If media query matches
-              document.getElementById('mySidebar').style.backgroundColor = '#16406e'
-              
-              aboutElement.style.color = "#fff";
-              homeElement.style.color = "#fff";
-            }
-            else{
-              homeElement.style.color = "#16406e";
-              aboutElement.style.color = "#333";
-            }
-        
-          
+            
         } else if (scrollTop > 700 && scrollTop <= 1000) {
           document.getElementById("aboutChanger").src = "img/image1.1.png";
-          document.querySelectorAll(".colorChange").forEach(e => {
+          let aboutColorChanging = document.querySelectorAll(".colorChange");
+          aboutColorChanging[0].classList.remove("homeScrolling");
+          aboutColorChanging[1].classList.add("aboutScrolling");
+
+          aboutColorChanging.forEach(function(e) {
             e.addEventListener("mouseover", function(event) {
               event.target.style.color = "#ac3b61";
               e.addEventListener("mouseout", function(event) {
@@ -195,24 +191,31 @@
             });
           });
 
-          homeElement.style.color = "#333";
-          aboutElement.style.color = "#ac3b61";
+          document.getElementsByClassName("openbtn")[0].style.backgroundColor =
+            "#ac3b61";
 
-  document.getElementsByClassName('openbtn')[0].style.backgroundColor = '#ac3b61'
-
-         
-  var g = window.matchMedia("(max-width: 996px)");
-            if (g.matches) {
-              // If media query matches
-              document.getElementById('mySidebar').style.backgroundColor = '#ac3b61'
-              aboutElement.style.color = "#fff";
-              homeElement.style.color = "#fff";
-            }
-            else{
-              homeElement.style.color = "#16406e";
-              aboutElement.style.color = "#333";
-            }}
-      });
+          var g = window.matchMedia("(max-width: 996px)");
+          if (g.matches) {
+            document.getElementById("mySidebar").style.backgroundColor =
+              "#ac3b61";
+            aboutColorChanging[0].classList.remove("homeScrolling");
+            aboutColorChanging[1].classList.remove("aboutScrolling");
+            aboutColorChanging[1].classList.add("allATagsWhite");
+            aboutColorChanging.forEach(function(e) {
+              e.addEventListener("mouseover", function(event) {
+                event.target.style.color = "#eee";
+                e.addEventListener("mouseout", function(event) {
+                  event.target.style.color = "";
+                });
+              });
+            });
+          }
+          else{
+            aboutColorChanging[1].classList.remove("allATagsWhite");
+          }
+        }
+        setTimeout(mainFunct, 1000);
+      }
     </script>
   </body>
 </html>

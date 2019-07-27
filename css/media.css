@@ -169,9 +169,11 @@
     font-weight: 300;
     font-size: 1.7rem;
     color: var(--white-color);
+    
   }
 }
 @media (max-height: 450px) {
+ 
   .sidebar{
     padding-top: 20px;
   }
@@ -196,8 +198,13 @@
     font-weight: 200;
     font-size: 1.4rem;
     color: var(--white-color);
-    
   }
-  #navbar ul li a:last-child{
+  @media(min-width: 996px){
+    #navbar ul li a {
+      font-weight: 500;
+      font-size: 1rem;
+      color: var(--dark-color);
+      
+    }
   }
 }
