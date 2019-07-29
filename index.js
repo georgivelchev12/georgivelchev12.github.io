@@ -18,6 +18,7 @@ let heightOnScrollAndResize = () => {
 }
 window.addEventListener('scroll', heightOnScrollAndResize)
 window.addEventListener('resize', heightOnScrollAndResize)
+window.addEventListener('click', heightOnScrollAndResize)
 
 let navbarAttrChanging = document.querySelectorAll(".colorChange");
 
