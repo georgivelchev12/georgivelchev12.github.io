@@ -339,16 +339,19 @@
     text-align: left;
   }
   .opacity-image-skills h1{
-    font-size: 1.3rem;
-    font-weight: 350;
-    margin-top: 8px;
+    font-size: 1rem;
+    font-weight: 330;
+    margin-top: 4px;
     margin-bottom: 4px;
   }
   .opacity-image-skills h5{
-    font-weight: 300;
-    font-size:0.65rem;
-    margin-top: 0.7rem;
-    margin-bottom: 0.6rem;
+    font-weight: 290;
+    font-size:0.60rem;
+    margin-top: 0;
+    margin-bottom: 0.45rem;
+  }
+  .progress{
+    height: 2.5px;
   }
 
 
