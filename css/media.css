@@ -98,7 +98,7 @@
     color: var(--grey-color);
     font-size: 1.95rem;
   }
-  .nav-brand {
+  #main-header .nav-brand {
     left: 0;
   }
   #main-header {
@@ -224,15 +224,15 @@
   #main-header {
     height: 100vh;
   }
-  #navbar ul {
+   #main-header #navbar ul {
     position: static;
     flex-direction: column;
     padding-top: 0;
   }
-  #navbar ul li {
+   #main-header #navbar ul li {
     padding: 0.7rem 0;
   }
-  #navbar ul li a {
+   #main-header #navbar ul li a {
     font-weight: 300;
     font-size: 1.7rem;
     color: var(--white-color);
@@ -316,11 +316,15 @@
     color: var(--white-color);
   }
   .about ul >li h1{
-  
-    font-size: 1.3rem;
+    
+    font-size: 1.2rem;
+    margin-top: 3rem;
+    padding:0;
   }
   .about ul li p{
-    font-size: 1rem;
+    font-size: 0.9rem;
+    margin: 0;
+    padding:0;
   }
   .signature{
     display: none;
@@ -329,23 +333,38 @@
     background-size: cover;
     background-position: center; 
   }
-  .opacity-image-skills{
-    height: 60vh;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.6)
-  }
   .skills > div{
     align-items: left;
     justify-content: center;
     text-align: left;
   }
+  .opacity-image-skills h1{
+    font-size: 1.3rem;
+    font-weight: 350;
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
+  .opacity-image-skills h5{
+    font-weight: 300;
+    font-size:0.65rem;
+    margin-top: 0.7rem;
+    margin-bottom: 0.6rem;
+  }
 
-  @media(min-width: 996px){
-    #navbar ul li a {
-      font-weight: 500;
-      font-size: 1rem;
-      color: var(--dark-color);
-      
+
+  @media(max-width: 996px){
+    #main-header #navbar ul{
+      padding-top: 0.5rem;
+    }
+    #main-header #navbar ul li{
+      margin: 0;
+      padding: 0.9rem;
+    }
+    #main-header #navbar ul li a {
+      font-weight: 400;
+      font-size: 0.9rem;
+      margin: 0;
+      padding: 0;
     }
   }
 }
