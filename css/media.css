@@ -205,6 +205,10 @@
   .progress{
     width: 90%;
   }
+  #main-header .nav-brand{
+    left: 0.7rem;
+
+  }
 }
 @media (max-width: 500px) {
   .showcase .showcase-content .l-heading {
@@ -240,10 +244,34 @@
   .about .lead-m{
     font-size: 0.9rem;
   }
+  #main-header .nav-brand{
+    left: 1rem;
+    width: 7rem;
+    height: 5rem;
+  }
+  .openbtn{
+    width: 45px;
+    height: 45px;
+  }
+  
+}
+@media (max-width:400px){
+  #main-header .nav-brand{
+    left: 0.5rem;
+    width: 6rem;
+    height: 4rem;
+  }
+  .openbtn{
+    width: 40px;
+    height: 40px;
+  }
   .signature{
     display: none;
   }
-  
+
+  .about .lead-m{
+    font-size: .9rem;
+  }
 }
 @media (max-height: 575px){
   .opacity-image-skills h1{
