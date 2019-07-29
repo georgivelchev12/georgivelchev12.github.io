@@ -82,19 +82,19 @@
   .openbtn > div:after {
     top: 10px;
   }
-  #navbar ul {
+  #main-header #navbar ul {
     position: static;
     flex-direction: column;
     padding-top: 5rem;
   }
-  #navbar ul li {
+  #main-header #navbar ul li {
     padding: 1.2rem 0;
   }
-  #navbar ul li a {
+  #main-header #navbar ul li a {
     font-size: 2rem;
     color: var(--white-color);
   }
-  #navbar ul li a:hover {
+  #main-header #navbar ul li a:hover {
     color: var(--grey-color);
     font-size: 1.95rem;
   }
@@ -247,7 +247,7 @@
   #main-header .nav-brand{
     left: 1rem;
     width: 7rem;
-    height: 5rem;
+    height: 4.5rem;
   }
   .openbtn{
     width: 45px;
@@ -260,6 +260,7 @@
     left: 0.5rem;
     width: 6rem;
     height: 4rem;
+    margin-top: 0.15rem;
   }
   .openbtn{
     width: 40px;

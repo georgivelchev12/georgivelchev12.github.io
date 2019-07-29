@@ -4,7 +4,17 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
 }
-
+const items = document.querySelectorAll("#timeline li");
+const run = () =>
+  items.forEach(item => {
+    if (isInViewport(item)) {
+      item.classList.add("show");
+    }
+  });
+// Events
+window.addEventListener("load", run);
+window.addEventListener("resize", run);
+window.addEventListener("scroll", run);
 // Events
 let body;
 let height;
@@ -63,7 +73,7 @@ function mainFunct() {
       });
     }
   } else if (scrollTop >= (height / 2) && scrollTop <= height) {
-    
+
     document.getElementById("aboutChanger").src = "img/image1.1.png";
     navbarAttrChanging[0].classList.remove("homeScrolling");
     navbarAttrChanging[1].classList.add("aboutScrolling");
