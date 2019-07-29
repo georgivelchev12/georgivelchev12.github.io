@@ -1,56 +1,59 @@
-:root {
-  --dark-color: #333;
-  --white-color: #fff;
-  --main-color: #16406e;
-  --secondary-color: #ac3b61;
-  --grey-color: #bab2b5;
-  --black-color: #000;
-}
 html {
   scroll-behavior: smooth;
 }
+
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
+
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, Helvetica, Sans Serif;
   font-size: 1rem;
   overflow-x: hidden;
+  /* Change ScrollBar */
 }
-/* Change ScrollBar */
+
 body::-webkit-scrollbar {
   background: #eee;
   height: 16px;
-  width: 0;
+  width: 5px;
 }
+
 body::-webkit-scrollbar-thumb {
-  background: var(--main-color);
+  background: #16406e;
   border-radius: 20px;
 }
+
 body::-webkit-scrollbar-thumb:hover {
   background: #266191;
 }
+
 /* Utilities */
 a {
   text-decoration: none;
 }
+
 .lead {
   font-size: 1.3rem;
   margin-bottom: 2rem;
 }
+
 .lead-m {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
+
 .btn {
   display: inline-block;
-  color: var(--white-color);
-  background: var(--main-color);
+  color: #fff;
+  background: #16406e;
   border: none;
   margin-right: auto;
   padding: 1rem 4rem;
 }
+
 .l-heading {
   color: #000;
   font-size: 3rem;
@@ -59,43 +62,80 @@ a {
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
+
 .m-heading {
-  color: var(--black-color);
+  color: #000;
   font-size: 2rem;
   -webkit-animation: fadeIn1 0.9s 1;
   animation: fadeIn1 0.9s 1;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
+
 .fix-search {
-  background: var(--black-color);
+  background: #000;
 }
+
 .mt-0 {
   margin-top: 0;
 }
+
 .mt-1 {
   margin-top: 1rem;
 }
+
 .mt-2 {
   margin-top: 2rem;
 }
+
 .mt-3 {
   margin-top: 3rem;
 }
+
 .mb-0 {
   margin-bottom: 0;
 }
+
 .mb-1 {
   margin-bottom: 1rem;
 }
+
 .mb-2 {
   margin-bottom: 2rem;
 }
+
 .mb-3 {
   margin-bottom: 2rem;
 }
+
 .text-white {
   color: #fff;
+}
+
+/* Navbar Toggler d-none*/
+.closebtn {
+  display: none;
+}
+
+.openbtn {
+  display: none;
+}
+
+.togglerBtn {
+  display: none;
+}
+
+/* Button Clases on Scroll */
+.allATagsWhite {
+  color: #fff !important;
+}
+
+.homeScrolling {
+  color: #16406e !important;
+}
+
+.aboutScrolling {
+  color: #ac3b61 !important;
 }
 
 /* Main Header Img And Opacity */
@@ -106,36 +146,19 @@ a {
   background: url("../img/macbookOnChair.jpg") no-repeat center center/cover;
   background-attachment: fixed;
   z-index: 1;
+  /* Navbar & Animation */
 }
-.opacity-2 {
+
+#main-header .opacity-2 {
   z-index: 2;
   width: 100%;
   height: 100vh;
   background: rgba(100, 100, 100, 0.1);
 }
 
-/* Navbar Toggler d-none*/
-.closebtn {
-  display: none;
-}
-.openbtn {
-  display: none;
-}
-.togglerBtn {
-  display: none;
-}
-/* Button Clases on Scroll */
-.allATagsWhite{
-  color: #fff !important;
-}
-.homeScrolling{
-  color: var(--main-color) !important;
-}
-.aboutScrolling{
-  color: var(--secondary-color) !important;
-}
-/* Navbar & Animation */
-#navbar {
+#main-header #navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: absolute;
   top: 0;
@@ -144,10 +167,13 @@ a {
   position: fixed;
   padding-top: 0.5rem;
   padding-right: 6rem;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   z-index: 20;
 }
-.nav-brand {
+
+#main-header .nav-brand {
   position: absolute;
   left: 2rem;
   top: 0;
@@ -159,32 +185,22 @@ a {
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-#navbar ul {
+
+#main-header #navbar ul {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   list-style: none;
   right: 0;
   margin-right: 1.5rem;
 }
-#navbar ul li a {
-  letter-spacing: 0.5px;
-  font-weight: 600;
-  font-size: 1rem;
-  text-transform: uppercase;
-  color: var(--dark-color);
-  padding: 0.55rem;
-  margin: 0 0.25rem;
-  margin-right: 10px;
-  transition: all 0.3s;
-}
-#navbar ul li a:hover {
-  color: var(--main-color);
-  opacity: 0.8;
-}
 
-nav li {
-  color: var(--white-color);
+#main-header #navbar ul li {
+  color: #fff;
   display: inline-block;
   margin-right: 10px;
   opacity: 0;
@@ -194,66 +210,100 @@ nav li {
   animation-fill-mode: forwards;
 }
 
-li:nth-child(5n + 1) {
+#main-header #navbar ul li a {
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #333;
+  padding: 0.55rem;
+  margin: 0 0.25rem;
+  margin-right: 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#main-header #navbar ul li a:hover {
+  color: #16406e;
+  opacity: 0.8;
+}
+
+#main-header #navbar ul li:nth-child(5n + 1) {
   -webkit-animation-delay: 0.2s;
   animation-delay: 0.2s;
 }
 
-li:nth-child(5n + 2) {
+#main-header #navbar ul li:nth-child(5n + 2) {
   -webkit-animation-delay: 0.4s;
   animation-delay: 0.4s;
 }
 
-li:nth-child(5n + 3) {
+#main-header #navbar ul li:nth-child(5n + 3) {
   -webkit-animation-delay: 0.6s;
   animation-delay: 0.6s;
 }
 
-li:nth-child(5n + 4) {
+#main-header #navbar ul li:nth-child(5n + 4) {
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
 }
 
-li:nth-child(5n + 5) {
+#main-header #navbar ul li:nth-child(5n + 5) {
   -webkit-animation-delay: 1s;
   animation-delay: 1s;
 }
-li:nth-child(5n + 6) {
+
+#main-header #navbar ul li:nth-child(5n + 6) {
   -webkit-animation-delay: 1.2s;
   animation-delay: 1.2s;
 }
-li:nth-child(5n + 7) {
+
+#main-header #navbar ul li:nth-child(5n + 7) {
   -webkit-animation-delay: 1.4s;
   animation-delay: 1.4s;
 }
-li:nth-child(5n + 8) {
+
+#main-header #navbar ul li:nth-child(5n + 8) {
   -webkit-animation-delay: 1.4s;
   animation-delay: 1.4s;
 }
+
 /* Showcase */
 .showcase {
   top: -5%;
   left: 60%;
   right: 10%;
   height: 100%;
-  color: var(--white-color);
+  color: #fff;
   position: absolute;
 }
+
 .showcase .showcase-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: left;
-  justify-content: center;
-  align-items: left;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
   height: 100%;
-  color: var(--dark-color);
+  color: #333;
 }
+
 .showcase .showcase-content p {
   -webkit-animation: fadeIn2 1.2s 1;
   animation: fadeIn2 1.2s 1;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
+
 .showcase .showcase-content a {
   -webkit-animation: fadeIn4 1.5s 1;
   animation: fadeIn4 1.5s 1;
@@ -262,36 +312,57 @@ li:nth-child(5n + 8) {
 }
 
 /* About & Skills section */
-
 #about-section {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
   width: 100%;
   height: 100vh;
   background: #eee2dc;
 }
+
 .about {
   position: relative;
   width: 60%;
   height: 45vh;
 }
+
 .about ul {
   list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
 }
+
 .signature {
   width: 55%;
   height: 20vh;
   background: url("../img/signature.png") no-repeat center center/cover;
 }
+
 .skills {
   position: relative;
   height: 55vh;
@@ -302,13 +373,22 @@ li:nth-child(5n + 8) {
   background-repeat: no-repeat;
   background-position: right top;
 }
+
 .skills > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: left;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
   text-align: left;
   padding-left: 2.5rem;
 }
+
 .progress {
   width: 45%;
   overflow: hidden;
@@ -317,23 +397,27 @@ li:nth-child(5n + 8) {
   border-radius: 5px;
   margin-bottom: 0.6rem;
 }
+
 .progress div {
   height: 100%;
-  background: var(--secondary-color);
+  background: #ac3b61;
 }
 
 /* Animation */
 @keyframes fadeIn {
   0% {
-    transform: translateY(-100%) rotate(-8deg);
+    -webkit-transform: translateY(-100%) rotate(-8deg);
+            transform: translateY(-100%) rotate(-8deg);
   }
   100% {
     opacity: 1;
   }
 }
+
 @-webkit-keyframes fadeIn {
   0% {
-    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
   100% {
     opacity: 1;
@@ -342,12 +426,14 @@ li:nth-child(5n + 8) {
 
 @keyframes fadeIn1 {
   0% {
-    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
   100% {
     opacity: 1;
   }
 }
+
 @-webkit-keyframes fadeIn1 {
   0% {
     opacity: 0;
@@ -356,15 +442,18 @@ li:nth-child(5n + 8) {
     opacity: 1;
   }
 }
+
 @keyframes fadeIn2 {
   0% {
     opacity: 0;
-    transform: translateX(40%);
+    -webkit-transform: translateX(40%);
+            transform: translateX(40%);
   }
   100% {
     opacity: 1;
   }
 }
+
 @-webkit-keyframes fadeIn2 {
   0% {
     opacity: 0;
@@ -377,12 +466,14 @@ li:nth-child(5n + 8) {
 @keyframes fadeIn4 {
   0% {
     opacity: 0;
-    transform: translateY(70%);
+    -webkit-transform: translateY(70%);
+            transform: translateY(70%);
   }
   100% {
     opacity: 1;
   }
 }
+
 @-webkit-keyframes fadeIn4 {
   0% {
     opacity: 0;
@@ -391,4 +482,6 @@ li:nth-child(5n + 8) {
     opacity: 1;
   }
 }
+
 /*...*/
+/*# sourceMappingURL=style.css.map */
