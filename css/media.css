@@ -126,9 +126,6 @@
   .btn {
     margin: 0;
   }
-  .about{
-    height: 40vh;
-  }
   .about ul >li h1{
     padding-top: 3rem;
     margin-top: 0;
@@ -146,13 +143,10 @@
     width: 70%;
   }
   .skills{
-    height: 60vh;
     background-size: cover;
     background-position: center; 
   }
   .opacity-image-skills{
-    height: 60vh;
-    width: 100%;
     background: rgba(0, 0, 0, 0.6)
   }
   .skills > div{
@@ -188,23 +182,19 @@
   }
 
   .about ul >li h1{
-  
+    margin-bottom: 0;
+    margin-top: 1rem;
     font-size: 1.6rem;
+    font-weight: 550;
   }
   .about ul li p{
     font-size: 1rem;
+    margin-bottom: 0;
   }
-  .signature{
-    display: none;
-  }
+
   .skills{
     background-size: cover;
     background-position: center; 
-  }
-  .opacity-image-skills{
-    height: 60vh;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.6)
   }
   .skills > div{
     align-items: left;
@@ -212,7 +202,9 @@
     text-align: left;
   }
 
-  
+  .progress{
+    width: 90%;
+  }
 }
 @media (max-width: 500px) {
   .showcase .showcase-content .l-heading {
@@ -240,11 +232,35 @@
     font-weight: 300;
     font-size: 1.7rem;
     color: var(--white-color);
-    
+  }
+  .opacity-image-skills h1{
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  .about .lead-m{
+    font-size: 0.9rem;
+  }
+  .signature{
+    display: none;
+  }
+  
+}
+@media (max-height: 575px){
+  .opacity-image-skills h1{
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .opacity-image-skills h5{
+    margin-top: 1rem;
   }
 }
 @media (max-height: 450px) {
  
+  .signature{
+    display: none;
+  }
   .sidebar{
     padding-top: 20px;
   }
@@ -270,6 +286,31 @@
     font-size: 1.4rem;
     color: var(--white-color);
   }
+  .about ul >li h1{
+  
+    font-size: 1.3rem;
+  }
+  .about ul li p{
+    font-size: 1rem;
+  }
+  .signature{
+    display: none;
+  }
+  .skills{
+    background-size: cover;
+    background-position: center; 
+  }
+  .opacity-image-skills{
+    height: 60vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6)
+  }
+  .skills > div{
+    align-items: left;
+    justify-content: center;
+    text-align: left;
+  }
+
   @media(min-width: 996px){
     #navbar ul li a {
       font-weight: 500;

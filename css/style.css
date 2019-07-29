@@ -351,13 +351,17 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   text-align: center;
+  margin: auto;
+  padding: 0;
 }
 
-
+.about ul > li h1 {
+  margin-top: 5.5rem;
+}
 
 .about ul li p {
   padding-bottom: 0;
@@ -367,7 +371,8 @@ a {
 .signature {
   margin-top: 0;
   padding-top: 0;
-  width: 55%;
+  margin-bottom: 1.5rem;
+  width: 70%;
   height: 20vh;
   background: url("../img/signature.png") no-repeat center center/cover;
 }
