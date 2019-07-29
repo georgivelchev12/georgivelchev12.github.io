@@ -1,3 +1,14 @@
+:root{
+  --dark-color: #333;
+--white-color: #fff;
+--main-color: #16406e;
+--secondary-color: #ac3b61;
+--grey-color: #bab2b5;
+--black-color: #000;
+
+
+}
+
 @media (max-width: 996px) {
   /* Sidebar slide */
   .sidebar {
@@ -9,7 +20,7 @@
     right: 0;
     background-color: var(--main-color);
     opacity: 0.95;
-    overflow-x: hidden;
+    overflow: hidden;
     padding-top: 60px;
     transition: 0.4s;
   }
@@ -115,6 +126,40 @@
   .btn {
     margin: 0;
   }
+  .about{
+    height: 40vh;
+  }
+  .about ul >li h1{
+    padding-top: 3rem;
+    margin-top: 0;
+  
+    font-size: 1.6rem;
+  }
+  .about ul li p{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .signature{
+    padding-bottom:0;
+    margin-bottom: 0;
+    height: 10vh;
+    width: 70%;
+  }
+  .skills{
+    height: 60vh;
+    background-size: cover;
+    background-position: center; 
+  }
+  .opacity-image-skills{
+    height: 60vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6)
+  }
+  .skills > div{
+    align-items: left;
+    justify-content: center;
+    text-align: left;
+  }
 
   @keyframes fadeIn {
     0% {
@@ -141,6 +186,32 @@
   #main-header {
     height: 100vh;
   }
+
+  .about ul >li h1{
+  
+    font-size: 1.6rem;
+  }
+  .about ul li p{
+    font-size: 1rem;
+  }
+  .signature{
+    display: none;
+  }
+  .skills{
+    background-size: cover;
+    background-position: center; 
+  }
+  .opacity-image-skills{
+    height: 60vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6)
+  }
+  .skills > div{
+    align-items: left;
+    justify-content: center;
+    text-align: left;
+  }
+
   
 }
 @media (max-width: 500px) {

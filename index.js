@@ -5,36 +5,29 @@ function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
 }
 
-const items = document.querySelectorAll("#timeline li");
-
-const run = () =>
-  items.forEach(item => {
-    if (isInViewport(item)) {
-      item.classList.add("show");
-    }
-  });
-
-window.addEventListener("load", run);
-window.addEventListener("resize", run);
-window.addEventListener("scroll", run);
 // Events
+let body;
+let height;
+let heightOnScrollAndResize = () => {
+  body = document.body,
+    html = document.documentElement;
 
-var body = document.body,
-  html = document.documentElement;
+  height = Math.max(body.scrollHeight, body.offsetHeight,
+    html.clientHeight, html.scrollHeight, html.offsetHeight);
 
-let height = Math.max(body.scrollHeight, body.offsetHeight,
-  html.clientHeight, html.scrollHeight, html.offsetHeight);
-
+}
+window.addEventListener('scroll', heightOnScrollAndResize)
+window.addEventListener('resize', heightOnScrollAndResize)
 
 let navbarAttrChanging = document.querySelectorAll(".colorChange");
 
 window.addEventListener("scroll", mainFunct);
 function mainFunct() {
-  var scrollTop =
+  let scrollTop =
     document.documentElement.scrollTop || document.body.scrollTop;
-  var e = window.matchMedia("(max-width: 996px)");
 
-  if (scrollTop > 0 && scrollTop <= (height / 2)) {
+  if (scrollTop > 0 && scrollTop < (height / 2)) {
+
     document.getElementById("aboutChanger").src = "img/image1.png";
     navbarAttrChanging[0].classList.add("homeScrolling");
     navbarAttrChanging[1].classList.remove("aboutScrolling");
@@ -58,7 +51,7 @@ function mainFunct() {
       navbarAttrChanging[1].classList.remove('aboutScrolling')
       navbarAttrChanging[0].classList.remove('homeScrolling')
       navbarAttrChanging[0].classList.add('allATagsWhite')
-      console.log(navbarAttrChanging[0].classList)
+
       navbarAttrChanging.forEach(function (e) {
         e.addEventListener("mouseover", function (event) {
           event.target.style.color = "#eee";
@@ -68,7 +61,8 @@ function mainFunct() {
         });
       });
     }
-  } else if (scrollTop > (height / 2) && scrollTop <= height) {
+  } else if (scrollTop >= (height / 2) && scrollTop <= height) {
+    
     document.getElementById("aboutChanger").src = "img/image1.1.png";
     navbarAttrChanging[0].classList.remove("homeScrolling");
     navbarAttrChanging[1].classList.add("aboutScrolling");
@@ -113,7 +107,7 @@ window.addEventListener('resize', () => {
       "#16406e";
     navbarAttrChanging[0].classList.remove('homeScrolling')
     navbarAttrChanging[0].classList.add('allATagsWhite')
-    console.log(navbarAttrChanging[0].classList)
+
     navbarAttrChanging.forEach(function (e) {
       e.addEventListener("mouseover", function (event) {
         event.target.style.color = "#eee";
@@ -124,7 +118,21 @@ window.addEventListener('resize', () => {
     });
   }
   else {
+    navbarAttrChanging.forEach(function (e) {
+      e.addEventListener("mouseover", function (event) {
+        event.target.style.color = "#16406e";
+        e.addEventListener("mouseout", function (event) {
+          event.target.style.color = "";
+        });
+      });
+    });
     navbarAttrChanging[0].classList.add('homeScrolling')
     navbarAttrChanging[0].classList.remove('allATagsWhite')
+    navbarAttrChanging[1].classList.remove('allATagsWhite')
+    navbarAttrChanging[2].classList.remove('allATagsWhite')
+    navbarAttrChanging[3].classList.remove('allATagsWhite')
+    navbarAttrChanging[4].classList.remove('allATagsWhite')
+    navbarAttrChanging[5].classList.remove('allATagsWhite')
+    navbarAttrChanging[6].classList.remove('allATagsWhite')
   }
 })
