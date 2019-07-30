@@ -377,7 +377,7 @@ a {
 }
 .about ul li h1 {
   margin-top: 5.5rem;
-  transform: translateX(250px);
+  transform: translateX(50px);
   transition: all 1s ease-in-out;
   visibility: hidden;
   opacity: 0;
@@ -386,7 +386,7 @@ a {
 .about ul li p {
   padding-bottom: 0;
   margin-bottom: 1rem;
-  transform: translateX(150px);
+  transform: translateX(50px);
   transition: all 1s ease-in-out;
   visibility: hidden;
   opacity: 0;
@@ -397,7 +397,7 @@ a {
   padding-top: 1rem;
   width: 50%;
   height: 10vh;
-  transform: translateX(150px);
+  transform: translateX(50px);
   transition: all 1s ease-in-out;
   visibility: hidden;
   opacity: 0;
@@ -414,15 +414,14 @@ a {
   opacity: 1;
 }
 .opacity-image-skills span{
-width: 50%;
-
-transform: translateX(150px);
+  transform: translateX(50px);
+  width: 60%;
   transition: all 1s ease-in-out;
   visibility: hidden;
   opacity: 0;
 }
 .opacity-image-skills span.show{
-  transform: none;
+    transform: none;
   visibility: visible;
   opacity: 1;
 }
@@ -462,11 +461,11 @@ transform: translateX(150px);
 .opacity-image-skills {
   height: 55vh;
   width: 100%;
-  padding: 0;
   background: rgba(0, 0, 0, 0.3);
 }
 
 .progress {
+  width: 65%;
   overflow: hidden;
   height: 4px;
   background: #ccc;
