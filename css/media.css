@@ -216,7 +216,18 @@
     justify-content: center;
     text-align: left;
   }
-
+  .about ul li h1{
+    transform: translateX(50px);
+  }
+  .about ul li p{
+    transform: translateX(50px);
+  }
+  .signature{
+    transform: translateX(50px);
+  }
+  .opacity-image-skills span{
+    transform: translateX(50px);
+  }
   .progress{
     width: 90%;
   }
