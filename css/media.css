@@ -146,6 +146,9 @@
     background-size: cover;
     background-position: center; 
   }
+  .opacity-image-skills span{
+    width: 60%;
+  }
   .opacity-image-skills{
     background: rgba(0, 0, 0, 0.6)
   }
@@ -154,7 +157,18 @@
     justify-content: center;
     text-align: left;
   }
+  @media (max-height: 645px){
+    .about ul >li h1{
+      margin-bottom: 0;
+      margin-top: 1rem;
+      padding-top: 0;
 
+    }
+    .about ul li p{
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+  }
   @keyframes fadeIn {
     0% {
       transform: translateY(-100%);
@@ -192,6 +206,7 @@
     margin-bottom: 0;
   }
 
+  
   .skills{
     background-size: cover;
     background-position: center; 
@@ -208,6 +223,10 @@
   #main-header .nav-brand{
     left: 0.7rem;
 
+  }
+  #main-header #navbar ul li a:hover {
+    color: var(--grey-color);
+    font-size: 1.8rem;
   }
 }
 @media (max-width: 500px) {
@@ -249,6 +268,7 @@
     width: 7rem;
     height: 4.5rem;
   }
+
   .openbtn{
     width: 45px;
     height: 45px;
@@ -274,6 +294,36 @@
     font-size: .9rem;
   }
 }
+@media(max-height:750px){
+  .about ul > li h1 {
+    margin-top: 2.5rem;
+  }
+  
+  .about ul li p {
+    padding-bottom: 0;
+    margin-bottom: 1rem;
+  }
+  .signature{
+    width: 40%;
+    height: 10vh;
+  }
+  
+  @media(max-width:996px){
+    #main-header #navbar ul
+    #main-header #navbar ul {
+      margin-top: 1rem;
+      padding-top: 1rem;
+    }
+    #main-header #navbar ul li {
+      padding: 0.8rem 0;
+    }
+    #main-header #navbar ul li a {
+      font-weight: 300;
+      font-size: 1.7rem;
+      color: var(--white-color);
+    }
+  }
+}
 @media (max-height: 575px){
   .opacity-image-skills h1{
     font-size: 1.6rem;
@@ -283,6 +333,45 @@
   }
   .opacity-image-skills h5{
     margin-top: 1rem;
+  }
+
+  .signature{
+    display: none;
+  }
+  #main-header #navbar ul li a:hover {
+    color: var(--grey-color);
+    font-size: 1.3rem;
+  }
+  
+  @media(max-width: 996px){
+    .about ul > li h1 {
+      margin-top: 1rem;
+      padding-top: 1rem;
+    }
+
+    .about ul li p {
+      padding-bottom: 0;
+      margin-bottom: 1rem;
+    }
+    .signature{
+      width: 40%;
+      height: 10vh;
+    }
+    
+    #main-header #navbar ul {
+      margin-top: 1rem;
+      padding-top: 1rem;
+    }
+    #main-header #navbar ul li {
+      padding: 0.5rem 0;
+    }
+    #main-header #navbar ul li a {
+      font-weight: 300;
+      font-size: 1.2rem;
+      color: var(--white-color);
+    }
+
+    
   }
 }
 @media (max-height: 450px) {
@@ -303,26 +392,18 @@
   .btn {
     padding: 1rem 2rem;
   }
-  #navbar ul {
-    margin-top: 0;
-    padding-top: 0;
-  }
-  #navbar ul li {
-    padding: 0.3rem 0;
-  }
-  #navbar ul li a {
-    font-weight: 200;
-    font-size: 1.4rem;
-    color: var(--white-color);
+  #main-header #navbar ul li a:hover {
+    color: var(--grey-color);
+    font-size: 1rem;
   }
   .about ul >li h1{
     
-    font-size: 1.2rem;
-    margin-top: 3rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
     padding:0;
   }
   .about ul li p{
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin: 0;
     padding:0;
   }
@@ -356,18 +437,17 @@
 
 
   @media(max-width: 996px){
-    #main-header #navbar ul{
-      padding-top: 0.5rem;
+    #main-header #navbar ul {
+      margin-top: 0;
+      padding-top: 0;
     }
-    #main-header #navbar ul li{
-      margin: 0;
-      padding: 0.9rem;
+    #main-header #navbar ul li {
+      padding: 0.4rem 0;
     }
     #main-header #navbar ul li a {
-      font-weight: 400;
+      font-weight: 200;
       font-size: 0.9rem;
-      margin: 0;
-      padding: 0;
+      color: var(--white-color);
     }
   }
 }

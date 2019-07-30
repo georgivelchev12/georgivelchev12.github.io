@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/media.css" />
     <title>Piroll</title>
   </head>
-  <body id="home" class="scrollspy mainScroll">
+  <body id="home" class="scrollspy mainScroll newScrollBar">
     <!-- Header, navbar and showcase -->
     <header id="main-header">
       <div class="opacity-2"></div>
@@ -27,7 +27,7 @@
         /></a>
         <div id="mySidebar" class="sidebar">
           <ul>
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+            <a href="javascript:void(0)" class="closebtn"
               >&times;</a
             >
             <li>
@@ -53,7 +53,7 @@
             <li><a class="colorChange" href="#contact">Contact</a></li>
           </ul>
         </div>
-        <button class="openbtn main" onclick="openNav()"><div></div></button>
+        <button class="openbtn main"><div></div></button>
       </nav>
 
       <div class="showcase">
@@ -74,7 +74,7 @@
     <section id="about-section" class="scrollspy">
       <div class="about">
         <ul>
-          <li><h1 class="m-heading mt-2 mb-1">About Us</h1></li>
+          <li><h1 class="mt-2 mb-1">About Us</h1></li>
           <li>
             <p class="lead-m">
               Divide have don't man wherein air fourth. Own itself make have
@@ -86,22 +86,28 @@
           <li class="signature mb-3 mt-0"></li>
         </ul>
       </div>
-      <div class="skills text-white mt-3">
+      <div class="skills text-white">
         
         <div class="opacity-image-skills">
-          <h1 class="m-heading text-white">Professional Skills</h1>
+          <span>
+              <h1 class="m-heading text-white">Professional Skills</h1>
           <h5>UI/UX DESIGN 75%</h5>
           <div class="progress">
             <div style="width:75%"></div>
           </div>
-          <h5>WEB DEVELOPMENT 90%</h5>
+          </span>
+         <span>
+            <h5>WEB DEVELOPMENT 90%</h5>
           <div class="progress">
             <div style="width:90%"></div>
           </div>
-          <h5>MARKETING 65%</h5>
-          <div class="progress">
-            <div style="width:65%"></div>
-          </div>
+         </span>
+          <span>
+              <h5>MARKETING 65%</h5>
+              <div class="progress">
+                <div style="width:65%"></div>
+              </div>
+          </span>
         </div>
       </div>
     </section>

@@ -301,21 +301,22 @@ a {
 }
 .about ul li p{
   padding-bottom: 0;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 
 }
 .signature {
   margin-top: 0;
   padding-top: 0;
   margin-bottom: 1.5rem;
-  width: 70%;
-  height: 20vh;
+  width: 50%;
+  height: 10vh;
   background: url("../img/signature.png") no-repeat center center/cover;
 }
 .skills {
   position: relative;
   height: 55vh;
   width: 100%;
+  margin: 0;
   background: url("../img/image8.jpg");
   background-color: #000102;
   background-size: auto 100%;
