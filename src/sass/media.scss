@@ -1,4 +1,12 @@
 
+
+$dark-color: #333;
+$white-color: #fff;
+$main-color: #16406e;
+$secondary-color: #ac3b61;
+$grey-color: #bab2b5;
+$black-color: #000;
+
 @media (max-width: 996px) {
     /* Sidebar slide */
     .sidebar {
@@ -115,17 +123,17 @@
     .btn {
       margin: 0;
     }
-    .about ul > li h1 {
+    #about-section .about ul li h1 {
       padding-top: 3rem;
       margin-top: 0;
   
       font-size: 1.6rem;
     }
-    .about ul li p {
+    #about-section .about ul li p {
       font-size: 1rem;
       margin-bottom: 1rem;
     }
-    .signature {
+    #about-section .about ul .signature {
       padding-bottom: 0;
       margin-bottom: 0;
       height: 10vh;
@@ -147,16 +155,17 @@
       }
     }
   
-    @media (max-height: 645px) {
-      .about ul > li h1 {
+    @media (max-height: 675px) {
+      #about-section .about ul li h1 {
         margin-bottom: 0;
         margin-top: 1rem;
         padding-top: 0;
       }
-      .about ul li p {
+      #about-section .about ul li p {
         font-size: 1rem;
         margin-bottom: 0;
       }
+
     }
     @keyframes fadeIn {
       0% {
@@ -184,13 +193,13 @@
       height: 100vh;
     }
   
-    .about ul > li h1 {
+    #about-section .about ul li h1 {
       margin-bottom: 0;
       margin-top: 1rem;
       font-size: 1.6rem;
       font-weight: 550;
     }
-    .about ul li p {
+    #about-section .about ul li p {
       font-size: 1rem;
       margin-bottom: 0;
     }
@@ -204,15 +213,20 @@
         text-align: left;
       }
     }
-    .about ul li h1 {
+    #about-section .about ul li h1 {
       transform: translateX(50px);
     }
-    .about ul li p {
+    #about-section .about ul li p {
       transform: translateX(50px);
     }
-    .signature {
+    #about-section .about ul .signature {
       padding: 0;
       transform: translateX(50px);
+    }
+    #about-section .about ul .signature.show {
+      transform: none;
+      visibility: visible;
+      opacity: 1;
     }
     .show {
       transform: none;
@@ -276,7 +290,7 @@
       width: 45px;
       height: 45px;
     }
-    .about ul li h1 {
+    #about-section .about ul li h1 {
       margin-top: 5rem;
     }
   }
@@ -300,15 +314,15 @@
     }
   }
   @media (max-height: 750px) {
-    .about ul > li h1 {
+    #about-section .about ul li h1 {
       margin-top: 2.1rem;
     }
   
-    .about ul li p {
+    #about-section .about ul li p {
       padding-bottom: 0;
       margin-bottom: 0.8rem;
     }
-    .signature {
+    #about-section .about ul .signature {
       padding: 0;
     }
   
@@ -328,13 +342,13 @@
     }
   }
   @media (max-height: 575px) {
-    .opacity-image-skills h1 {
+    #about-section .skills .opacity-image-skills h1 {
       font-size: 1.6rem;
       font-weight: 400;
       margin-top: 15px;
       margin-bottom: 15px;
     }
-    .opacity-image-skills h5 {
+    #about-section .skills .opacity-image-skills h5 {
       margin-top: 1rem;
     }
     .signature {
@@ -345,15 +359,15 @@
       font-size: 1.3rem;
     }
     @media (max-width: 996px) {
-      .about ul > li h1 {
+      #about-section .about ul li h1 {
         margin-top: 1rem;
         padding-top: 1rem;
       }
-      .about ul li p {
+      #about-section .about ul li p {
         padding-bottom: 0;
         margin-bottom: 1rem;
       }
-      .signature {
+      #about-section .about ul .signature {
         width: 40%;
         height: 10vh;
       }
@@ -392,12 +406,12 @@
       color: $grey-color;
       font-size: 1rem;
     }
-    .about ul > li h1 {
+    #about-section .about ul li h1 {
       font-size: 1.1rem;
       margin-top: 1rem;
       padding: 0;
     }
-    .about ul li p {
+    #about-section .about ul li p {
       font-size: 0.8rem;
       margin: 0;
       padding: 0;

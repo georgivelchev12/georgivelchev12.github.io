@@ -1,0 +1,345 @@
+@media (max-width: 996px) {
+  /* Sidebar slide */
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #16406e;
+    opacity: 0.95;
+    overflow: hidden;
+    padding-top: 60px;
+    transition: 0.4s; }
+    .sidebar .closebtn {
+      display: block;
+      position: absolute;
+      top: 1.2%;
+      right: 3.3%;
+      font-size: 36px;
+      margin-left: 50px;
+      color: #fff; }
+  .openbtn {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 1rem;
+    z-index: -12312;
+    border: none;
+    width: 50px;
+    outline: none;
+    height: 50px;
+    padding: 1rem;
+    background: #16406e;
+    opacity: 0.85;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    justify-content: center;
+    -webkit-animation: fadeIn 0.9s 1;
+    animation: fadeIn 0.9s 1;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; }
+    .openbtn div {
+      position: relative;
+      flex: none;
+      width: 180%;
+      height: 2px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease; }
+      .openbtn div:after, .openbtn div:before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: -10px;
+        width: 100%;
+        height: 2px;
+        background: #fff; }
+      .openbtn div:after {
+        top: 10px; }
+  #main-header {
+    height: 100vh; }
+    #main-header .nav-brand {
+      left: 0; }
+    #main-header #navbar ul {
+      position: static;
+      flex-direction: column;
+      padding-top: 5rem; }
+      #main-header #navbar ul li {
+        padding: 1.2rem 0; }
+        #main-header #navbar ul li a {
+          font-size: 2rem;
+          color: #fff; }
+          #main-header #navbar ul li a:hover {
+            color: #bab2b5;
+            font-size: 1.95rem; }
+  .showcase {
+    top: 0;
+    left: 25%;
+    right: 20%; }
+    .showcase .showcase-content {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      color: #333; }
+      .showcase .showcase-content h1 {
+        font-size: 3rem;
+        color: #222; }
+  .btn {
+    margin: 0; }
+  #about-section .about ul li h1 {
+    padding-top: 3rem;
+    margin-top: 0;
+    font-size: 1.6rem; }
+  #about-section .about ul li p {
+    font-size: 1rem;
+    margin-bottom: 1rem; }
+  #about-section .about ul .signature {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    height: 10vh;
+    width: 70%; }
+  .skills {
+    background-size: cover;
+    background-position: center; }
+    .skills .opacity-image-skills {
+      background: rgba(0, 0, 0, 0.6); }
+      .skills .opacity-image-skills span {
+        width: 60%; }
+    .skills div {
+      align-items: left;
+      justify-content: center;
+      text-align: left; } }
+
+@media (max-width: 996px) and (max-height: 675px) {
+  #about-section .about ul li h1 {
+    margin-bottom: 0;
+    margin-top: 1rem;
+    padding-top: 0; }
+  #about-section .about ul li p {
+    font-size: 1rem;
+    margin-bottom: 0; } }
+
+@media (max-width: 996px) {
+  @keyframes fadeIn {
+    0% {
+      transform: translateY(-100%); }
+    100% {
+      opacity: 1; } }
+  @-webkit-keyframes fadeIn {
+    0% {
+      transform: translateY(-100%); }
+    100% {
+      opacity: 1; } } }
+
+@media (max-width: 700px) {
+  .showcase .showcase-content .lead {
+    display: none; }
+  #main-header {
+    height: 100vh; }
+  #about-section .about ul li h1 {
+    margin-bottom: 0;
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    font-weight: 550; }
+  #about-section .about ul li p {
+    font-size: 1rem;
+    margin-bottom: 0; }
+  .skills {
+    background-size: cover;
+    background-position: center; }
+    .skills div {
+      align-items: left;
+      justify-content: center;
+      text-align: left; }
+  #about-section .about ul li h1 {
+    transform: translateX(30px); }
+  #about-section .about ul li p {
+    transform: translateX(30px); }
+  #about-section .about ul .signature {
+    padding: 0;
+    transform: translateX(30px); }
+  #about-section .about ul .signature.show {
+    transform: none;
+    visibility: visible;
+    opacity: 1; }
+  .show {
+    transform: none;
+    visibility: visible;
+    opacity: 1; }
+  .opacity-image-skills span {
+    transform: translateX(30px); }
+  .progress {
+    width: 90%; }
+  #main-header .nav-brand {
+    left: 0.7rem; }
+  #main-header #navbar ul li a:hover {
+    color: #bab2b5;
+    font-size: 1.8rem; } }
+
+@media (max-width: 500px) {
+  .showcase .showcase-content .l-heading {
+    font-weight: 400;
+    font-size: 2.2rem; }
+  .btn {
+    padding: 1rem 2rem; }
+  .showcase .showcase-content .lead {
+    display: none; }
+  #main-header {
+    height: 100vh; }
+    #main-header .nav-brand {
+      left: 1rem;
+      width: 7rem;
+      height: 4.5rem; }
+    #main-header #navbar ul {
+      position: static;
+      flex-direction: column;
+      padding-top: 0; }
+      #main-header #navbar ul li {
+        padding: 0.7rem 0; }
+        #main-header #navbar ul li a {
+          font-weight: 300;
+          font-size: 1.7rem;
+          color: #fff; }
+  .opacity-image-skills h1 {
+    font-size: 2rem;
+    font-weight: 500; }
+  .about .lead-m {
+    font-size: 0.9rem; }
+  .openbtn {
+    width: 45px;
+    height: 45px; }
+  #about-section .about ul li h1 {
+    margin-top: 5rem; } }
+
+@media (max-width: 400px) {
+  #main-header .nav-brand {
+    left: 0.5rem;
+    width: 6rem;
+    height: 4rem;
+    margin-top: 0.15rem; }
+  .openbtn {
+    width: 40px;
+    height: 40px; }
+  .signature {
+    display: none; }
+  .about .lead-m {
+    font-size: 0.9rem; } }
+
+@media (max-height: 750px) {
+  #about-section .about ul li h1 {
+    margin-top: 2.1rem; }
+  #about-section .about ul li p {
+    padding-bottom: 0;
+    margin-bottom: 0.8rem; }
+  #about-section .about ul .signature {
+    padding: 0; } }
+
+@media (max-height: 750px) and (max-width: 996px) {
+  #main-header #navbar ul {
+    margin-top: 1rem;
+    padding-top: 1rem; }
+    #main-header #navbar ul li {
+      padding: 0.8rem 0; }
+      #main-header #navbar ul li a {
+        font-weight: 300;
+        font-size: 1.7rem;
+        color: #fff; } }
+
+@media (max-height: 575px) {
+  #about-section .skills .opacity-image-skills h1 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 15px; }
+  #about-section .skills .opacity-image-skills h5 {
+    margin-top: 1rem; }
+  .signature {
+    display: none; }
+  #main-header #navbar ul li a:hover {
+    color: #bab2b5;
+    font-size: 1.3rem; } }
+
+@media (max-height: 575px) and (max-width: 996px) {
+  #about-section .about ul li h1 {
+    margin-top: 1rem;
+    padding-top: 1rem; }
+  #about-section .about ul li p {
+    padding-bottom: 0;
+    margin-bottom: 1rem; }
+  #about-section .about ul .signature {
+    width: 40%;
+    height: 10vh; }
+  #main-header #navbar ul {
+    margin-top: 1rem;
+    padding-top: 1rem; }
+    #main-header #navbar ul li {
+      padding: 0.5rem 0; }
+      #main-header #navbar ul li a {
+        font-weight: 300;
+        font-size: 1.2rem;
+        color: #fff; } }
+
+@media (max-height: 450px) {
+  .signature {
+    display: none; }
+  .sidebar {
+    padding-top: 20px; }
+  .showcase .showcase-content .lead {
+    display: none; }
+  .showcase .showcase-content .l-heading {
+    font-weight: 400;
+    font-size: 2.2rem; }
+  .btn {
+    padding: 1rem 2rem; }
+  #main-header #navbar ul li a:hover {
+    color: #bab2b5;
+    font-size: 1rem; }
+  #about-section .about ul li h1 {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    padding: 0; }
+  #about-section .about ul li p {
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0; }
+  .signature {
+    display: none; }
+  .skills {
+    background-size: cover;
+    background-position: center; }
+    .skills div {
+      align-items: left;
+      justify-content: center;
+      text-align: left; }
+  .opacity-image-skills h1 {
+    font-size: 1rem;
+    font-weight: 330;
+    margin-top: 4px;
+    margin-bottom: 4px; }
+  .opacity-image-skills h5 {
+    font-weight: 290;
+    font-size: 0.6rem;
+    margin-top: 0;
+    margin-bottom: 0.45rem; }
+  .progress {
+    height: 2.5px; } }
+
+@media (max-height: 450px) and (max-width: 996px) {
+  #main-header #navbar ul {
+    margin-top: 0;
+    padding-top: 0; }
+    #main-header #navbar ul li {
+      padding: 0.4rem 0; }
+      #main-header #navbar ul li a {
+        font-weight: 200;
+        font-size: 0.9rem;
+        color: #fff; } }

@@ -10,14 +10,20 @@
     "type": "git",
     "url": "git+https://github.com/georgivelchev12/georgivelchev12.github.io.git"
   },
-  "author": "Georgi Velchev",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/georgivelchev12/georgivelchev12.github.io/issues"
   },
   "homepage": "https://github.com/georgivelchev12/georgivelchev12.github.io#readme",
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "gulp-babel": "^8.0.0",
     "gulp-sass": "^4.0.2",
     "node-sass": "^4.12.0"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2"
   }
 }
