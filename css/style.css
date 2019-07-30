@@ -396,7 +396,7 @@ a {
   margin-top: 0;
   padding-top: 1rem;
   width: 50%;
-  height: 10vh;
+  height: 12vh;
   transform: translateX(150px);
   transition: all 1s ease-in-out;
   visibility: hidden;

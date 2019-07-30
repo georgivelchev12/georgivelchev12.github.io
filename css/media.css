@@ -223,7 +223,13 @@
     transform: translateX(50px);
   }
   .signature{
+    padding: 0;
     transform: translateX(50px);
+  }
+  .show{
+    transform: none;
+    visibility: visible;
+    opacity: 1;
   }
   .opacity-image-skills span{
     transform: translateX(50px);
@@ -279,12 +285,13 @@
     width: 7rem;
     height: 4.5rem;
   }
-
   .openbtn{
     width: 45px;
     height: 45px;
   }
-  
+  .about ul li h1{
+    margin-top: 5rem;
+  }
 }
 @media (max-width:400px){
   #main-header .nav-brand{
@@ -307,18 +314,17 @@
 }
 @media(max-height:750px){
   .about ul > li h1 {
-    margin-top: 2.5rem;
+    margin-top: 2.1rem;
   }
   
   .about ul li p {
     padding-bottom: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
   }
   .signature{
-    width: 40%;
-    height: 10vh;
+    padding: 0;
   }
-  
+
   @media(max-width:996px){
     #main-header #navbar ul
     #main-header #navbar ul {
