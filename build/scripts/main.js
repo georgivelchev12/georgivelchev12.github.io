@@ -9,7 +9,7 @@ var controller = {
     this.animationWithShowClass();
   },
   heightOnScrollAndResize: function heightOnScrollAndResize() {
-    height = window.innerHeight * 2;
+    height = window.innerHeight * 3;
     window.addEventListener('scroll', this.heightOnScrollAndResize);
     window.addEventListener('resize', this.heightOnScrollAndResize);
     window.addEventListener('click', this.heightOnScrollAndResize);
@@ -27,35 +27,39 @@ var controller = {
     });
     var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
-    if (scrollTop >= 0 && scrollTop < height / 2) {
+    if (scrollTop >= 0 && scrollTop < height / 3) {
       document.getElementById("aboutChanger").src = "img/image1.png";
       document.getElementsByClassName("openbtn")[0].style.backgroundColor = "#16406e";
 
       if (window.innerWidth <= 996) {
         document.getElementById("mySidebar").style.backgroundColor = "#16406e";
         navbarAttrChanging[0].classList.remove('homeScrolling');
+        navbarAttrChanging[2].classList.remove('workScrolling');
         navbarAttrChanging.forEach(function (e) {
+          e.classList.remove('homeScrollingOnHover');
           e.classList.remove('homeScrollingOnHover');
           e.classList.add('allATagsWhite');
         });
       } else {
         navbarAttrChanging[0].classList.add("homeScrolling");
         navbarAttrChanging[1].classList.remove("aboutScrolling");
+        navbarAttrChanging[2].classList.remove("workScrolling");
         navbarAttrChanging.forEach(function (e) {
           e.classList.add('homeScrollingOnHover');
           e.classList.remove("aboutScrollingOnHover");
+          e.classList.remove("workScrolling");
+          e.classList.remove("workScrollingOnHover");
           e.classList.remove('allATagsWhite');
         });
       }
-    } else if (scrollTop >= height / 2 && scrollTop <= height) {
+    } else if (scrollTop >= height / 3 && scrollTop < height / 1.5) {
       document.getElementById("aboutChanger").src = "img/image1.1.png";
       document.getElementsByClassName("openbtn")[0].style.backgroundColor = "#ac3b61";
-      navbarAttrChanging[0].classList.remove("homeScrolling");
-      navbarAttrChanging[1].classList.add("aboutScrolling");
 
       if (window.innerWidth <= 996) {
         document.getElementById("mySidebar").style.backgroundColor = "#ac3b61";
         navbarAttrChanging[1].classList.remove('aboutScrolling');
+        navbarAttrChanging[2].classList.remove('workScrolling');
         navbarAttrChanging.forEach(function (e) {
           e.classList.remove('aboutScrollingOnHover');
           e.classList.add('allATagsWhite');
@@ -63,9 +67,37 @@ var controller = {
       } else {
         navbarAttrChanging[0].classList.remove("homeScrolling");
         navbarAttrChanging[1].classList.add("aboutScrolling");
+        navbarAttrChanging[2].classList.remove("workScrolling");
         navbarAttrChanging.forEach(function (e) {
           e.classList.add('aboutScrollingOnHover');
           e.classList.remove("homeScrollingOnHover");
+          e.classList.remove("workScrolling");
+          e.classList.remove("workScrollingOnHover");
+          e.classList.remove('allATagsWhite');
+        });
+      }
+    } else if (scrollTop >= height / 1.5 && scrollTop <= height) {
+      document.getElementById("aboutChanger").src = "img/image1.2.png";
+      document.getElementsByClassName("openbtn")[0].style.backgroundColor = "#f79e02";
+
+      if (window.innerWidth <= 996) {
+        document.getElementById("mySidebar").style.backgroundColor = "#f79e02";
+        navbarAttrChanging[1].classList.remove('aboutScrolling');
+        navbarAttrChanging[2].classList.remove('workScrolling');
+        navbarAttrChanging.forEach(function (e) {
+          e.classList.remove('workScrollingOnHover');
+          e.classList.remove('workScrolling');
+          e.classList.add('allATagsWhite');
+        });
+      } else {
+        navbarAttrChanging[0].classList.remove("homeScrolling");
+        navbarAttrChanging[1].classList.remove("aboutScrolling");
+        navbarAttrChanging[2].classList.add("workScrolling");
+        navbarAttrChanging.forEach(function (e) {
+          e.classList.add("workScrolling");
+          e.classList.add('workScrollingOnHover');
+          e.classList.remove("homeScrollingOnHover");
+          e.classList.remove("aboutScrollingOnHover");
           e.classList.remove('allATagsWhite');
         });
       }

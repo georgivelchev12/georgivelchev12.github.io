@@ -133,10 +133,12 @@ ul{
 .aboutScrollingOnHover:hover {
   color: $secondary-color !important;
 }
-// .workScrolling {
-// }
-// .workScrollingOnHover:hover {
-// }
+.workScrolling {
+  color: #f79e02 !important;
+}
+.workScrollingOnHover:hover {
+  color: #eee !important;
+}
 // .processScrolling {
 // }
 // .processScrollingOnHover:hover {
@@ -464,8 +466,8 @@ ul{
   .work-bar{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    height: 25vh;
-    color: #f79e02;
+    height: 30vh;
+    color: #eee;
 
     div{
       padding: 3rem;
