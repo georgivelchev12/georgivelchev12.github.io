@@ -81,21 +81,24 @@ $black-color: #000;
   
     #main-header {
       height: 100vh;
-      .nav-brand {
-        left: 0;
-      }
-      #navbar ul {
-        position: static;
-        flex-direction: column;
-        padding-top: 5rem;
-        li {
-          padding: 1.2rem 0;
-          a {
-            font-size: 2rem;
-            color: $white-color;
-            &:hover {
-              color: $grey-color;
-              font-size: 1.95rem;
+      
+      #navbar{
+        .nav-brand {
+          left: 0;
+        }
+        ul {
+          position: static;
+          flex-direction: column;
+          padding-top: 5rem;
+          li {
+            padding: 1.2rem 0;
+            a {
+              font-size: 2rem;
+              color: $white-color;
+              &:hover {
+                color: $grey-color;
+                font-size: 1.95rem;
+              }
             }
           }
         }
@@ -214,14 +217,14 @@ $black-color: #000;
       }
     }
     #about-section .about ul li h1 {
-      transform: translateX(50px);
+      transform: translateX(20px);
     }
-    #about-section .about ul li p {
-      transform: translateX(50px);
+    #about-section .about ul li p  {
+      transform: translateX(20px);;
     }
-    #about-section .about ul .signature {
+    .skills .about ul .signature {
       padding: 0;
-      transform: translateX(50px);
+      transform: translateX(20px);;
     }
     #about-section .about ul .signature.show {
       transform: none;
@@ -233,14 +236,11 @@ $black-color: #000;
       visibility: visible;
       opacity: 1;
     }
-    .opacity-image-skills span {
-      transform: translateX(50px);
+    .skills .opacity-image-skills span{
+      transform: translateX(30px)
     }
     .progress {
       width: 90%;
-    }
-    #main-header .nav-brand {
-      left: 0.7rem;
     }
     #main-header #navbar ul li a:hover {
       color: $grey-color;
@@ -260,21 +260,24 @@ $black-color: #000;
     }
     #main-header {
       height: 100vh;
-      .nav-brand {
-        left: 1rem;
-        width: 7rem;
-        height: 4.5rem;
-      }
-      #navbar ul {
-        position: static;
-        flex-direction: column;
-        padding-top: 0;
-        li {
-          padding: 0.7rem 0;
-          a {
-            font-weight: 300;
-            font-size: 1.7rem;
-            color: $white-color;
+      
+      #navbar{
+        .nav-brand {
+          left: 0;
+          width: 7rem;
+          height: 4.5rem;
+        }
+        ul {
+          position: static;
+          flex-direction: column;
+          padding-top: 0;
+          li {
+            padding: 0.7rem 0;
+            a {
+              font-weight: 300;
+              font-size: 1.7rem;
+              color: $white-color;
+            }
           }
         }
       }
@@ -291,12 +294,12 @@ $black-color: #000;
       height: 45px;
     }
     #about-section .about ul li h1 {
-      margin-top: 5rem;
+      margin-top: 2.5rem;
     }
   }
   @media (max-width: 400px) {
-    #main-header .nav-brand {
-      left: 0.5rem;
+    #main-header #navbar .nav-brand {
+      left: 0rem;
       width: 6rem;
       height: 4rem;
       margin-top: 0.15rem;
@@ -314,10 +317,7 @@ $black-color: #000;
     }
   }
   @media (max-height: 750px) {
-    #about-section .about ul li h1 {
-      margin-top: 2.1rem;
-    }
-  
+   
     #about-section .about ul li p {
       padding-bottom: 0;
       margin-bottom: 0.8rem;
@@ -325,7 +325,12 @@ $black-color: #000;
     #about-section .about ul .signature {
       padding: 0;
     }
+  @media(max-width:500px){
+    #about-section .about ul li h1 {
+      margin-top: .1rem;
+    }
   
+  }
     @media (max-width: 996px) {
       #main-header #navbar ul {
         margin-top: 1rem;
@@ -343,7 +348,7 @@ $black-color: #000;
   }
   @media (max-height: 575px) {
     #about-section .skills .opacity-image-skills h1 {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 400;
       margin-top: 15px;
       margin-bottom: 15px;
@@ -366,6 +371,7 @@ $black-color: #000;
       #about-section .about ul li p {
         padding-bottom: 0;
         margin-bottom: 1rem;
+        font-size: 0.8rem;
       }
       #about-section .about ul .signature {
         width: 40%;

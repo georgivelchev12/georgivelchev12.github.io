@@ -64,7 +64,7 @@
         top: 10px; }
   #main-header {
     height: 100vh; }
-    #main-header .nav-brand {
+    #main-header #navbar .nav-brand {
       left: 0; }
     #main-header #navbar ul {
       position: static;
@@ -161,12 +161,12 @@
       justify-content: center;
       text-align: left; }
   #about-section .about ul li h1 {
-    transform: translateX(30px); }
+    transform: translateX(20px); }
   #about-section .about ul li p {
-    transform: translateX(30px); }
-  #about-section .about ul .signature {
+    transform: translateX(20px); }
+  .skills .about ul .signature {
     padding: 0;
-    transform: translateX(30px); }
+    transform: translateX(20px); }
   #about-section .about ul .signature.show {
     transform: none;
     visibility: visible;
@@ -175,12 +175,10 @@
     transform: none;
     visibility: visible;
     opacity: 1; }
-  .opacity-image-skills span {
+  .skills .opacity-image-skills span {
     transform: translateX(30px); }
   .progress {
     width: 90%; }
-  #main-header .nav-brand {
-    left: 0.7rem; }
   #main-header #navbar ul li a:hover {
     color: #bab2b5;
     font-size: 1.8rem; } }
@@ -195,8 +193,8 @@
     display: none; }
   #main-header {
     height: 100vh; }
-    #main-header .nav-brand {
-      left: 1rem;
+    #main-header #navbar .nav-brand {
+      left: 0;
       width: 7rem;
       height: 4.5rem; }
     #main-header #navbar ul {
@@ -218,11 +216,11 @@
     width: 45px;
     height: 45px; }
   #about-section .about ul li h1 {
-    margin-top: 5rem; } }
+    margin-top: 2.5rem; } }
 
 @media (max-width: 400px) {
-  #main-header .nav-brand {
-    left: 0.5rem;
+  #main-header #navbar .nav-brand {
+    left: 0rem;
     width: 6rem;
     height: 4rem;
     margin-top: 0.15rem; }
@@ -235,13 +233,15 @@
     font-size: 0.9rem; } }
 
 @media (max-height: 750px) {
-  #about-section .about ul li h1 {
-    margin-top: 2.1rem; }
   #about-section .about ul li p {
     padding-bottom: 0;
     margin-bottom: 0.8rem; }
   #about-section .about ul .signature {
     padding: 0; } }
+
+@media (max-height: 750px) and (max-width: 500px) {
+  #about-section .about ul li h1 {
+    margin-top: .1rem; } }
 
 @media (max-height: 750px) and (max-width: 996px) {
   #main-header #navbar ul {
@@ -256,7 +256,7 @@
 
 @media (max-height: 575px) {
   #about-section .skills .opacity-image-skills h1 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 400;
     margin-top: 15px;
     margin-bottom: 15px; }
@@ -274,7 +274,8 @@
     padding-top: 1rem; }
   #about-section .about ul li p {
     padding-bottom: 0;
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    font-size: 0.8rem; }
   #about-section .about ul .signature {
     width: 40%;
     height: 10vh; }
