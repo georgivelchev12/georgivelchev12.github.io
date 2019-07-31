@@ -306,7 +306,7 @@
     font-size: 1rem; }
   #about-section .about ul li h1 {
     font-size: 1.1rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     padding: 0; }
   #about-section .about ul li p {
     font-size: 0.8rem;
@@ -321,12 +321,12 @@
       align-items: left;
       justify-content: center;
       text-align: left; }
-  .opacity-image-skills h1 {
-    font-size: 1rem;
+  #about-section .skills .opacity-image-skills h1 {
+    font-size: 0.95rem;
     font-weight: 330;
     margin-top: 4px;
     margin-bottom: 4px; }
-  .opacity-image-skills h5 {
+  #about-section .skills .opacity-image-skills h5 {
     font-weight: 290;
     font-size: 0.6rem;
     margin-top: 0;
