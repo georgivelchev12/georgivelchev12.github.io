@@ -26,12 +26,13 @@ let controller = {
     if (scrollTop >= 0 && scrollTop < (height / 3)) {
       document.getElementById("aboutChanger").src = "img/image1.png";
       document.getElementsByClassName("openbtn")[0].style.backgroundColor = "#16406e";
+
       if (window.innerWidth <= 996) {
         document.getElementById("mySidebar").style.backgroundColor = "#16406e";
         navbarAttrChanging[0].classList.remove('homeScrolling')
+        navbarAttrChanging[1].classList.remove('aboutScrolling');
         navbarAttrChanging[2].classList.remove('workScrolling')
         navbarAttrChanging.forEach(e => {
-          e.classList.remove('homeScrollingOnHover')
           e.classList.remove('homeScrollingOnHover')
           e.classList.add('allATagsWhite');
         })

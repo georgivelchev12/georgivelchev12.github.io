@@ -13,7 +13,6 @@ gulp.task('sass', function () {
     gulp.watch('src/sass/*.scss', ['sass']);
   });
 
- 
   gulp.task('default', () =>
   gulp.src('src/scripts/*.js')
       .pipe(babel({

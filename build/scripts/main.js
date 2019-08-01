@@ -34,9 +34,9 @@ var controller = {
       if (window.innerWidth <= 996) {
         document.getElementById("mySidebar").style.backgroundColor = "#16406e";
         navbarAttrChanging[0].classList.remove('homeScrolling');
+        navbarAttrChanging[1].classList.remove('aboutScrolling');
         navbarAttrChanging[2].classList.remove('workScrolling');
         navbarAttrChanging.forEach(function (e) {
-          e.classList.remove('homeScrollingOnHover');
           e.classList.remove('homeScrollingOnHover');
           e.classList.add('allATagsWhite');
         });
