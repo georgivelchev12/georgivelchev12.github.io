@@ -509,13 +509,7 @@ $black-color: #000;
   }
 }
 @media (max-height: 575px) {
-  #process-section {
-    .process-text {
-      p {
-        display: none;
-      }
-    }
-  }
+
   #about-section .skills .opacity-image-skills h1 {
     font-size: 1.5rem;
     font-weight: 400;
@@ -561,10 +555,19 @@ $black-color: #000;
   }
 }
 @media (max-height: 450px) {
+
   #process-section {
     .process-video {
       video {
         margin-top: 0 !important;
+      }
+    }
+    .process-text {
+      h1{
+        margin-top: 0;
+      }
+      p {
+        display: none;
       }
     }
   }
