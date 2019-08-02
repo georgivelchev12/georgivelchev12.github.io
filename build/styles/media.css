@@ -50,6 +50,12 @@
   #work-section .load-more h2 {
     letter-spacing: 0.8px;
     font-weight: 300; }
+  #process-section .process-text h1 {
+    padding-top: 1.5rem;
+    padding-bottom: 0.5;
+    font-weight: 500; }
+  #process-section .process-video a i {
+    font-size: 3rem; }
   /* Sidebar slide */
   .sidebar {
     height: 100%;
@@ -124,6 +130,7 @@
       #main-header #navbar ul li {
         padding: 1.2rem 0; }
         #main-header #navbar ul li a {
+          z-index: 300456465566;
           font-size: 2rem;
           color: #fff; }
           #main-header #navbar ul li a:hover {
@@ -192,6 +199,10 @@
       opacity: 1; } } }
 
 @media (max-width: 700px) {
+  #process-section .process-text h1 {
+    padding-top: 1.8rem;
+    padding-bottom: 0.5;
+    font-weight: 500; }
   .showcase .showcase-content .lead {
     display: none; }
   #main-header {
@@ -312,7 +323,11 @@
   .signature {
     display: none; }
   .about .lead-m {
-    font-size: 0.9rem; } }
+    font-size: 0.9rem; }
+  #process-section .process-text h1 {
+    padding-top: 2.4rem;
+    padding-bottom: 0.5;
+    font-weight: 500; } }
 
 @media (max-height: 750px) {
   #about-section .about ul li p {
@@ -337,6 +352,8 @@
         color: #fff; } }
 
 @media (max-height: 575px) {
+  #process-section .process-text p {
+    display: none; }
   #about-section .skills .opacity-image-skills h1 {
     font-size: 1.5rem;
     font-weight: 400;
@@ -372,6 +389,8 @@
         color: #fff; } }
 
 @media (max-height: 450px) {
+  #process-section .process-video video {
+    margin-top: 0 !important; }
   .signature {
     display: none; }
   .sidebar {

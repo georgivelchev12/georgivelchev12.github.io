@@ -1,15 +1,15 @@
 let height;
 let navbarAttrChanging = document.querySelectorAll(".colorChange");
 
-
 let controller = {
   init() {
     this.heightOnScrollAndResize();
     this.changeMainContent();
     this.animationWithShowClass();
+    this.videoPlayAndPause();
   },
   heightOnScrollAndResize() {
-    height = window.innerHeight*3;
+    height = window.innerHeight * 4;
 
     window.addEventListener('scroll', this.heightOnScrollAndResize)
     window.addEventListener('resize', this.heightOnScrollAndResize)
@@ -23,9 +23,11 @@ let controller = {
     document.getElementsByClassName('closebtn')[0].addEventListener('click', () => toggleNav("0"))
 
     let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    if (scrollTop >= 0 && scrollTop < (height / 3)) {
+    if ((scrollTop >= 0 && scrollTop < (height / 4))) {
+
       document.getElementById("aboutChanger").src = "img/image1.png";
       document.getElementsByClassName("openbtn")[0].style.backgroundColor = "#16406e";
+
 
       if (window.innerWidth <= 996) {
         document.getElementById("mySidebar").style.backgroundColor = "#16406e";
@@ -49,7 +51,8 @@ let controller = {
           e.classList.remove('allATagsWhite');
         });
       }
-    } else if (scrollTop >= (height / 3) && scrollTop < height/1.5) {
+    } else if (scrollTop >= (height / 4) && scrollTop < height / 2) {
+
       document.getElementById("aboutChanger").src = "img/image1.1.png";
       document.getElementsByClassName("openbtn")[0].style.backgroundColor = "#ac3b61";
 
@@ -77,12 +80,15 @@ let controller = {
         });
       }
     }
-    else if(scrollTop >= height/1.5 && scrollTop <= height){
+    else if (scrollTop >= height / 2 && scrollTop < height) {
+
       document.getElementById("aboutChanger").src = "img/image1.2.png";
       document.getElementsByClassName("openbtn")[0].style.backgroundColor = "#f79e02";
 
       if (window.innerWidth <= 996) {
         document.getElementById("mySidebar").style.backgroundColor = "#f79e02";
+
+        navbarAttrChanging[0].classList.remove('homeScrolling')
         navbarAttrChanging[1].classList.remove('aboutScrolling')
         navbarAttrChanging[2].classList.remove('workScrolling')
         navbarAttrChanging.forEach(e => {
@@ -113,8 +119,8 @@ let controller = {
   animationWithShowClass() {
     let aboutItems = document.querySelectorAll('.about ul li');
     let skillsItems = document.querySelectorAll('.skills .opacity-image-skills span')
- 
-    function isInViewport(e){
+    let processText = document.querySelectorAll('.process-text span')
+    function isInViewport(e) {
       let rect = e.getBoundingClientRect();
       return (
         rect.top >= 0 &&
@@ -124,30 +130,80 @@ let controller = {
       );
     };
 
-    let run = () =>{
+    let run = () => {
       aboutItems.forEach(item => {
         if (isInViewport(item)) {
           item.classList.add('show');
         }
-        else{
+        else {
           item.classList.remove('show');
         }
       });
       skillsItems.forEach(e => {
-        if(isInViewport(e)){
+        if (isInViewport(e)) {
           e.classList.add('show');
         }
-        else{
+        else {
           e.classList.remove('show');
 
         }
       })
+      processText.forEach(x => {
+        if (isInViewport(x)) {
+          x.classList.add('show');
+        }
+        else {
+          x.classList.remove('show');
+
+        }
+      })
     }
-   
+
     window.addEventListener('load', run);
     window.addEventListener('resize', run);
     window.addEventListener('scroll', run);
 
+  }
+  , videoPlayAndPause() {
+    let videoPlay = document.getElementsByClassName('videoPlay')[0];
+    let videoPause = document.getElementsByClassName('videoPause')[0];
+    let btnShowing = (number) => videoPlay.style.opacity = `${number}`;
+    videoPlay.addEventListener('click', function () {
+      videoPause.play();
+      btnShowing(0);
+    })
+    videoPause.addEventListener('click', function () {
+      videoPause.pause();
+      btnShowing(1);
+    })
+
+    videoPlay.style.top = '40%';
+    marginTopOfVideo('-1rem')
+
+    if (window.innerWidth <= 996 && window.innerWidth > 700) {
+      positionOfButton(260)
+    }
+    else if (window.innerWidth <= 700 && window.innerWidth > 550) {
+      positionOfButton(150)
+      marginTopOfVideo('3rem')
+    }
+    else if (window.innerWidth <= 550 && window.innerWidth > 400) {
+      positionOfButton(100)
+      marginTopOfVideo('3.6rem')
+    }
+    else if (window.innerWidth <= 400) {
+      positionOfButton(25)
+      marginTopOfVideo('5rem')
+    }
+    function marginTopOfVideo(margin) {
+      videoPause.style.marginTop = margin;
+    }
+    function positionOfButton(num) {
+      videoPlay.style.top = videoPause.getBoundingClientRect().height - num + 'px';
+    }
+    window.addEventListener("resize", this.videoPlayAndPause);
+    window.addEventListener("load", this.videoPlayAndPause);
+    window.addEventListener("scroll", this.videoPlayAndPause);
   }
 }
 

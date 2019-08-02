@@ -147,7 +147,7 @@ ul {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    z-index: 20; }
+    z-index: 2234340; }
     #main-header #navbar .nav-brand {
       position: absolute;
       left: 2rem;
@@ -421,7 +421,8 @@ ul {
     #work-section .items .item {
       position: relative;
       background: #f79e02;
-      overflow: hidden; }
+      overflow: hidden;
+      z-index: 0; }
       #work-section .items .item:after {
         content: "";
         position: absolute;
@@ -482,12 +483,72 @@ ul {
     align-items: center;
     height: 10vh;
     background: #333;
-    color: #eee; }
+    color: #eee;
+    cursor: pointer; }
     #work-section .load-more h2 {
       margin: 0;
       letter-spacing: 1.2px;
       font-size: 1.5rem;
       font-weight: 300; }
+
+#process-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center; }
+  #process-section .process-text {
+    height: 30vh;
+    text-align: center; }
+    #process-section .process-text span h1 {
+      transform: translateX(30px);
+      transition: all 1s ease-in-out;
+      visibility: hidden;
+      opacity: 0;
+      padding-top: 2.4rem; }
+    #process-section .process-text span p {
+      transform: translateX(30px);
+      transition: all 1s ease-in-out;
+      visibility: hidden;
+      opacity: 0;
+      margin-top: 0.7rem;
+      width: 70%;
+      margin: auto; }
+    #process-section .process-text span.show h1 {
+      transform: translateX(0);
+      visibility: visible;
+      opacity: 1; }
+    #process-section .process-text span.show p {
+      transform: translateX(0);
+      visibility: visible;
+      opacity: 1; }
+  #process-section .process-video {
+    width: 100%;
+    height: 70vh;
+    position: relative; }
+    #process-section .process-video video {
+      margin-bottom: 0.7rem;
+      margin-top: -1rem;
+      left: 0;
+      right: 0;
+      max-height: 100%;
+      max-width: 90%;
+      box-shadow: 0px 0px 38px -10px rgba(0, 0, 0, 0.85); }
+    #process-section .process-video a {
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      width: 10%;
+      top: 40%;
+      opacity: 1;
+      transition: all 1s; }
+      #process-section .process-video a i {
+        z-index: 1;
+        font-size: 4rem; }
 
 /* Animation */
 @keyframes fadeIn {
