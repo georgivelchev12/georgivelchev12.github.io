@@ -186,7 +186,7 @@ var controller = {
     }
 
     function positionOfButton(num) {
-      videoPlay.style.top = videoPause.getBoundingClientRect().height - num + 'px';
+      videoPlay.style.top = videoPause.getBoundingClientRect().height - num + 'px'; // TRY WITH PROCENT NUM
     }
 
     window.addEventListener("resize", this.videoPlayAndPause);

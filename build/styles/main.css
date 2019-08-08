@@ -503,13 +503,13 @@ ul {
     height: 30vh;
     text-align: center; }
     #process-section .process-text span h1 {
-      transform: translateX(30px);
+      transform: translateX(20px);
       transition: all 1s ease-in-out;
       visibility: hidden;
       opacity: 0;
       padding-top: 2.4rem; }
     #process-section .process-text span p {
-      transform: translateX(30px);
+      transform: translateX(20px);
       transition: all 1s ease-in-out;
       visibility: hidden;
       opacity: 0;
