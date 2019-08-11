@@ -15,47 +15,6 @@
     font-weight: 300; } }
 
 @media (max-width: 996px) {
-  #work-section .work-bar {
-    grid-template-columns: repeat(2, 1fr); }
-    #work-section .work-bar div {
-      padding: 0rem; }
-      #work-section .work-bar div:nth-child(1) {
-        padding: 0 0 0 7rem; }
-      #work-section .work-bar div:nth-child(2) {
-        padding: 0 7rem 0 0; }
-      #work-section .work-bar div:nth-child(3) {
-        padding: 0 0 0 7rem; }
-      #work-section .work-bar div:nth-child(4) {
-        padding: 0 7rem 0 0; }
-      #work-section .work-bar div ul {
-        margin: 0;
-        padding: 0 1rem 0 1rem; }
-        #work-section .work-bar div ul i {
-          font-size: 1.5rem;
-          margin-right: 1rem; }
-        #work-section .work-bar div ul h3 {
-          font-size: 1rem;
-          margin-top: 1rem;
-          margin-bottom: 0; }
-        #work-section .work-bar div ul p {
-          font-size: 1rem;
-          margin-top: 0;
-          margin-bottom: 1rem; }
-  #work-section .items {
-    grid-template-columns: repeat(2, 1fr); }
-    #work-section .items .item:nth-child(3) {
-      display: none; }
-    #work-section .items .item:nth-child(4) {
-      display: none; }
-  #work-section .load-more h2 {
-    letter-spacing: 0.8px;
-    font-weight: 300; }
-  #process-section .process-text h1 {
-    padding-top: 1.5rem;
-    padding-bottom: 0.5;
-    font-weight: 500; }
-  #process-section .process-video a i {
-    font-size: 3rem; }
   /* Sidebar slide */
   .sidebar {
     height: 100%;
@@ -175,7 +134,48 @@
     .skills div {
       align-items: left;
       justify-content: center;
-      text-align: left; } }
+      text-align: left; }
+  #work-section .work-bar {
+    grid-template-columns: repeat(2, 1fr); }
+    #work-section .work-bar div {
+      padding: 0rem; }
+      #work-section .work-bar div:nth-child(1) {
+        padding: 0 0 0 7rem; }
+      #work-section .work-bar div:nth-child(2) {
+        padding: 0 7rem 0 0; }
+      #work-section .work-bar div:nth-child(3) {
+        padding: 0 0 0 7rem; }
+      #work-section .work-bar div:nth-child(4) {
+        padding: 0 7rem 0 0; }
+      #work-section .work-bar div ul {
+        margin: 0;
+        padding: 0 1rem 0 1rem; }
+        #work-section .work-bar div ul i {
+          font-size: 1.5rem;
+          margin-right: 1rem; }
+        #work-section .work-bar div ul h3 {
+          font-size: 1rem;
+          margin-top: 1rem;
+          margin-bottom: 0; }
+        #work-section .work-bar div ul p {
+          font-size: 1rem;
+          margin-top: 0;
+          margin-bottom: 1rem; }
+  #work-section .items {
+    grid-template-columns: repeat(2, 1fr); }
+    #work-section .items .item:nth-child(3) {
+      display: none; }
+    #work-section .items .item:nth-child(4) {
+      display: none; }
+  #work-section .load-more h2 {
+    letter-spacing: 0.8px;
+    font-weight: 300; }
+  #process-section .process-text h1 {
+    padding-top: 1.5rem;
+    padding-bottom: 0.5;
+    font-weight: 500; }
+  #process-section .process-video a i {
+    font-size: 3rem; } }
 
 @media (max-width: 996px) and (max-height: 675px) {
   #about-section .about ul li h1 {

@@ -33,78 +33,7 @@ $black-color: #000;
   }
 }
 @media (max-width: 996px) {
-  #work-section {
-    .work-bar {
-      grid-template-columns: repeat(2, 1fr);
 
-      div {
-        padding: 0rem;
-        &:nth-child(1) {
-          padding: 0 0 0 7rem;
-        }
-        &:nth-child(2) {
-          padding: 0 7rem 0 0;
-        }
-        &:nth-child(3) {
-          padding: 0 0 0 7rem;
-        }
-        &:nth-child(4) {
-          padding: 0 7rem 0 0;
-        }
-        ul {
-          margin: 0;
-          padding: 0 1rem 0 1rem;
-          i {
-            font-size: 1.5rem;
-            margin-right: 1rem;
-          }
-          h3 {
-            font-size: 1rem;
-            margin-top: 1rem;
-            margin-bottom: 0;
-          }
-          p {
-            font-size: 1rem;
-            margin-top: 0;
-            margin-bottom: 1rem;
-          }
-        }
-      }
-    }
-    .items {
-      grid-template-columns: repeat(2, 1fr);
-      .item {
-        &:nth-child(3) {
-          display: none;
-        }
-        &:nth-child(4) {
-          display: none;
-        }
-      }
-    }
-    .load-more {
-      h2 {
-        letter-spacing: 0.8px;
-        font-weight: 300;
-      }
-    }
-  }
-  #process-section {
-    .process-text {
-      h1 {
-        padding-top: 1.5rem;
-        padding-bottom: 0.5;
-        font-weight: 500;
-      }
-    }
-    .process-video {
-      a {
-        i {
-          font-size: 3rem;
-        }
-      }
-    }
-  }
   /* Sidebar slide */
   .sidebar {
     height: 100%;
@@ -256,6 +185,79 @@ $black-color: #000;
     }
   }
 
+
+  #work-section {
+    .work-bar {
+      grid-template-columns: repeat(2, 1fr);
+
+      div {
+        padding: 0rem;
+        &:nth-child(1) {
+          padding: 0 0 0 7rem;
+        }
+        &:nth-child(2) {
+          padding: 0 7rem 0 0;
+        }
+        &:nth-child(3) {
+          padding: 0 0 0 7rem;
+        }
+        &:nth-child(4) {
+          padding: 0 7rem 0 0;
+        }
+        ul {
+          margin: 0;
+          padding: 0 1rem 0 1rem;
+          i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+          }
+          h3 {
+            font-size: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 0;
+          }
+          p {
+            font-size: 1rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+    .items {
+      grid-template-columns: repeat(2, 1fr);
+      .item {
+        &:nth-child(3) {
+          display: none;
+        }
+        &:nth-child(4) {
+          display: none;
+        }
+      }
+    }
+    .load-more {
+      h2 {
+        letter-spacing: 0.8px;
+        font-weight: 300;
+      }
+    }
+  }
+  #process-section {
+    .process-text {
+      h1 {
+        padding-top: 1.5rem;
+        padding-bottom: 0.5;
+        font-weight: 500;
+      }
+    }
+    .process-video {
+      a {
+        i {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
   @media (max-height: 675px) {
     #about-section .about ul li h1 {
       margin-bottom: 0;

@@ -503,13 +503,13 @@ ul {
     height: 30vh;
     text-align: center; }
     #process-section .process-text span h1 {
-      transform: translateX(20px);
+      transform: translateX(14px);
       transition: all 1s ease-in-out;
       visibility: hidden;
       opacity: 0;
       padding-top: 2.4rem; }
     #process-section .process-text span p {
-      transform: translateX(20px);
+      transform: translateX(14px);
       transition: all 1s ease-in-out;
       visibility: hidden;
       opacity: 0;
@@ -549,6 +549,47 @@ ul {
       #process-section .process-video a i {
         z-index: 1;
         font-size: 4rem; }
+
+#services-and-testimonials-section {
+  height: 100vh; }
+  #services-and-testimonials-section .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(25%, 1fr));
+    height: 60vh; }
+    #services-and-testimonials-section .services div {
+      background: #ccc;
+      padding: 16% 10% 4% 10%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center; }
+      #services-and-testimonials-section .services div:nth-child(1) {
+        padding-bottom: 0; }
+      #services-and-testimonials-section .services div:nth-child(2) {
+        padding-bottom: 0; }
+        #services-and-testimonials-section .services div:nth-child(2) h5 {
+          margin-top: 0.5rem; }
+      #services-and-testimonials-section .services div:nth-child(3) {
+        padding-bottom: 0; }
+      #services-and-testimonials-section .services div:nth-child(4) {
+        padding-bottom: 0; }
+      #services-and-testimonials-section .services div i {
+        color: #555; }
+      #services-and-testimonials-section .services div h5 {
+        color: #222;
+        margin-bottom: 0;
+        margin-top: 1rem;
+        padding-bottom: 0;
+        font-size: 1.65rem;
+        text-transform: uppercase;
+        font-weight: 450; }
+      #services-and-testimonials-section .services div p {
+        color: #444;
+        font-size: 1rem; }
+  #services-and-testimonials-section .testimonials {
+    height: 40vh; }
 
 /* Animation */
 @keyframes fadeIn {

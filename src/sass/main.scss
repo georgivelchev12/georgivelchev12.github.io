@@ -599,14 +599,14 @@ ul {
     text-align: center;
     span{
       h1{
-        transform: translateX(20px);
+        transform: translateX(14px);
         transition: all 1s ease-in-out;
         visibility: hidden;
         opacity: 0;
         padding-top: 2.4rem;
       }
       p{
-        transform: translateX(20px);
+        transform: translateX(14px);
         transition: all 1s ease-in-out;
         visibility: hidden;
         opacity: 0;
@@ -656,6 +656,54 @@ ul {
         font-size: 4rem;
       }
     }
+  }
+}
+
+
+// Services And Testimoninals
+
+
+#services-and-testimonials-section{
+  height: 100vh;
+
+  .services{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(25%, 1fr));
+    grid-template-rows: repeat(auto-fit,minmax(25%, 1fr));
+    height: 60vh;
+    div{
+      background: #ccc;
+      padding: 16% 10% 4% 10%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      &:nth-child(1){padding-bottom: 0}
+      &:nth-child(2){padding-bottom: 0; h5{margin-top:0.5rem;}}
+      &:nth-child(3){padding-bottom: 0}
+      &:nth-child(4){padding-bottom: 0}
+      i{
+        color: #555;
+      }
+      h5{
+        color: #222;
+        margin-bottom: 0;
+        margin-top:1rem;
+        padding-bottom: 0;
+        font-size: 1.65rem;
+        text-transform: uppercase;
+        font-weight: 450;
+        
+      }
+      p{
+        color: #444;
+        font-size: 1rem;
+      }
+    }
+  }
+  .testimonials{
+    height: 40vh;
   }
 }
 
