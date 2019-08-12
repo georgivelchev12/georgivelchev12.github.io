@@ -166,6 +166,7 @@ let controller = {
       }
     }
     else if(scrollTop >= (height/1.2) && scrollTop <= height){
+      console.log(1);
       
     }
 

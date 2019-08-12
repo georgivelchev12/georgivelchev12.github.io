@@ -27,11 +27,9 @@ var controller = {
     document.getElementsByClassName('closebtn')[0].addEventListener('click', function () {
       return toggleNav("0");
     });
-    console.log(height);
     var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
     if (scrollTop >= 0 && scrollTop < height / 6) {
-      console.log(scrollTop, 1);
       document.getElementById("aboutChanger").src = "img/image1.png";
       document.getElementsByClassName("openbtn")[0].style.backgroundColor = "#16406e";
 
@@ -61,7 +59,6 @@ var controller = {
         });
       }
     } else if (scrollTop >= height / 6 && scrollTop < height / 3) {
-      console.log(scrollTop, 2);
       document.getElementById("aboutChanger").src = "img/image1.1.png";
       document.getElementsByClassName("openbtn")[0].style.backgroundColor = "#ac3b61";
 
@@ -90,7 +87,6 @@ var controller = {
         });
       }
     } else if (scrollTop >= height / 3 && scrollTop < height / 1.5) {
-      console.log(scrollTop, 3);
       document.getElementById("aboutChanger").src = "img/image1.2.png";
       document.getElementsByClassName("openbtn")[0].style.backgroundColor = "#f79e02";
 
@@ -121,7 +117,6 @@ var controller = {
         });
       }
     } else if (scrollTop >= height / 1.5 && scrollTop < height / 1.2) {
-      console.log(scrollTop, 4);
       document.getElementById("aboutChanger").src = "img/image1.3.png";
       document.getElementsByClassName("openbtn")[0].style.backgroundColor = "#14a76c";
 
@@ -152,7 +147,7 @@ var controller = {
         });
       }
     } else if (scrollTop >= height / 1.2 && scrollTop <= height) {
-      console.log(scrollTop, 5);
+      console.log(1);
     }
 
     window.addEventListener("resize", this.changeMainContent);
