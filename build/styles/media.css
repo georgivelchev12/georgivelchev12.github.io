@@ -436,7 +436,36 @@
     display: none; }
   #main-header #navbar ul li a:hover {
     color: #bab2b5;
-    font-size: 1.05rem; } }
+    font-size: 1.05rem; }
+  #services-and-testimonials-section .services div {
+    padding: 4%; }
+    #services-and-testimonials-section .services div:nth-child(1) {
+      padding-bottom: 0%;
+      padding-top: 10%;
+      padding-left: 10%;
+      padding-right: 0; }
+    #services-and-testimonials-section .services div:nth-child(2) {
+      padding-bottom: 0%; }
+    #services-and-testimonials-section .services div:nth-child(3) {
+      padding-bottom: 0%;
+      padding-top: 10%;
+      padding-right: 10%;
+      padding-left: 0; }
+    #services-and-testimonials-section .services div:nth-child(7) {
+      padding-bottom: 0%; }
+    #services-and-testimonials-section .services div:nth-child(4) {
+      padding-bottom: 0%; }
+    #services-and-testimonials-section .services div i {
+      color: #555;
+      font-size: 1rem; }
+    #services-and-testimonials-section .services div h5 {
+      font-size: 1rem; }
+    #services-and-testimonials-section .services div p {
+      font-size: 0.7rem; }
+  #services-and-testimonials-section .testimonials .slider .testimonial-item h5 {
+    font-size: 1rem; }
+  #services-and-testimonials-section .testimonials .slider .testimonial-item p {
+    font-size: 0.7rem; } }
 
 @media (max-height: 575px) and (max-width: 996px) {
   #about-section .about ul li h1 {

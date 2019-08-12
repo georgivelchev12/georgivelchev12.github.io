@@ -624,6 +624,41 @@ $black-color: #000;
     color: $grey-color;
     font-size: 1.05rem;
   }
+  #services-and-testimonials-section{
+    .services{
+      div{
+        padding: 4%;
+        &:nth-child(1){padding-bottom: 0%; padding-top: 10%; padding-left: 10%; padding-right: 0;}
+        &:nth-child(2){padding-bottom: 0%;}
+        &:nth-child(3){padding-bottom: 0%; padding-top: 10%; padding-right: 10%; padding-left: 0;}
+        &:nth-child(7){padding-bottom: 0%;}
+        &:nth-child(4){padding-bottom: 0%;}
+        i{
+          color: #555;
+          font-size: 1rem;
+        }
+        h5{
+          font-size: 1rem;
+        }
+        p{
+          font-size: 0.7rem;
+        }
+      }
+    }
+    .testimonials{
+      .slider{
+        .testimonial-item{
+          h5{
+            font-size: 1rem;
+          }
+          p{
+            font-size:0.7rem;
+          }
+        }
+      }
+      
+    }
+  }
   @media (max-width: 996px) {
     #about-section .about ul li h1 {
       margin-top: 1rem;
