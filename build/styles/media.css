@@ -256,31 +256,41 @@
     transform: translateX(30px); }
   .progress {
     width: 90%; }
+  #main-header #navbar ul li a {
+    font-size: 1.3rem; }
   #main-header #navbar ul li a:hover {
     color: #bab2b5;
-    font-size: 1.8rem; }
+    font-size: 1.2rem; }
   #services-and-testimonials-section {
     height: 100vh; }
     #services-and-testimonials-section .services {
       grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
       grid-template-rows: repeat(auto-fit, minmax(50%, 1fr)); }
-      #services-and-testimonials-section .services div:nth-child(3) {
-        display: none; }
-      #services-and-testimonials-section .services div:nth-child(5) {
-        display: none; }
-      #services-and-testimonials-section .services div i {
-        color: #555; }
-      #services-and-testimonials-section .services div h5 {
-        font-size: 1.2rem; }
-      #services-and-testimonials-section .services div p {
-        font-size: 0.8rem; }
+      #services-and-testimonials-section .services div {
+        padding: 10%; }
+        #services-and-testimonials-section .services div:nth-child(3) {
+          display: none; }
+        #services-and-testimonials-section .services div:nth-child(5) {
+          display: none; }
+        #services-and-testimonials-section .services div:nth-child(1) {
+          padding-bottom: 10%; }
+        #services-and-testimonials-section .services div:nth-child(2) {
+          padding-bottom: 10%; }
+        #services-and-testimonials-section .services div:nth-child(7) {
+          padding-bottom: 10%; }
+        #services-and-testimonials-section .services div:nth-child(4) {
+          padding-bottom: 10%; }
+        #services-and-testimonials-section .services div i {
+          color: #555; }
+        #services-and-testimonials-section .services div h5 {
+          font-size: 1.2rem; }
+        #services-and-testimonials-section .services div p {
+          font-size: 0.8rem; }
     #services-and-testimonials-section .testimonials .slider .testimonial-item h5 {
       font-size: 1.2rem;
-      font-weight: 350; }
-    #services-and-testimonials-section .testimonials .slider .testimonial-item p {
-      margin: auto; } }
+      font-weight: 350; } }
 
-@media (max-width: 549.9px) {
+@media screen and (max-width: 548px) {
   .showcase .showcase-content .l-heading {
     font-weight: 400;
     font-size: 2.2rem; }
@@ -302,7 +312,7 @@
         padding: 0.7rem 0; }
         #main-header #navbar ul li a {
           font-weight: 300;
-          font-size: 1.3rem !important;
+          font-size: 1.3rem;
           color: #fff; }
   .opacity-image-skills h1 {
     font-size: 2rem;
@@ -344,7 +354,36 @@
   #work-section .work-bar div ul p {
     font-size: 0.7rem;
     margin-top: 0;
-    margin-bottom: 0.7rem; } }
+    margin-bottom: 0.7rem; }
+  #services-and-testimonials-section .services div {
+    padding: 6%; }
+    #services-and-testimonials-section .services div:nth-child(1) {
+      padding-bottom: 0%;
+      padding-top: 15%;
+      padding-left: 10%;
+      padding-right: 0; }
+    #services-and-testimonials-section .services div:nth-child(2) {
+      padding-bottom: 0%;
+      padding-top: 15%;
+      padding-left: 0%;
+      padding-right: 10%; }
+    #services-and-testimonials-section .services div:nth-child(7) {
+      padding-bottom: 0%;
+      padding-top: 0; }
+    #services-and-testimonials-section .services div:nth-child(4) {
+      padding-bottom: 0%;
+      padding-top: 0; }
+    #services-and-testimonials-section .services div i {
+      color: #555;
+      font-size: 1rem; }
+    #services-and-testimonials-section .services div h5 {
+      font-size: 1rem; }
+    #services-and-testimonials-section .services div p {
+      font-size: 0.7rem; }
+  #services-and-testimonials-section .testimonials .slider .testimonial-item h5 {
+    font-size: 1rem; }
+  #services-and-testimonials-section .testimonials .slider .testimonial-item p {
+    font-size: 0.7rem; } }
 
 @media (max-width: 400px) {
   #main-header #navbar .nav-brand {
@@ -383,7 +422,6 @@
       padding: 0.8rem 0; }
       #main-header #navbar ul li a {
         font-weight: 300;
-        font-size: 1.7rem;
         color: #fff; } }
 
 @media (max-height: 575px) {
@@ -398,7 +436,7 @@
     display: none; }
   #main-header #navbar ul li a:hover {
     color: #bab2b5;
-    font-size: 1.3rem; } }
+    font-size: 1.05rem; } }
 
 @media (max-height: 575px) and (max-width: 996px) {
   #about-section .about ul li h1 {
@@ -418,7 +456,7 @@
       padding: 0.5rem 0; }
       #main-header #navbar ul li a {
         font-weight: 300;
-        font-size: 1.2rem;
+        font-size: 1rem;
         color: #fff; } }
 
 @media (max-height: 450px) {
@@ -480,5 +518,5 @@
       padding: 0.4rem 0; }
       #main-header #navbar ul li a {
         font-weight: 200;
-        font-size: 0.9rem;
+        font-size: 1.1rem;
         color: #fff; } }

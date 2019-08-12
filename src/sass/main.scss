@@ -599,32 +599,12 @@ ul {
     text-align: center;
     span{
       h1{
-        transform: translateX(14px);
-        transition: all 1s ease-in-out;
-        visibility: hidden;
-        opacity: 0;
         padding-top: 2.4rem;
       }
       p{
-        transform: translateX(14px);
-        transition: all 1s ease-in-out;
-        visibility: hidden;
-        opacity: 0;
         margin-top: 0.7rem;
         width: 70%;
         margin: auto;
-      }
-      &.show h1 {
-       
-        transform: translateX(0);
-        visibility: visible;
-        opacity: 1;
-      }
-      &.show p {
-
-        transform: translateX(0);
-        visibility: visible;
-        opacity: 1;
       }
     }
   }

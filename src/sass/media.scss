@@ -371,9 +371,12 @@ $black-color: #000;
   .progress {
     width: 90%;
   }
+  #main-header #navbar ul li a{
+    font-size: 1.3rem;
+  }
   #main-header #navbar ul li a:hover {
     color: $grey-color;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
   #services-and-testimonials-section{
     height: 100vh;
@@ -382,8 +385,13 @@ $black-color: #000;
       grid-template-columns: repeat(auto-fit,minmax(50%, 1fr));
       grid-template-rows: repeat(auto-fit,minmax(50%, 1fr));
       div{
+        padding: 10%;
         &:nth-child(3){display: none;}
         &:nth-child(5){display: none;}
+        &:nth-child(1){padding-bottom: 10%;}
+        &:nth-child(2){padding-bottom: 10%;}
+        &:nth-child(7){padding-bottom: 10%;}
+        &:nth-child(4){padding-bottom: 10%;}
         i{
           color: #555;
         }
@@ -402,16 +410,13 @@ $black-color: #000;
             font-size: 1.2rem;
             font-weight: 350;
           }
-          p{
-            margin: auto;
-          }
         }
       }
       
     }
   }
 }
-@media (max-width: 549.9px) {
+@media screen and (max-width: 548px) {
   .showcase .showcase-content .l-heading {
     font-weight: 400;
     font-size: 2.2rem;
@@ -439,12 +444,13 @@ $black-color: #000;
           padding: 0.7rem 0;
           a {
             font-weight: 300;
-            font-size: 1.3rem !important; 
+            font-size: 1.3rem; 
             color: $white-color;
           }
         }
       }
     }
+   
   }
   .opacity-image-skills h1 {
     font-size: 2rem;
@@ -510,7 +516,40 @@ $black-color: #000;
       }
     }
   }
-
+  #services-and-testimonials-section{
+    .services{
+      div{
+        padding: 6%;
+        &:nth-child(1){padding-bottom: 0%;padding-top: 15%; padding-left: 10%;padding-right: 0;}
+        &:nth-child(2){padding-bottom: 0%;padding-top: 15%;padding-left: 0%;padding-right: 10%;}
+        &:nth-child(7){padding-bottom: 0%; padding-top: 0;}
+        &:nth-child(4){padding-bottom: 0%;padding-top: 0;}
+        i{
+          color: #555;
+          font-size: 1rem;
+        }
+        h5{
+          font-size: 1rem;
+        }
+        p{
+          font-size: 0.7rem;
+        }
+      }
+    }
+    .testimonials{
+      .slider{
+        .testimonial-item{
+          h5{
+            font-size: 1rem;
+          }
+          p{
+            font-size:0.7rem;
+          }
+        }
+      }
+      
+    }
+  }
 }
 @media (max-width: 400px) {
   #main-header #navbar .nav-brand {
@@ -561,7 +600,6 @@ $black-color: #000;
         padding: 0.8rem 0;
         a {
           font-weight: 300;
-          font-size: 1.7rem;
           color: $white-color;
         }
       }
@@ -584,7 +622,7 @@ $black-color: #000;
   }
   #main-header #navbar ul li a:hover {
     color: $grey-color;
-    font-size: 1.3rem;
+    font-size: 1.05rem;
   }
   @media (max-width: 996px) {
     #about-section .about ul li h1 {
@@ -607,7 +645,7 @@ $black-color: #000;
         padding: 0.5rem 0;
         a {
           font-weight: 300;
-          font-size: 1.2rem;
+          font-size: 1rem;
           color: $white-color;
         }
       }
@@ -697,7 +735,7 @@ $black-color: #000;
         padding: 0.4rem 0;
         a {
           font-weight: 200;
-          font-size: 0.9rem;
+          font-size: 1.1rem;
           color: $white-color;
         }
       }

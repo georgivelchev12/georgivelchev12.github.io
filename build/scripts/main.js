@@ -157,7 +157,6 @@ var controller = {
   animationWithShowClass: function animationWithShowClass() {
     var aboutItems = document.querySelectorAll('.about ul li');
     var skillsItems = document.querySelectorAll('.skills .opacity-image-skills span');
-    var processText = document.querySelectorAll('.process-text span');
 
     function isInViewport(e) {
       var rect = e.getBoundingClientRect();
@@ -169,7 +168,6 @@ var controller = {
     var run = function run() {
       addAndRemoveShowClass(aboutItems);
       addAndRemoveShowClass(skillsItems);
-      addAndRemoveShowClass(processText);
 
       function addAndRemoveShowClass(items) {
         items.forEach(function (item) {

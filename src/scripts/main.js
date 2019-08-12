@@ -177,8 +177,7 @@ let controller = {
   animationWithShowClass() {
     let aboutItems = document.querySelectorAll('.about ul li');
     let skillsItems = document.querySelectorAll('.skills .opacity-image-skills span')
-    let processText = document.querySelectorAll('.process-text span')
-   
+
     function isInViewport(e) {
       let rect = e.getBoundingClientRect();
       return (
@@ -193,7 +192,6 @@ let controller = {
 
       addAndRemoveShowClass(aboutItems);
       addAndRemoveShowClass(skillsItems);
-      addAndRemoveShowClass(processText);
 
       function addAndRemoveShowClass(items){
         items.forEach(item => {
@@ -221,7 +219,7 @@ let controller = {
       videoPause.play();
       btnShowing(0);
     })
-    
+
     videoPause.addEventListener('click', function () {
       videoPause.pause();
       btnShowing(1);
