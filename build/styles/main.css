@@ -121,7 +121,13 @@ ul {
   color: #14a76c !important; }
 
 .servicesScrollingOnHover:hover {
-  color: #14a76c !important; }
+  color: #333 !important; }
+
+.contactScrolling {
+  color: #c3073f !important; }
+
+.contactScrollingOnHover:hover {
+  color: #333 !important; }
 
 .changeColorOnHover:hover {
   color: #16406e !important; }

@@ -39,6 +39,7 @@ var controller = {
         navbarAttrChanging[1].classList.remove('aboutScrolling');
         navbarAttrChanging[2].classList.remove('workScrolling');
         navbarAttrChanging[3].classList.remove('servicesScrolling');
+        navbarAttrChanging[4].classList.remove('contactScrolling');
         navbarAttrChanging.forEach(function (e) {
           e.classList.remove('homeScrollingOnHover');
           e.classList.add('allATagsWhite');
@@ -48,6 +49,7 @@ var controller = {
         navbarAttrChanging[1].classList.remove("aboutScrolling");
         navbarAttrChanging[2].classList.remove("workScrolling");
         navbarAttrChanging[3].classList.remove("servicesScrolling");
+        navbarAttrChanging[4].classList.remove("contactScrolling");
         navbarAttrChanging.forEach(function (e) {
           e.classList.add('homeScrollingOnHover');
           e.classList.remove("aboutScrollingOnHover");
@@ -55,6 +57,8 @@ var controller = {
           e.classList.remove("workScrollingOnHover");
           e.classList.remove("servicesScrolling");
           e.classList.remove("servicesScrollingOnHover");
+          e.classList.remove("contactScrolling");
+          e.classList.remove("contactScrollingOnHover");
           e.classList.remove('allATagsWhite');
         });
       }
@@ -64,9 +68,11 @@ var controller = {
 
       if (window.innerWidth <= 996) {
         document.getElementById("mySidebar").style.backgroundColor = "#ac3b61";
+        navbarAttrChanging[0].classList.remove('homeScrolling');
         navbarAttrChanging[1].classList.remove('aboutScrolling');
         navbarAttrChanging[2].classList.remove('workScrolling');
         navbarAttrChanging[3].classList.remove('servicesScrolling');
+        navbarAttrChanging[4].classList.remove('contactScrolling');
         navbarAttrChanging.forEach(function (e) {
           e.classList.remove('aboutScrollingOnHover');
           e.classList.add('allATagsWhite');
@@ -76,6 +82,7 @@ var controller = {
         navbarAttrChanging[1].classList.add("aboutScrolling");
         navbarAttrChanging[2].classList.remove("workScrolling");
         navbarAttrChanging[3].classList.remove("servicesScrolling");
+        navbarAttrChanging[4].classList.remove("contactScrolling");
         navbarAttrChanging.forEach(function (e) {
           e.classList.add('aboutScrollingOnHover');
           e.classList.remove("homeScrollingOnHover");
@@ -83,6 +90,8 @@ var controller = {
           e.classList.remove("workScrollingOnHover");
           e.classList.remove("servicesScrolling");
           e.classList.remove("servicesScrollingOnHover");
+          e.classList.remove("contactScrolling");
+          e.classList.remove("contactScrollingOnHover");
           e.classList.remove('allATagsWhite');
         });
       }
@@ -96,6 +105,7 @@ var controller = {
         navbarAttrChanging[1].classList.remove('aboutScrolling');
         navbarAttrChanging[2].classList.remove('workScrolling');
         navbarAttrChanging[3].classList.remove('servicesScrolling');
+        navbarAttrChanging[4].classList.remove('contactScrolling');
         navbarAttrChanging.forEach(function (e) {
           e.classList.remove('workScrollingOnHover');
           e.classList.remove('workScrolling');
@@ -106,6 +116,7 @@ var controller = {
         navbarAttrChanging[1].classList.remove("aboutScrolling");
         navbarAttrChanging[2].classList.add("workScrolling");
         navbarAttrChanging[3].classList.remove("servicesScrolling");
+        navbarAttrChanging[4].classList.remove('contactScrolling');
         navbarAttrChanging.forEach(function (e) {
           e.classList.add("workScrolling");
           e.classList.add('workScrollingOnHover');
@@ -113,6 +124,8 @@ var controller = {
           e.classList.remove("aboutScrollingOnHover");
           e.classList.remove("servicesScrollingOnHover");
           e.classList.remove("servicesScrolling");
+          e.classList.remove("contactScrolling");
+          e.classList.remove("contactScrollingOnHover");
           e.classList.remove('allATagsWhite');
         });
       }
@@ -126,6 +139,7 @@ var controller = {
         navbarAttrChanging[1].classList.remove('aboutScrolling');
         navbarAttrChanging[2].classList.remove('workScrolling');
         navbarAttrChanging[3].classList.remove('servicesScrolling');
+        navbarAttrChanging[4].classList.remove('contactScrolling');
         navbarAttrChanging.forEach(function (e) {
           e.classList.remove('servicesScrolling');
           e.classList.remove('servicesScrollingOnHover');
@@ -136,18 +150,53 @@ var controller = {
         navbarAttrChanging[1].classList.remove("aboutScrolling");
         navbarAttrChanging[2].classList.remove("workScrolling");
         navbarAttrChanging[3].classList.add("servicesScrolling");
+        navbarAttrChanging[4].classList.remove("contactScrolling");
         navbarAttrChanging.forEach(function (e) {
           e.classList.add("servicesScrolling");
-          e.classList.add("servicesScrollingOnScrolling");
+          e.classList.add("servicesScrollingOnHover");
+          e.classList.remove("workScrolling");
+          e.classList.remove('workScrollingOnHover');
+          e.classList.remove("homeScrollingOnHover");
+          e.classList.remove("aboutScrollingOnHover");
+          e.classList.remove("contactScrolling");
+          e.classList.remove("contactScrollingOnHover");
+          e.classList.remove('allATagsWhite');
+        });
+      }
+    } else if (scrollTop >= height / 1.2 && scrollTop <= height) {
+      document.getElementById("aboutChanger").src = "img/image1.4.png";
+      document.getElementsByClassName("openbtn")[0].style.backgroundColor = "#c30707";
+
+      if (window.innerWidth <= 996) {
+        document.getElementById("mySidebar").style.backgroundColor = "#c30707";
+        navbarAttrChanging[0].classList.remove('homeScrolling');
+        navbarAttrChanging[1].classList.remove('aboutScrolling');
+        navbarAttrChanging[2].classList.remove('workScrolling');
+        navbarAttrChanging[3].classList.remove('servicesScrolling');
+        navbarAttrChanging[4].classList.remove('contactScrolling');
+        navbarAttrChanging.forEach(function (e) {
+          e.classList.remove('contactScrolling');
+          e.classList.remove('contactScrollingOnHover');
+          e.classList.add('allATagsWhite');
+        });
+      } else {
+        navbarAttrChanging[0].classList.remove("homeScrolling");
+        navbarAttrChanging[1].classList.remove("aboutScrolling");
+        navbarAttrChanging[2].classList.remove("workScrolling");
+        navbarAttrChanging[3].classList.remove("servicesScrolling");
+        navbarAttrChanging[4].classList.add("contactScrolling");
+        navbarAttrChanging.forEach(function (e) {
+          e.classList.remove("servicesScrolling");
+          e.classList.remove("servicesScrollingOnScrolling");
           e.classList.remove("workScrolling");
           e.classList.remove('workScrollingOnHover');
           e.classList.remove("homeScrollingOnHover");
           e.classList.remove("aboutScrollingOnHover");
           e.classList.remove('allATagsWhite');
+          e.classList.add("contactScrolling");
+          e.classList.add("contactScrollingOnHover");
         });
       }
-    } else if (scrollTop >= height / 1.2 && scrollTop <= height) {
-      console.log(1);
     }
 
     window.addEventListener("resize", this.changeMainContent);
