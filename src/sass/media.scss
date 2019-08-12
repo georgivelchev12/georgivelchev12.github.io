@@ -4,7 +4,7 @@ $main-color: #16406e;
 $secondary-color: #ac3b61;
 $grey-color: #bab2b5;
 $black-color: #000;
-@media (max-width: 1180px) {
+@media (max-width: 1179.9px) {
   #work-section {
     .work-bar {
       grid-template-columns: repeat(4, 1fr);
@@ -31,8 +31,28 @@ $black-color: #000;
       }
     }
   }
+  #services-and-testimonials-section{
+    .services{
+      grid-template-columns:  repeat(auto-fit,minmax(33%, 1fr));
+      grid-template-rows:  repeat(auto-fit,minmax(33%, 1fr));
+      div{
+        padding: 16% 10% 4% 10%;
+        &:nth-child(6){display: none;}
+        &:nth-child(8){display: none;}
+        i{
+         font-size: 1.8rem;
+        }
+        h5{
+          font-size: 1.35rem;
+        }
+        p{
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
 }
-@media (max-width: 996px) {
+@media screen and (max-width: 996px) {
 
   /* Sidebar slide */
   .sidebar {
@@ -258,6 +278,7 @@ $black-color: #000;
       }
     }
   }
+
   @media (max-height: 675px) {
     #about-section .about ul li h1 {
       margin-bottom: 0;
@@ -268,6 +289,7 @@ $black-color: #000;
       font-size: 1rem;
       margin-bottom: 0;
     }
+    
   }
   @keyframes fadeIn {
     0% {
@@ -353,8 +375,43 @@ $black-color: #000;
     color: $grey-color;
     font-size: 1.8rem;
   }
+  #services-and-testimonials-section{
+    height: 100vh;
+  
+    .services{
+      grid-template-columns: repeat(auto-fit,minmax(50%, 1fr));
+      grid-template-rows: repeat(auto-fit,minmax(50%, 1fr));
+      div{
+        &:nth-child(3){display: none;}
+        &:nth-child(5){display: none;}
+        i{
+          color: #555;
+        }
+        h5{
+          font-size: 1.2rem;
+        }
+        p{
+          font-size: 0.8rem;
+        }
+      }
+    }
+    .testimonials{
+      .slider{
+        .testimonial-item{
+          h5{
+            font-size: 1.2rem;
+            font-weight: 350;
+          }
+          p{
+            margin: auto;
+          }
+        }
+      }
+      
+    }
+  }
 }
-@media (max-width: 549px) {
+@media (max-width: 549.9px) {
   .showcase .showcase-content .l-heading {
     font-weight: 400;
     font-size: 2.2rem;
@@ -382,7 +439,7 @@ $black-color: #000;
           padding: 0.7rem 0;
           a {
             font-weight: 300;
-            font-size: 1.7rem;
+            font-size: 1.3rem !important; 
             color: $white-color;
           }
         }
@@ -453,6 +510,7 @@ $black-color: #000;
       }
     }
   }
+
 }
 @media (max-width: 400px) {
   #main-header #navbar .nav-brand {

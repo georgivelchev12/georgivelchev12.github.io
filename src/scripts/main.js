@@ -178,6 +178,7 @@ let controller = {
     let aboutItems = document.querySelectorAll('.about ul li');
     let skillsItems = document.querySelectorAll('.skills .opacity-image-skills span')
     let processText = document.querySelectorAll('.process-text span')
+   
     function isInViewport(e) {
       let rect = e.getBoundingClientRect();
       return (
@@ -189,32 +190,21 @@ let controller = {
     };
 
     let run = () => {
-      aboutItems.forEach(item => {
-        if (isInViewport(item)) {
-          item.classList.add('show');
-        }
-        else {
-          item.classList.remove('show');
-        }
-      });
-      skillsItems.forEach(e => {
-        if (isInViewport(e)) {
-          e.classList.add('show');
-        }
-        else {
-          e.classList.remove('show');
 
-        }
-      })
-      processText.forEach(x => {
-        if (isInViewport(x)) {
-          x.classList.add('show');
-        }
-        else {
-          x.classList.remove('show');
+      addAndRemoveShowClass(aboutItems);
+      addAndRemoveShowClass(skillsItems);
+      addAndRemoveShowClass(processText);
 
-        }
-      })
+      function addAndRemoveShowClass(items){
+        items.forEach(item => {
+          if (isInViewport(item)) {
+            item.classList.add('show');
+          }
+          else {
+            item.classList.remove('show');
+          }
+        });
+      }
     }
 
     window.addEventListener('load', run);
@@ -226,10 +216,12 @@ let controller = {
     let videoPlay = document.getElementsByClassName('videoPlay')[0];
     let videoPause = document.getElementsByClassName('videoPause')[0];
     let btnShowing = (number) => videoPlay.style.opacity = `${number}`;
+
     videoPlay.addEventListener('click', function () {
       videoPause.play();
       btnShowing(0);
     })
+    
     videoPause.addEventListener('click', function () {
       videoPause.pause();
       btnShowing(1);

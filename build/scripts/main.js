@@ -167,27 +167,19 @@ var controller = {
     ;
 
     var run = function run() {
-      aboutItems.forEach(function (item) {
-        if (isInViewport(item)) {
-          item.classList.add('show');
-        } else {
-          item.classList.remove('show');
-        }
-      });
-      skillsItems.forEach(function (e) {
-        if (isInViewport(e)) {
-          e.classList.add('show');
-        } else {
-          e.classList.remove('show');
-        }
-      });
-      processText.forEach(function (x) {
-        if (isInViewport(x)) {
-          x.classList.add('show');
-        } else {
-          x.classList.remove('show');
-        }
-      });
+      addAndRemoveShowClass(aboutItems);
+      addAndRemoveShowClass(skillsItems);
+      addAndRemoveShowClass(processText);
+
+      function addAndRemoveShowClass(items) {
+        items.forEach(function (item) {
+          if (isInViewport(item)) {
+            item.classList.add('show');
+          } else {
+            item.classList.remove('show');
+          }
+        });
+      }
     };
 
     window.addEventListener('load', run);
