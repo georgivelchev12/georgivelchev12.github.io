@@ -276,6 +276,8 @@
           padding-bottom: 10%; }
         #services-and-testimonials-section .services div:nth-child(2) {
           padding-bottom: 10%; }
+          #services-and-testimonials-section .services div:nth-child(2) h5 {
+            margin-top: 1rem; }
         #services-and-testimonials-section .services div:nth-child(7) {
           padding-bottom: 10%; }
         #services-and-testimonials-section .services div:nth-child(4) {
@@ -367,6 +369,8 @@
       padding-top: 15%;
       padding-left: 0%;
       padding-right: 10%; }
+      #services-and-testimonials-section .services div:nth-child(2) h5 {
+        margin-top: 1rem; }
     #services-and-testimonials-section .services div:nth-child(7) {
       padding-bottom: 0%;
       padding-top: 0; }
@@ -446,6 +450,8 @@
       padding-right: 0; }
     #services-and-testimonials-section .services div:nth-child(2) {
       padding-bottom: 0%; }
+      #services-and-testimonials-section .services div:nth-child(2) h5 {
+        margin-top: 1rem; }
     #services-and-testimonials-section .services div:nth-child(3) {
       padding-bottom: 0%;
       padding-top: 10%;
