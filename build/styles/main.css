@@ -117,6 +117,12 @@ ul {
 .workScrollingOnHover:hover {
   color: #eee !important; }
 
+.servicesScrolling {
+  color: #14a76c !important; }
+
+.servicesScrollingOnHover:hover {
+  color: #14a76c !important; }
+
 .changeColorOnHover:hover {
   color: #16406e !important; }
 
@@ -558,7 +564,7 @@ ul {
     grid-template-rows: repeat(auto-fit, minmax(25%, 1fr));
     height: 60vh; }
     #services-and-testimonials-section .services div {
-      background: #ccc;
+      background: #eee;
       padding: 16% 10% 4% 10%;
       display: flex;
       flex-direction: column;
@@ -589,7 +595,54 @@ ul {
         color: #444;
         font-size: 1rem; }
   #services-and-testimonials-section .testimonials {
-    height: 40vh; }
+    background: #14a76c;
+    overflow: hidden;
+    height: 40vh;
+    width: 100%;
+    position: relative; }
+    #services-and-testimonials-section .testimonials #prevBtn {
+      position: absolute;
+      top: 50%;
+      left: 3%;
+      font-size: 2rem;
+      opacity: 0.75;
+      color: white;
+      transition: all 0.3s; }
+      #services-and-testimonials-section .testimonials #prevBtn:hover {
+        opacity: 0.7;
+        font-size: 2.1rem; }
+    #services-and-testimonials-section .testimonials #nextBtn {
+      position: absolute;
+      top: 50%;
+      right: 3%;
+      font-size: 2rem;
+      opacity: 0.75;
+      color: white;
+      transition: all 0.3s; }
+      #services-and-testimonials-section .testimonials #nextBtn:hover {
+        opacity: 0.7;
+        font-size: 2.1rem; }
+    #services-and-testimonials-section .testimonials .slider {
+      min-width: 100%;
+      height: 100%;
+      display: flex;
+      text-align: center;
+      align-items: center; }
+      #services-and-testimonials-section .testimonials .slider .testimonial-item {
+        min-width: 100%;
+        color: white; }
+        #services-and-testimonials-section .testimonials .slider .testimonial-item h5 {
+          width: 60%;
+          margin: auto;
+          font-size: 1.6rem;
+          font-weight: 400;
+          padding-bottom: 1rem;
+          z-index: -6234; }
+        #services-and-testimonials-section .testimonials .slider .testimonial-item p {
+          margin: auto; }
+
+#contact-section {
+  height: 100vh; }
 
 /* Animation */
 @keyframes fadeIn {
