@@ -639,6 +639,74 @@ ul {
 
 #contact-section {
   height: 100vh; }
+  #contact-section .container {
+    margin: auto;
+    padding-top: 2.65rem;
+    width: 70%;
+    height: 75vh; }
+    #contact-section .container h2 {
+      margin-top: 0;
+      text-align: center;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      font-weight: 400;
+      margin-bottom: 0.5rem; }
+    #contact-section .container .bottom-line {
+      height: 2px;
+      width: 3.5rem;
+      background: #c30707;
+      display: block;
+      margin: 0 auto 0.6rem auto; }
+    #contact-section .container p {
+      text-align: center;
+      font-size: 1.2rem;
+      padding: 0 2rem;
+      letter-spacing: 0.65px;
+      margin: 0 0 1.3rem 0; }
+    #contact-section .container .text-fields {
+      display: grid;
+      grid-template-columns: repeat(auto-fit);
+      grid-template-rows: repeat(auto-fit);
+      grid-template-areas: "name email" "subject phone" "message message";
+      grid-gap: 1rem;
+      margin-bottom: 1.1rem; }
+      #contact-section .container .text-fields .name-input {
+        grid-area: name; }
+      #contact-section .container .text-fields .subject-input {
+        grid-area: subject; }
+      #contact-section .container .text-fields .email-input {
+        grid-area: email; }
+      #contact-section .container .text-fields .phone-input {
+        grid-area: phone; }
+      #contact-section .container .text-fields .message-input {
+        font-size: 1.3rem !important;
+        grid-area: message;
+        resize: none;
+        height: 160px; }
+      #contact-section .container .text-fields .text-input {
+        font-size: 1rem;
+        padding: 0.8rem 1.4rem;
+        border: 1px solid #888; }
+        #contact-section .container .text-fields .text-input:focus {
+          outline: none;
+          border-color: #c30707; }
+    #contact-section .container button {
+      display: block;
+      margin: 0 auto;
+      width: 30%;
+      height: 3rem;
+      border: none;
+      color: #fff;
+      background-color: #c30707;
+      border-radius: 2px;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      font-weight: 400;
+      margin-top: 1.4rem;
+      transition: all 0.4s; }
+      #contact-section .container button:hover {
+        opacity: 0.95;
+        background-color: #cc0808; }
 
 /* Animation */
 @keyframes fadeIn {
