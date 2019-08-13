@@ -113,12 +113,7 @@ ul {
 }
 
 /* Button Clases on Scroll */
-.allATagsWhite {
-  color: $white-color !important;
-}
-.allATagsWhite:hover {
-  color: #eee;
-}
+
 
 .homeScrolling {
   color: $main-color !important;
@@ -138,23 +133,33 @@ ul {
 .workScrollingOnHover:hover {
   color: #eee !important;
 }
+.processScrolling{
+  color: #f79e02 !important;
+}
+.processScrollingOnHover:hover{
+  color: #f79e02 !important;
+}
 .servicesScrolling {
   color: #14a76c !important;
 }
 .servicesScrollingOnHover:hover {
   color: #333 !important;
 }
-
-
 .contactScrolling {
   color: #c30707 !important;
 }
 .contactScrollingOnHover:hover {
-  color: #333 !important;
+  color: #c30707 !important;
 }
 
 .changeColorOnHover:hover {
   color: $main-color !important;
+}
+.allATagsWhite {
+  color: $white-color !important;
+}
+.allATagsWhite:hover {
+  color: #eee !important;
 }
 /* Main Header Img And Opacity */
 #main-header {

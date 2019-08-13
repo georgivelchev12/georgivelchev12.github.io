@@ -93,12 +93,6 @@ ul {
   display: none; }
 
 /* Button Clases on Scroll */
-.allATagsWhite {
-  color: #fff !important; }
-
-.allATagsWhite:hover {
-  color: #eee; }
-
 .homeScrolling {
   color: #16406e !important; }
 
@@ -117,6 +111,12 @@ ul {
 .workScrollingOnHover:hover {
   color: #eee !important; }
 
+.processScrolling {
+  color: #f79e02 !important; }
+
+.processScrollingOnHover:hover {
+  color: #f79e02 !important; }
+
 .servicesScrolling {
   color: #14a76c !important; }
 
@@ -127,10 +127,16 @@ ul {
   color: #c30707 !important; }
 
 .contactScrollingOnHover:hover {
-  color: #333 !important; }
+  color: #c30707 !important; }
 
 .changeColorOnHover:hover {
   color: #16406e !important; }
+
+.allATagsWhite {
+  color: #fff !important; }
+
+.allATagsWhite:hover {
+  color: #eee !important; }
 
 /* Main Header Img And Opacity */
 #main-header {
