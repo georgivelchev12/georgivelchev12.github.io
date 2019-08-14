@@ -638,21 +638,30 @@ ul {
           margin: auto; }
 
 #contact-section {
-  height: 100vh; }
+  height: 70vh;
+  width: 100%;
+  display: grid;
+  grid-template-areas: "logo container logo-1";
+  align-items: start;
+  justify-content: center; }
   #contact-section .logos {
-    padding-top: 2.3rem;
+    grid-area: logo;
+    padding-top: 6rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    height: 20vh; }
+    align-items: center; }
     #contact-section .logos img {
-      padding: 0 3rem;
-      height: 100%; }
+      padding-bottom: 1rem;
+      width: 50%;
+      height: 70%; }
+  #contact-section .logo-1 {
+    grid-area: logo-1; }
   #contact-section .container {
-    margin: auto;
-    padding-top: 1rem;
-    width: 65%;
-    height: 70vh; }
+    grid-area: container;
+    margin: 0 auto;
+    margin-top: 3rem;
+    width: 75%; }
     #contact-section .container h2 {
       margin-top: 0;
       text-align: center;
@@ -674,8 +683,8 @@ ul {
       margin: 0 0 1.3rem 0; }
     #contact-section .container .text-fields {
       display: grid;
-      grid-template-columns: repeat(auto-fit);
-      grid-template-rows: repeat(auto-fit);
+      grid-auto-columns: repeat(auto-fit);
+      grid-auto-rows: repeat(auto-fit);
       grid-template-areas: "name email" "subject phone" "message message";
       grid-gap: 1rem;
       margin-bottom: 1.1rem; }
@@ -702,7 +711,7 @@ ul {
     #contact-section .container button {
       display: block;
       margin: 0 auto;
-      width: 30%;
+      width: 40%;
       height: 3rem;
       border: none;
       color: #fff;
@@ -716,6 +725,10 @@ ul {
       #contact-section .container button:hover {
         opacity: 0.95;
         background-color: #cc0808; }
+
+.footer {
+  height: 30vh;
+  background: #222; }
 
 /* Animation */
 @keyframes fadeIn {

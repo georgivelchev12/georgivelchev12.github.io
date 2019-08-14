@@ -51,6 +51,38 @@ $black-color: #000;
       }
     }
   }
+  #contact-section {
+    .logos {
+      display: none;
+    }
+    .container {
+      margin-top: 3rem;
+      h2 {
+        margin-top: 0;
+        font-size: 2.2rem;
+      }
+      p {
+        font-size: 1rem;
+        margin: 0 0 1rem 0;
+      }
+      .text-fields {
+        margin-bottom: 1rem;
+  
+        .message-input {
+          height: 130px;
+        }
+        .text-input {
+          font-size: 1rem;
+          padding: 0.5rem 0.9rem;
+        }
+      }
+      button {
+        height: 2.5rem;
+        font-size: 1.3rem;
+        margin-top: 1.1rem;
+      }
+    }
+  }
 }
 @media screen and (max-width: 996px) {
 
@@ -278,6 +310,20 @@ $black-color: #000;
       }
     }
   }
+  #contact-section {
+    .container {
+      margin-top: 1rem;
+      .text-fields {
+        .message-input {
+          height: 120px;
+        }
+        .text-input {
+          padding: 0.5rem 0.7rem;
+        }
+      }
+    }
+  }
+
 
   @media (max-height: 675px) {
     #about-section .about ul li h1 {
@@ -415,6 +461,39 @@ $black-color: #000;
       
     }
   }
+  #contact-section {
+
+    .container {
+      h2 {
+        font-size: 1.3rem;
+      }
+      p{
+        font-size:0.9rem;
+      }
+      .text-fields {
+        grid-template-areas:
+        "name"
+        "email"
+        "subject"
+         "phone"
+        "message";
+        margin-bottom: 0.7rem;
+        grid-gap: 0.5rem;
+        .message-input {
+          height: 100px;
+        }
+        .text-input {
+          font-size: 1rem;
+          padding: 0.5rem 0.9rem;
+        }
+      }
+      button {
+        height: 2.5rem;
+        font-size: 0.8rem;
+        margin-top: 1.1rem;
+      }
+    }
+  }
 }
 @media screen and (max-width: 548px) {
   .showcase .showcase-content .l-heading {
@@ -550,6 +629,8 @@ $black-color: #000;
       
     }
   }
+
+
 }
 @media (max-width: 400px) {
   #main-header #navbar .nav-brand {

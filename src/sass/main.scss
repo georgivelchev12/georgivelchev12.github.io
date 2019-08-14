@@ -755,25 +755,34 @@ ul {
   }
 }
 #contact-section {
-  height: 100vh;
-  .logos{
-    padding-top: 2.3rem;
+  height: 70vh;
+  width: 100%;
+  display: grid;
+  grid-template-areas: "logo container logo-1";
+  align-items: start;
+  justify-content: center;
+  .logos {
+    grid-area: logo;
+    padding-top: 6rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-  
-    height: 20vh;
-    img{
-      padding: 0 3rem;
-      height: 100%;
+    img {
+      padding-bottom: 1rem;
+      width: 50%;
+      height: 70%;
     }
   }
+  .logo-1 {
+    grid-area: logo-1;
+  }
   .container {
-    margin: auto;
-    padding-top: 1rem;
-    width: 65%;
-    height: 70vh;
+    grid-area: container;
+    margin: 0 auto;
+    margin-top: 3rem;
+    width: 75%;
     h2 {
       margin-top: 0;
       text-align: center;
@@ -783,7 +792,6 @@ ul {
       margin-bottom: 0.5rem;
     }
     .bottom-line {
-      
       height: 2px;
       width: 3.5rem;
       background: #c30707;
@@ -799,8 +807,8 @@ ul {
     }
     .text-fields {
       display: grid;
-      grid-template-columns: repeat(auto-fit);
-      grid-template-rows: repeat(auto-fit);
+      grid-auto-columns: repeat(auto-fit);
+      grid-auto-rows: repeat(auto-fit);
       grid-template-areas:
         "name email"
         "subject phone"
@@ -827,22 +835,21 @@ ul {
         grid-area: message;
         resize: none;
         height: 160px;
-        
       }
       .text-input {
         font-size: 1rem;
         padding: 0.8rem 1.4rem;
         border: 1px solid #888;
-        &:focus{
+        &:focus {
           outline: none;
           border-color: #c30707;
         }
       }
     }
-    button{
+    button {
       display: block;
       margin: 0 auto;
-      width: 30%;
+      width: 40%;
       height: 3rem;
       border: none;
       color: #fff;
@@ -853,12 +860,16 @@ ul {
       font-weight: 400;
       margin-top: 1.4rem;
       transition: all 0.4s;
-      &:hover{
+      &:hover {
         opacity: 0.95;
         background-color: #cc0808;
       }
     }
   }
+}
+.footer {
+  height: 30vh;
+  background: #222;
 }
 
 /* Animation */
