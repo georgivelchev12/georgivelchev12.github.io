@@ -52,6 +52,7 @@ $black-color: #000;
     }
   }
   #contact-section {
+    align-items: center;
     .logos {
       display: none;
     }
@@ -462,10 +463,10 @@ $black-color: #000;
     }
   }
   #contact-section {
-
     .container {
+      margin-top: 0;
       h2 {
-        font-size: 1.3rem;
+        font-size: 1.9rem;
       }
       p{
         font-size:0.9rem;
@@ -480,17 +481,17 @@ $black-color: #000;
         margin-bottom: 0.7rem;
         grid-gap: 0.5rem;
         .message-input {
-          height: 100px;
+          height: 90px;
         }
         .text-input {
           font-size: 1rem;
-          padding: 0.5rem 0.9rem;
+          padding: 0.45rem 0.8rem;
         }
       }
       button {
-        height: 2.5rem;
-        font-size: 0.8rem;
-        margin-top: 1.1rem;
+        width: 100%;
+        margin-top: 0.7rem;
+        font-size:1.1rem;
       }
     }
   }
@@ -656,6 +657,29 @@ $black-color: #000;
         padding-top: 2.4rem;
         padding-bottom: 0.5;
         font-weight: 500;
+      }
+    }
+  }
+  #contact-section {
+    .container {
+
+      h2 {
+
+        font-size: 1.45rem;
+      }
+      p{
+        font-size:0.8rem;
+      }
+      .text-fields {
+        margin-bottom: 0.6rem;
+        grid-gap: 0.4rem;
+        .message-input {
+          height: 80px;
+        }
+      }
+      button {
+        margin-top: 0.6rem;
+        font-size: 1rem;
       }
     }
   }

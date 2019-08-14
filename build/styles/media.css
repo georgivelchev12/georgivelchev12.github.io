@@ -28,27 +28,29 @@
         font-size: 1.35rem; }
       #services-and-testimonials-section .services div p {
         font-size: 0.9rem; }
-  #contact-section .logos {
-    display: none; }
-  #contact-section .container {
-    margin-top: 3rem; }
-    #contact-section .container h2 {
-      margin-top: 0;
-      font-size: 2.2rem; }
-    #contact-section .container p {
-      font-size: 1rem;
-      margin: 0 0 1rem 0; }
-    #contact-section .container .text-fields {
-      margin-bottom: 1rem; }
-      #contact-section .container .text-fields .message-input {
-        height: 130px; }
-      #contact-section .container .text-fields .text-input {
+  #contact-section {
+    align-items: center; }
+    #contact-section .logos {
+      display: none; }
+    #contact-section .container {
+      margin-top: 3rem; }
+      #contact-section .container h2 {
+        margin-top: 0;
+        font-size: 2.2rem; }
+      #contact-section .container p {
         font-size: 1rem;
-        padding: 0.5rem 0.9rem; }
-    #contact-section .container button {
-      height: 2.5rem;
-      font-size: 1.3rem;
-      margin-top: 1.1rem; } }
+        margin: 0 0 1rem 0; }
+      #contact-section .container .text-fields {
+        margin-bottom: 1rem; }
+        #contact-section .container .text-fields .message-input {
+          height: 130px; }
+        #contact-section .container .text-fields .text-input {
+          font-size: 1rem;
+          padding: 0.5rem 0.9rem; }
+      #contact-section .container button {
+        height: 2.5rem;
+        font-size: 1.3rem;
+        margin-top: 1.1rem; } }
 
 @media screen and (max-width: 996px) {
   /* Sidebar slide */
@@ -318,23 +320,25 @@
     #services-and-testimonials-section .testimonials .slider .testimonial-item h5 {
       font-size: 1.2rem;
       font-weight: 350; }
-  #contact-section .container h2 {
-    font-size: 1.3rem; }
-  #contact-section .container p {
-    font-size: 0.9rem; }
-  #contact-section .container .text-fields {
-    grid-template-areas: "name" "email" "subject" "phone" "message";
-    margin-bottom: 0.7rem;
-    grid-gap: 0.5rem; }
-    #contact-section .container .text-fields .message-input {
-      height: 100px; }
-    #contact-section .container .text-fields .text-input {
-      font-size: 1rem;
-      padding: 0.5rem 0.9rem; }
-  #contact-section .container button {
-    height: 2.5rem;
-    font-size: 0.8rem;
-    margin-top: 1.1rem; } }
+  #contact-section .container {
+    margin-top: 0; }
+    #contact-section .container h2 {
+      font-size: 1.9rem; }
+    #contact-section .container p {
+      font-size: 0.9rem; }
+    #contact-section .container .text-fields {
+      grid-template-areas: "name" "email" "subject" "phone" "message";
+      margin-bottom: 0.7rem;
+      grid-gap: 0.5rem; }
+      #contact-section .container .text-fields .message-input {
+        height: 90px; }
+      #contact-section .container .text-fields .text-input {
+        font-size: 1rem;
+        padding: 0.45rem 0.8rem; }
+    #contact-section .container button {
+      width: 100%;
+      margin-top: 0.7rem;
+      font-size: 1.1rem; } }
 
 @media screen and (max-width: 548px) {
   .showcase .showcase-content .l-heading {
@@ -449,7 +453,19 @@
   #process-section .process-text h1 {
     padding-top: 2.4rem;
     padding-bottom: 0.5;
-    font-weight: 500; } }
+    font-weight: 500; }
+  #contact-section .container h2 {
+    font-size: 1.45rem; }
+  #contact-section .container p {
+    font-size: 0.8rem; }
+  #contact-section .container .text-fields {
+    margin-bottom: 0.6rem;
+    grid-gap: 0.4rem; }
+    #contact-section .container .text-fields .message-input {
+      height: 80px; }
+  #contact-section .container button {
+    margin-top: 0.6rem;
+    font-size: 1rem; } }
 
 @media (max-height: 750px) {
   #about-section .about ul li p {

@@ -494,6 +494,8 @@ ul {
           width: 100%;
           top: 50%;
           transform: translateY(-50%); }
+          #work-section .items .item .item-text .item-text-wrap i {
+            cursor: pointer; }
   #work-section .load-more {
     display: flex;
     text-align: center;
@@ -638,11 +640,11 @@ ul {
           margin: auto; }
 
 #contact-section {
-  height: 70vh;
+  height: 85vh;
   width: 100%;
   display: grid;
   grid-template-areas: "logo container logo-1";
-  align-items: start;
+  align-items: center;
   justify-content: center; }
   #contact-section .logos {
     grid-area: logo;
@@ -727,7 +729,7 @@ ul {
         background-color: #cc0808; }
 
 .footer {
-  height: 30vh;
+  height: 15vh;
   background: #222; }
 
 /* Animation */

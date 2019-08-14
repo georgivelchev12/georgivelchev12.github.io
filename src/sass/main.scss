@@ -570,6 +570,9 @@ ul {
           width: 100%;
           top: 50%;
           transform: translateY(-50%);
+          i{
+            cursor: pointer;
+          }
         }
       }
     }
@@ -755,11 +758,11 @@ ul {
   }
 }
 #contact-section {
-  height: 70vh;
+  height: 85vh;
   width: 100%;
   display: grid;
   grid-template-areas: "logo container logo-1";
-  align-items: start;
+  align-items: center;
   justify-content: center;
   .logos {
     grid-area: logo;
@@ -868,7 +871,7 @@ ul {
   }
 }
 .footer {
-  height: 30vh;
+  height: 15vh;
   background: #222;
 }
 
