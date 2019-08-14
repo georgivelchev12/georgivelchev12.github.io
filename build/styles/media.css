@@ -253,10 +253,10 @@
       font-size: 1.35rem; }
     .footer .footer-content div p {
       margin-top: 0;
-      margin-bottom: 0;
+      margin-bottom: 0.3rem;
       font-size: 1.05rem; }
     .footer .footer-content .social {
-      margin-bottom: 0.8rem; }
+      margin-bottom: 0.65rem; }
       .footer .footer-content .social .fab {
         margin-right: 1rem;
         border: 2px #fff solid;
