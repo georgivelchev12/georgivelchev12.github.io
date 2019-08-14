@@ -363,19 +363,18 @@ $black-color: #000;
       flex-direction: column;
       div {
         h3 {
-          margin-top: 0.6rem;
+          margin-top: 1.3rem;
           margin-bottom: 0.3rem;
-          font-size: 1.35rem;
+          font-size: 1.4rem;
         }
         p {
           margin-top: 0;
-          margin-bottom: 0.3rem;
-
-          font-size: 1.05rem;
+          margin-bottom: 0;
+          font-size: 1.1rem;
         }
       }
       .social {
-        margin-bottom: 0.65rem;
+        margin-bottom: 1rem;
         .fab {
           margin-right: 1rem;
           border: 2px #fff solid;
@@ -390,8 +389,6 @@ $black-color: #000;
           &:hover {
             background: #c30707;
           }
-  
-         
         }
         .fas {
           margin-left: 0;
@@ -692,6 +689,28 @@ $black-color: #000;
 
 }
 @media (max-width: 400px) {
+  .footer {
+    .footer-content {
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      div {
+        h3 {
+          margin-top: 0;
+          margin-bottom: 0.7rem;
+        }
+        p {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+      .social {
+        display: none;
+      }
+    }
+  }
   #main-header #navbar .nav-brand {
     left: 0rem;
     width: 6rem;
