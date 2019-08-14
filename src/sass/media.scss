@@ -420,7 +420,8 @@ $black-color: #000;
     }
   }
   .showcase .showcase-content .lead {
-    display: none;
+    margin-top: 0;
+    font-size: 1.15rem;
   }
   #main-header {
     height: 100vh;
@@ -559,9 +560,9 @@ $black-color: #000;
   .btn {
     padding: 1rem 2rem;
   }
-  .showcase .showcase-content .lead {
-    display: none;
-  }
+  // .showcase .showcase-content .lead {
+  //   display: none;
+  // }
   #main-header {
     height: 100vh;
 

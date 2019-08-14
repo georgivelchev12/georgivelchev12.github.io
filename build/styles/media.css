@@ -289,7 +289,8 @@
     padding-bottom: 0.5;
     font-weight: 500; }
   .showcase .showcase-content .lead {
-    display: none; }
+    margin-top: 0;
+    font-size: 1.15rem; }
   #main-header {
     height: 100vh; }
   #about-section .about ul li h1 {
@@ -387,8 +388,6 @@
     font-size: 2.2rem; }
   .btn {
     padding: 1rem 2rem; }
-  .showcase .showcase-content .lead {
-    display: none; }
   #main-header {
     height: 100vh; }
     #main-header #navbar .nav-brand {
