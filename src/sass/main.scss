@@ -570,7 +570,7 @@ ul {
           width: 100%;
           top: 50%;
           transform: translateY(-50%);
-          i{
+          i {
             cursor: pointer;
           }
         }
@@ -757,8 +757,10 @@ ul {
     }
   }
 }
+//Contact Section
+
 #contact-section {
-  height: 85vh;
+  height: 80vh;
   width: 100%;
   display: grid;
   grid-template-areas: "logo container logo-1";
@@ -870,9 +872,63 @@ ul {
     }
   }
 }
+
 .footer {
-  height: 15vh;
+  height: 20vh;
   background: #222;
+  color: #fff;
+  .footer-content {
+    padding: 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    div {
+      h3 {
+        margin-bottom: 0.7rem;
+        font-size: 1.5rem;
+        color: #db1818;
+      }
+      p {
+        margin-top: 0.7rem;
+        font-size: 1.3rem;
+      }
+    }
+    .social {
+      .fab {
+        margin-right: 1rem;
+        border: 2px #fff solid;
+        border-radius: 50%;
+        height: 45px;
+        width: 45px;
+        line-height: 25px;
+        text-align: center;
+        padding: 0.5rem;
+        transition: all 0.4s;
+
+        &:hover {
+          background: #c30707;
+        }
+
+       
+      }
+      .fas {
+        margin-left: 4rem;
+        border: 2px #fff solid;
+        border-radius: 50%;
+        height: 45px;
+        width: 45px;
+        line-height: 25px;
+        text-align: center;
+        padding: 0.5rem;
+        color: #fff;
+        transition: all 0.4s;
+        &:hover {
+          background: #c30707;
+        }
+      }
+    }
+  }
 }
 
 /* Animation */
