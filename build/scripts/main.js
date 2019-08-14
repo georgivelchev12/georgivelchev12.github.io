@@ -27,6 +27,11 @@ var controller = {
     document.getElementsByClassName('closebtn')[0].addEventListener('click', function () {
       return toggleNav("0");
     });
+    navbarAttrChanging.forEach(function (e) {
+      e.addEventListener('click', function () {
+        return toggleNav("0");
+      });
+    });
 
     var removeScrollClasses = function removeScrollClasses(nav) {
       nav.forEach(function (e) {

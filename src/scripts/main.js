@@ -23,6 +23,9 @@ let controller = {
     }
     document.getElementsByClassName('openbtn')[0].addEventListener('click', () => toggleNav("100%"))
     document.getElementsByClassName('closebtn')[0].addEventListener('click', () => toggleNav("0"))
+    navbarAttrChanging.forEach(e => {
+      e.addEventListener('click', () => toggleNav("0"));
+    })
 
     let removeScrollClasses = (nav) => {
       nav.forEach(e => e.classList.remove('homeScrolling',
@@ -32,7 +35,7 @@ let controller = {
         'servicesScrolling',
         'contactScrolling'))
     };
-    let openBtnColorChange = (color) =>{
+    let openBtnColorChange = (color) => {
       document.getElementsByClassName("openbtn")[0].style.backgroundColor = color;
     };
     let sideBarColorChange = (color) => {
@@ -257,7 +260,7 @@ let controller = {
     window.addEventListener('resize', run);
     window.addEventListener('scroll', run);
 
-  }, 
+  },
   videoPlayAndPause() {
     let videoPlay = document.getElementsByClassName('videoPlay')[0];
     let videoPause = document.getElementsByClassName('videoPause')[0];
@@ -268,12 +271,12 @@ let controller = {
     let positionOfButton = (num) => {
       videoPlay.style.top = videoPause.getBoundingClientRect().height - num + 'px';
     }
-    videoPlay.addEventListener('click',()=>{
+    videoPlay.addEventListener('click', () => {
       videoPause.play();
       btnShowing(0);
     })
 
-    videoPause.addEventListener('click',() => {
+    videoPause.addEventListener('click', () => {
       videoPause.pause();
       btnShowing(1);
     })
