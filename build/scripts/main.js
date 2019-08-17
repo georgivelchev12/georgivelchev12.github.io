@@ -39,6 +39,13 @@ var controller = {
       });
     };
 
+    var removeAllClasses = function removeAllClasses(nav, addClass) {
+      nav.forEach(function (e) {
+        e.classList.remove("homeScrolling", "homeScrollingOnHover", "aboutScrolling", "aboutScrollingOnHover", "workScrolling", "workScrollingOnHover", "processScrolling", "processScrollingOnHover", "servicesScrolling", "servicesScrollingOnHover", "contactScrolling", "contactScrollingOnHover", "allATagsWhite");
+        e.classList.add(addClass);
+      });
+    };
+
     var openBtnColorChange = function openBtnColorChange(color) {
       document.getElementsByClassName("openbtn")[0].style.backgroundColor = color;
     };
@@ -65,10 +72,7 @@ var controller = {
           e.classList.add('allATagsWhite');
         });
       } else {
-        navbarAttrChanging.forEach(function (e) {
-          e.classList.add('homeScrollingOnHover');
-          e.classList.remove("aboutScrolling", "aboutScrollingOnHover", "workScrolling", "workScrollingOnHover", "processScrolling", "processScrollingOnHover", "servicesScrolling", "servicesScrollingOnHover", "contactScrolling", "contactScrollingOnHover", "allATagsWhite");
-        });
+        removeAllClasses(navbarAttrChanging, 'homeScrollingOnHover');
         navbarAttrChanging[0].classList.add("homeScrolling"); //btn-active
       }
     } else if (scrollTop >= height / 6 && scrollTop < height / 3) {
@@ -83,10 +87,7 @@ var controller = {
           e.classList.add('allATagsWhite');
         });
       } else {
-        navbarAttrChanging.forEach(function (e) {
-          e.classList.add('aboutScrollingOnHover');
-          e.classList.remove("homeScrolling", "homeScrollingOnHover", "workScrolling", "workScrollingOnHover", "processScrolling", "processScrollingOnHover", "servicesScrolling", "servicesScrollingOnHover", "contactScrolling", "contactScrollingOnHover", "allATagsWhite");
-        });
+        removeAllClasses(navbarAttrChanging, 'aboutScrollingOnHover');
         navbarAttrChanging[1].classList.add("aboutScrolling"); //btn-active
       }
     } else if (scrollTop >= height / 3 && scrollTop < height / 2) {
@@ -101,10 +102,7 @@ var controller = {
           e.classList.add('allATagsWhite');
         });
       } else {
-        navbarAttrChanging.forEach(function (e) {
-          e.classList.add("workScrolling", "workScrollingOnHover");
-          e.classList.remove("homeScrolling", "homeScrollingOnHover", "aboutScrolling", "aboutScrollingOnHover", "processScrollingOnHover", "processScrolling", "servicesScrollingOnHover", "servicesScrolling", "contactScrolling", "contactScrollingOnHover", "allATagsWhite");
-        });
+        removeAllClasses(navbarAttrChanging, "workScrolling", "workScrollingOnHover");
         navbarAttrChanging[2].classList.add('allATagsWhite'); //btn-active
       }
     } else if (scrollTop >= height / 2 && scrollTop < height / 1.5) {
@@ -119,10 +117,7 @@ var controller = {
           e.classList.add('allATagsWhite');
         });
       } else {
-        navbarAttrChanging.forEach(function (e) {
-          e.classList.add("processScrollingOnHover");
-          e.classList.remove("homeScrolling", "homeScrollingOnHover", "aboutScrolling", "aboutScrollingOnHover", "workScrolling", "workScrollingOnHover", "servicesScrolling", "servicesScrollingOnHover", "contactScrolling", "contactScrollingOnHover", "allATagsWhite");
-        });
+        removeAllClasses(navbarAttrChanging, 'processScrollingOnHover');
         navbarAttrChanging[3].classList.add('processScrolling'); //btn-active
       }
     } else if (scrollTop >= height / 1.5 && scrollTop < height / 1.2) {
@@ -137,10 +132,7 @@ var controller = {
           e.classList.add('allATagsWhite');
         });
       } else {
-        navbarAttrChanging.forEach(function (e) {
-          e.classList.add("servicesScrollingOnHover");
-          e.classList.remove("workScrolling", "workScrollingOnHover", "homeScrolling", "homeScrollingOnHover", "aboutScrolling", "aboutScrollingOnHover", "processScrolling", "processScrollingOnHover", "contactScrolling", "contactScrollingOnHover", "allATagsWhite");
-        });
+        removeAllClasses(navbarAttrChanging, 'servicesScrollingOnHover');
         navbarAttrChanging[4].classList.add("servicesScrolling"); //btn-active
       }
     } else if (scrollTop >= height / 1.2 && scrollTop <= height) {
@@ -155,10 +147,7 @@ var controller = {
           e.classList.add("allATagsWhite");
         });
       } else {
-        navbarAttrChanging.forEach(function (e) {
-          e.classList.add("contactScrollingOnHover");
-          e.classList.remove("homeScrolling", "homeScrollingOnHover", "aboutScrolling", "aboutScrollingOnHover", "workScrolling", "workScrollingOnHover", "processScrolling", "processScrollingOnHover", "servicesScrolling", "servicesScrollingOnHover", "allATagsWhite");
-        });
+        removeAllClasses(navbarAttrChanging, 'contactScrollingOnHover');
         navbarAttrChanging[5].classList.add("contactScrolling"); //btn-active
       }
     }

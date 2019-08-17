@@ -12,7 +12,6 @@ let controller = {
   },
   heightOnScrollAndResize() {
     height = window.innerHeight * 6;
-
     window.addEventListener('scroll', this.heightOnScrollAndResize)
     window.addEventListener('resize', this.heightOnScrollAndResize)
     window.addEventListener('click', this.heightOnScrollAndResize)
@@ -35,6 +34,24 @@ let controller = {
         'servicesScrolling',
         'contactScrolling'))
     };
+    let removeAllClasses = (nav,addClass) =>{
+      nav.forEach(e => {
+        e.classList.remove("homeScrolling",
+          "homeScrollingOnHover",
+          "aboutScrolling",
+          "aboutScrollingOnHover",
+          "workScrolling",
+          "workScrollingOnHover",
+          "processScrolling",
+          "processScrollingOnHover",
+          "servicesScrolling",
+          "servicesScrollingOnHover",
+          "contactScrolling",
+          "contactScrollingOnHover",
+          "allATagsWhite")
+          e.classList.add(addClass);
+      });
+    }
     let openBtnColorChange = (color) => {
       document.getElementsByClassName("openbtn")[0].style.backgroundColor = color;
     };
@@ -59,20 +76,7 @@ let controller = {
         })
       }
       else {
-        navbarAttrChanging.forEach(e => {
-          e.classList.add('homeScrollingOnHover');
-          e.classList.remove("aboutScrolling",
-            "aboutScrollingOnHover",
-            "workScrolling",
-            "workScrollingOnHover",
-            "processScrolling",
-            "processScrollingOnHover",
-            "servicesScrolling",
-            "servicesScrollingOnHover",
-            "contactScrolling",
-            "contactScrollingOnHover",
-            "allATagsWhite")
-        });
+        removeAllClasses(navbarAttrChanging,'homeScrollingOnHover');
         navbarAttrChanging[0].classList.add("homeScrolling"); //btn-active
       }
     } else if (scrollTop >= (height / 6) && scrollTop < (height / 3)) {
@@ -87,20 +91,7 @@ let controller = {
         })
       }
       else {
-        navbarAttrChanging.forEach(e => {
-          e.classList.add('aboutScrollingOnHover');
-          e.classList.remove("homeScrolling",
-            "homeScrollingOnHover",
-            "workScrolling",
-            "workScrollingOnHover",
-            "processScrolling",
-            "processScrollingOnHover",
-            "servicesScrolling",
-            "servicesScrollingOnHover",
-            "contactScrolling",
-            "contactScrollingOnHover",
-            "allATagsWhite");
-        });
+        removeAllClasses(navbarAttrChanging,'aboutScrollingOnHover')
         navbarAttrChanging[1].classList.add("aboutScrolling");  //btn-active
       }
     }
@@ -116,20 +107,7 @@ let controller = {
         })
       }
       else {
-        navbarAttrChanging.forEach(e => {
-          e.classList.add("workScrolling", "workScrollingOnHover");
-          e.classList.remove("homeScrolling",
-            "homeScrollingOnHover",
-            "aboutScrolling",
-            "aboutScrollingOnHover",
-            "processScrollingOnHover",
-            "processScrolling",
-            "servicesScrollingOnHover",
-            "servicesScrolling",
-            "contactScrolling",
-            "contactScrollingOnHover",
-            "allATagsWhite");
-        });
+        removeAllClasses(navbarAttrChanging,"workScrolling", "workScrollingOnHover")
         navbarAttrChanging[2].classList.add('allATagsWhite'); //btn-active
       }
     }
@@ -145,20 +123,7 @@ let controller = {
         })
       }
       else {
-        navbarAttrChanging.forEach(e => {
-          e.classList.add("processScrollingOnHover");
-          e.classList.remove("homeScrolling",
-            "homeScrollingOnHover",
-            "aboutScrolling",
-            "aboutScrollingOnHover",
-            "workScrolling",
-            "workScrollingOnHover",
-            "servicesScrolling",
-            "servicesScrollingOnHover",
-            "contactScrolling",
-            "contactScrollingOnHover",
-            "allATagsWhite");
-        });
+        removeAllClasses(navbarAttrChanging,'processScrollingOnHover')
         navbarAttrChanging[3].classList.add('processScrolling') //btn-active
       }
     }
@@ -174,20 +139,7 @@ let controller = {
         })
       }
       else {
-        navbarAttrChanging.forEach(e => {
-          e.classList.add("servicesScrollingOnHover")
-          e.classList.remove("workScrolling",
-            "workScrollingOnHover",
-            "homeScrolling",
-            "homeScrollingOnHover",
-            "aboutScrolling",
-            "aboutScrollingOnHover",
-            "processScrolling",
-            "processScrollingOnHover",
-            "contactScrolling",
-            "contactScrollingOnHover",
-            "allATagsWhite");
-        });
+        removeAllClasses(navbarAttrChanging,'servicesScrollingOnHover')
         navbarAttrChanging[4].classList.add("servicesScrolling"); //btn-active
       }
     }
@@ -203,22 +155,7 @@ let controller = {
         })
       }
       else {
-        navbarAttrChanging.forEach(e => {
-          e.classList.add("contactScrollingOnHover")
-          e.classList.remove(
-            "homeScrolling",
-            "homeScrollingOnHover",
-            "aboutScrolling",
-            "aboutScrollingOnHover",
-            "workScrolling",
-            "workScrollingOnHover",
-            "processScrolling",
-            "processScrollingOnHover",
-            "servicesScrolling",
-            "servicesScrollingOnHover",
-            "allATagsWhite")
-        });
-
+        removeAllClasses(navbarAttrChanging,'contactScrollingOnHover')
         navbarAttrChanging[5].classList.add("contactScrolling"); //btn-active
       }
     }

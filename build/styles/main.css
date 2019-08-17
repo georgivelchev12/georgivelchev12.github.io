@@ -158,7 +158,8 @@ ul {
     position: absolute;
     top: 0;
     width: 100%;
-    background: transparent;
+    height: 4.5rem;
+    background: rgba(102, 102, 102, 0.3);
     position: fixed;
     padding-top: 0.5rem;
     padding-right: 6rem;
@@ -170,8 +171,8 @@ ul {
       position: absolute;
       left: 2rem;
       top: 0;
-      width: 8rem;
-      height: 5rem;
+      width: 7rem;
+      height: 4.5rem;
       opacity: 0;
       -webkit-animation: fadeIn1 0.9s 1;
       animation: fadeIn1 0.9s 1;
@@ -642,13 +643,12 @@ ul {
 #contact-section {
   height: 80vh;
   width: 100%;
-  display: grid;
-  grid-template-areas: "logo container logo-1";
+  display: flex;
   align-items: center;
   justify-content: center; }
   #contact-section .logos {
     grid-area: logo;
-    padding-top: 6rem;
+    padding-top: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -662,7 +662,7 @@ ul {
   #contact-section .container {
     grid-area: container;
     margin: 0 auto;
-    margin-top: 3rem;
+    margin-top: 2rem;
     width: 75%; }
     #contact-section .container h2 {
       margin-top: 0;

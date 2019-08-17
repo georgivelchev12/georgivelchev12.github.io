@@ -162,6 +162,8 @@ $black-color: #000;
     height: 100vh;
 
     #navbar {
+      height: 0;
+      background: transparent;
       .nav-brand {
         left: 0;
       }
@@ -420,7 +422,7 @@ $black-color: #000;
     }
   }
   .showcase .showcase-content .lead {
-    margin-top: 0;
+    margin-top: 0; 
     font-size: 1.25rem;
   }
   #main-header {
@@ -770,6 +772,7 @@ $black-color: #000;
   #about-section .about ul .signature {
     padding: 0;
   }
+
   @media (max-width: 500px) {
     #about-section .about ul li h1 {
       margin-top: 1rem;
@@ -842,6 +845,41 @@ $black-color: #000;
       
     }
   }
+  @media(min-width:400px){
+    #contact-section {
+      .logos{
+        display: none;
+      }
+      .container {
+        width: 55%;
+        margin-top: 1.5rem;
+        h2 {
+          font-size: 1.9rem;
+        }
+        p{
+          font-size:0.9rem;
+        }
+        .text-fields {
+          margin-bottom: 0.5rem;
+          grid-gap: 0.5rem;
+          .message-input {
+            height: 70px;
+          }
+          .text-input {
+            font-size: 1rem;
+            padding: 0.45rem 0.8rem;
+          }
+        }
+        button {
+          width: 40%;
+          height: 2.5rem;
+          margin-top: 0.5rem;
+          font-size:1.1rem;
+        }
+      }
+    }
+  }
+
   @media (max-width: 996px) {
     #about-section .about ul li h1 {
       margin-top: 1rem;

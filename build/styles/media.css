@@ -118,21 +118,24 @@
         top: 10px; }
   #main-header {
     height: 100vh; }
-    #main-header #navbar .nav-brand {
-      left: 0; }
-    #main-header #navbar ul {
-      position: static;
-      flex-direction: column;
-      padding-top: 5rem; }
-      #main-header #navbar ul li {
-        padding: 1.2rem 0; }
-        #main-header #navbar ul li a {
-          z-index: 300456465566;
-          font-size: 2rem;
-          color: #fff; }
-          #main-header #navbar ul li a:hover {
-            color: #bab2b5;
-            font-size: 1.95rem; }
+    #main-header #navbar {
+      height: 0;
+      background: transparent; }
+      #main-header #navbar .nav-brand {
+        left: 0; }
+      #main-header #navbar ul {
+        position: static;
+        flex-direction: column;
+        padding-top: 5rem; }
+        #main-header #navbar ul li {
+          padding: 1.2rem 0; }
+          #main-header #navbar ul li a {
+            z-index: 300456465566;
+            font-size: 2rem;
+            color: #fff; }
+            #main-header #navbar ul li a:hover {
+              color: #bab2b5;
+              font-size: 1.95rem; }
   .showcase {
     top: 0;
     left: 25%;
@@ -586,6 +589,30 @@
     font-size: 1rem; }
   #services-and-testimonials-section .testimonials .slider .testimonial-item p {
     font-size: 0.7rem; } }
+
+@media (max-height: 575px) and (min-width: 400px) {
+  #contact-section .logos {
+    display: none; }
+  #contact-section .container {
+    width: 55%;
+    margin-top: 1.5rem; }
+    #contact-section .container h2 {
+      font-size: 1.9rem; }
+    #contact-section .container p {
+      font-size: 0.9rem; }
+    #contact-section .container .text-fields {
+      margin-bottom: 0.5rem;
+      grid-gap: 0.5rem; }
+      #contact-section .container .text-fields .message-input {
+        height: 70px; }
+      #contact-section .container .text-fields .text-input {
+        font-size: 1rem;
+        padding: 0.45rem 0.8rem; }
+    #contact-section .container button {
+      width: 40%;
+      height: 2.5rem;
+      margin-top: 0.5rem;
+      font-size: 1.1rem; } }
 
 @media (max-height: 575px) and (max-width: 996px) {
   #about-section .about ul li h1 {
