@@ -5,7 +5,7 @@ let height;
 let controller = {
   init() {
     this.heightOnScrollAndResize();
-    this.changeNavOnScroll();
+
     this.animationWithShowClass();
     this.videoPlayAndPause();
     this.testimonialSlider();
@@ -20,10 +20,19 @@ let controller = {
     let toggleNav = (percantage) => {
       document.getElementById("mySidebar").style.width = percantage;
     }
-    document.getElementsByClassName('openbtn')[0].addEventListener('click', () => toggleNav("100%"))
-    document.getElementsByClassName('closebtn')[0].addEventListener('click', () => toggleNav("0"))
+    document.getElementsByClassName('openbtn')[0].addEventListener('click', () => {
+      document.body.style.overflowY = "hidden";
+      toggleNav("100%")
+    })
+    document.getElementsByClassName('closebtn')[0].addEventListener('click', () => {
+      document.body.style.overflowY = "visible";
+      toggleNav("0")
+  })
     navbarAttrChanging.forEach(e => {
-      e.addEventListener('click', () => toggleNav("0"));
+      e.addEventListener('click', () => {
+        document.body.style.overflowY = "visible";
+        toggleNav("0")
+    });
     })
 
     let removeScrollClasses = (nav) => {
@@ -55,9 +64,6 @@ let controller = {
     let openBtnColorChange = (color) => {
       document.getElementsByClassName("openbtn")[0].style.backgroundColor = color;
     };
-    let sideBarColorChange = (color) => {
-      document.getElementById("mySidebar").style.backgroundColor = color;
-    }
     let changeLogoImg = (img) => {
       document.getElementById("aboutChanger").src = img;
     }
@@ -68,8 +74,7 @@ let controller = {
       changeLogoImg("img/image1.png");
       openBtnColorChange("#16406e");
       if (window.innerWidth <= 996) {
-        sideBarColorChange("#16406e")
-        removeScrollClasses(navbarAttrChanging);
+                removeScrollClasses(navbarAttrChanging);
         navbarAttrChanging.forEach(e => {
           e.classList.remove('homeScrollingOnHover')
           e.classList.add('allATagsWhite');
@@ -83,8 +88,7 @@ let controller = {
       changeLogoImg("img/image1.1.png");
       openBtnColorChange("#ac3b61");
       if (window.innerWidth <= 996) {
-        sideBarColorChange("#ac3b61")
-        removeScrollClasses(navbarAttrChanging);
+                removeScrollClasses(navbarAttrChanging);
         navbarAttrChanging.forEach(e => {
           e.classList.remove('aboutScrollingOnHover')
           e.classList.add('allATagsWhite');
@@ -99,8 +103,7 @@ let controller = {
       changeLogoImg("img/image1.2.png")
       openBtnColorChange("#f79e02")
       if (window.innerWidth <= 996) {
-        sideBarColorChange("#f79e02")
-        removeScrollClasses(navbarAttrChanging);
+                removeScrollClasses(navbarAttrChanging);
         navbarAttrChanging.forEach(e => {
           e.classList.remove('workScrolling', 'workScrollingOnHover')
           e.classList.add('allATagsWhite');
@@ -115,8 +118,7 @@ let controller = {
       changeLogoImg("img/image1.2.png");
       openBtnColorChange("#f79e02");
       if (window.innerWidth <= 996) {
-        sideBarColorChange("#f79e02")
-        removeScrollClasses(navbarAttrChanging);
+                removeScrollClasses(navbarAttrChanging);
         navbarAttrChanging.forEach(e => {
           e.classList.remove("processScrollingOnHover", "processScrolling")
           e.classList.add('allATagsWhite');
@@ -131,8 +133,7 @@ let controller = {
       changeLogoImg("img/image1.3.png")
       openBtnColorChange("#14a76c");
       if (window.innerWidth <= 996) {
-        sideBarColorChange("#14a76c")
-        removeScrollClasses(navbarAttrChanging);
+                removeScrollClasses(navbarAttrChanging);
         navbarAttrChanging.forEach(e => {
           e.classList.remove('servicesScrolling', 'servicesScrollingOnHover')
           e.classList.add('allATagsWhite');
@@ -147,7 +148,7 @@ let controller = {
       changeLogoImg("img/image1.4.png")
       openBtnColorChange("#970909");
       if (window.innerWidth <= 996) {
-        sideBarColorChange("#970909");
+        
         removeScrollClasses(navbarAttrChanging);
         navbarAttrChanging.forEach(e => {
           e.classList.remove("contactScrollingOnHover")

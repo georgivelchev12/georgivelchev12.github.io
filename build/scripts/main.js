@@ -5,7 +5,6 @@ var height;
 var controller = {
   init: function init() {
     this.heightOnScrollAndResize();
-    this.changeNavOnScroll();
     this.animationWithShowClass();
     this.videoPlayAndPause();
     this.testimonialSlider();
@@ -22,14 +21,17 @@ var controller = {
     };
 
     document.getElementsByClassName('openbtn')[0].addEventListener('click', function () {
-      return toggleNav("100%");
+      document.body.style.overflowY = "hidden";
+      toggleNav("100%");
     });
     document.getElementsByClassName('closebtn')[0].addEventListener('click', function () {
-      return toggleNav("0");
+      document.body.style.overflowY = "visible";
+      toggleNav("0");
     });
     navbarAttrChanging.forEach(function (e) {
       e.addEventListener('click', function () {
-        return toggleNav("0");
+        document.body.style.overflowY = "visible";
+        toggleNav("0");
       });
     });
 
@@ -50,10 +52,6 @@ var controller = {
       document.getElementsByClassName("openbtn")[0].style.backgroundColor = color;
     };
 
-    var sideBarColorChange = function sideBarColorChange(color) {
-      document.getElementById("mySidebar").style.backgroundColor = color;
-    };
-
     var changeLogoImg = function changeLogoImg(img) {
       document.getElementById("aboutChanger").src = img;
     };
@@ -65,7 +63,6 @@ var controller = {
       openBtnColorChange("#16406e");
 
       if (window.innerWidth <= 996) {
-        sideBarColorChange("#16406e");
         removeScrollClasses(navbarAttrChanging);
         navbarAttrChanging.forEach(function (e) {
           e.classList.remove('homeScrollingOnHover');
@@ -80,7 +77,6 @@ var controller = {
       openBtnColorChange("#ac3b61");
 
       if (window.innerWidth <= 996) {
-        sideBarColorChange("#ac3b61");
         removeScrollClasses(navbarAttrChanging);
         navbarAttrChanging.forEach(function (e) {
           e.classList.remove('aboutScrollingOnHover');
@@ -95,7 +91,6 @@ var controller = {
       openBtnColorChange("#f79e02");
 
       if (window.innerWidth <= 996) {
-        sideBarColorChange("#f79e02");
         removeScrollClasses(navbarAttrChanging);
         navbarAttrChanging.forEach(function (e) {
           e.classList.remove('workScrolling', 'workScrollingOnHover');
@@ -110,7 +105,6 @@ var controller = {
       openBtnColorChange("#f79e02");
 
       if (window.innerWidth <= 996) {
-        sideBarColorChange("#f79e02");
         removeScrollClasses(navbarAttrChanging);
         navbarAttrChanging.forEach(function (e) {
           e.classList.remove("processScrollingOnHover", "processScrolling");
@@ -125,7 +119,6 @@ var controller = {
       openBtnColorChange("#14a76c");
 
       if (window.innerWidth <= 996) {
-        sideBarColorChange("#14a76c");
         removeScrollClasses(navbarAttrChanging);
         navbarAttrChanging.forEach(function (e) {
           e.classList.remove('servicesScrolling', 'servicesScrollingOnHover');
@@ -140,7 +133,6 @@ var controller = {
       openBtnColorChange("#970909");
 
       if (window.innerWidth <= 996) {
-        sideBarColorChange("#970909");
         removeScrollClasses(navbarAttrChanging);
         navbarAttrChanging.forEach(function (e) {
           e.classList.remove("contactScrollingOnHover");

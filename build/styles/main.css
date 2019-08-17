@@ -8,10 +8,15 @@ body {
   margin: 0;
   font-family: "Segoe UI", Arial, Helvetica, Sans Serif;
   font-size: 1rem;
-  overflow-x: hidden;
-  /* Remove ScrollBar */ }
+  overflow-x: hidden; }
   body::-webkit-scrollbar {
-    width: 0; }
+    width: 12px;
+    background-color: #f5f5f5; }
+  body::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #777; }
+    body::-webkit-scrollbar-thumb:hover {
+      background-color: #666; }
 
 /* Utilities */
 a {
@@ -93,17 +98,20 @@ ul {
   display: none; }
 
 /* Button Clases on Scroll */
-.homeScrolling {
-  color: #16406e !important; }
-
-.homeScrollingOnHover:hover {
-  color: #16406e !important; }
-
-.aboutScrolling {
-  color: #ac3b61 !important; }
-
-.aboutScrollingOnHover:hover {
-  color: #ac3b61 !important; }
+.active {
+  color: #fff !important; }
+  .active:before {
+    content: "";
+    opacity: 1 !important;
+    transform: translateY(0) !important; }
+  .active:after {
+    content: "";
+    opacity: 1 !important;
+    transform: translateY(0) !important; }
+  .active:hover:before {
+    transform: translateY(-2px) !important; }
+  .active:hover:after {
+    transform: translateY(2px) !important; }
 
 .workScrolling {
   color: #f79e02 !important; }
@@ -223,6 +231,7 @@ ul {
           -webkit-animation-delay: 1.4s;
           animation-delay: 1.4s; }
         #main-header #navbar ul li a {
+          position: relative;
           letter-spacing: 0.5px;
           font-weight: 600;
           font-size: 1rem;
@@ -233,9 +242,38 @@ ul {
           margin-right: 10px;
           -webkit-transition: all 0.3s;
           transition: all 0.3s; }
+          #main-header #navbar ul li a:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #fff;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            transform: translateY(-10px); }
+          #main-header #navbar ul li a:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #fff;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            transform: translateY(10px); }
           #main-header #navbar ul li a:hover {
-            color: #16406e;
-            opacity: 0.8; }
+            color: #fff; }
+            #main-header #navbar ul li a:hover:before {
+              transform: translateY(0);
+              opacity: 1;
+              color: #fff; }
+            #main-header #navbar ul li a:hover:after {
+              transform: translateY(0);
+              opacity: 1;
+              color: #fff; }
 
 /* Showcase */
 .showcase {
@@ -463,6 +501,38 @@ ul {
         display: block;
         transform: translateZ(0);
         transition: transform 750ms ease-in-out; }
+        #work-section .items .item .item-image.img-1 {
+          background: url("/img/workSectionImg1.jpg");
+          background-position: center center;
+          background-size: cover; }
+        #work-section .items .item .item-image.img-2 {
+          background: url("/img/workSectionImg2.jpg");
+          background-position: center center;
+          background-size: cover; }
+        #work-section .items .item .item-image.img-3 {
+          background: url("/img/workSectionImg3.jpg");
+          background-position: center center;
+          background-size: cover; }
+        #work-section .items .item .item-image.img-4 {
+          background: url("/img/workSectionImg4.jpg");
+          background-position: center center;
+          background-size: cover; }
+        #work-section .items .item .item-image.img-5 {
+          background: url("/img/workSectionImg5.jpg");
+          background-position: center center;
+          background-size: cover; }
+        #work-section .items .item .item-image.img-6 {
+          background: url("/img/workSectionImg6.jpg");
+          background-position: center center;
+          background-size: cover; }
+        #work-section .items .item .item-image.img-7 {
+          background: url("/img/workSectionImg7.jpg");
+          background-position: center center;
+          background-size: cover; }
+        #work-section .items .item .item-image.img-8 {
+          background: url("/img/workSectionImg8.jpg");
+          background-position: center center;
+          background-size: cover; }
         #work-section .items .item .item-image:before {
           content: "";
           display: block;
