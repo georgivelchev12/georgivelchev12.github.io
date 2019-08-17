@@ -121,6 +121,25 @@ ul {
 }
 
 /* Button Clases on Scroll */
+
+.homeNav{
+  color: #16406e !important;
+}
+.aboutNav{
+  color: #ac3b61 !important;
+}
+.workNav {
+  color: #f79e02 !important;
+}
+.processNav {
+  color: #333 !important;
+}
+.servicesNav {
+  color: #333 !important;
+}
+.contactNav {
+  color: #c30707 !important;
+}
 .active {
   color: #fff !important;
   &:before {
@@ -141,34 +160,6 @@ ul {
       transform: translateY(2px) !important;
     }
   }
-}
-
-.workScrolling {
-  color: #f79e02 !important;
-}
-.workScrollingOnHover:hover {
-  color: #eee !important;
-}
-.processScrolling {
-  color: #f79e02 !important;
-}
-.processScrollingOnHover:hover {
-  color: #f79e02 !important;
-}
-.servicesScrolling {
-  color: #14a76c !important;
-}
-.servicesScrollingOnHover:hover {
-  color: #333 !important;
-}
-.contactScrolling {
-  color: #c30707 !important;
-}
-.contactScrollingOnHover:hover {
-  color: #c30707 !important;
-}
-.changeColorOnHover:hover {
-  color: $main-color !important;
 }
 .allATagsWhite {
   color: $white-color !important;
@@ -200,7 +191,7 @@ ul {
     top: 0;
     width: 100%;
     height: 4.5rem;
-    background: rgba($color: #666, $alpha: 0.3);
+    background: rgba($color: #333, $alpha: 0.35);
     position: fixed;
     padding-top: 0.5rem;
     padding-right: 6rem;
@@ -280,7 +271,6 @@ ul {
           font-weight: 600;
           font-size: 1rem;
           text-transform: uppercase;
-          color: $dark-color;
           padding: 0.55rem;
           margin: 0 0.25rem;
           margin-right: 10px;
@@ -296,7 +286,7 @@ ul {
             background: #fff;
             opacity: 0;
             transition: opacity 0.3s, transform 0.3s;
-            transform: translateY(-10px);
+            transform: translateY(-10px) rotate(5deg);
           }
           &:after {
             content: "";
@@ -308,10 +298,10 @@ ul {
             background: #fff;
             opacity: 0;
             transition: opacity 0.3s, transform 0.3s;
-            transform: translateY(10px);
+            transform: translateY(10px) rotate(5deg);
           }
           &:hover {
-            color: #fff;
+            color: #fff !important;
             &:before {
               transform: translateY(0);
               opacity: 1;

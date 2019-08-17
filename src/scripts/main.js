@@ -5,7 +5,7 @@ let height;
 let controller = {
   init() {
     this.heightOnScrollAndResize();
-
+    this.changeNavOnScroll();
     this.animationWithShowClass();
     this.videoPlayAndPause();
     this.testimonialSlider();
@@ -17,6 +17,8 @@ let controller = {
     window.addEventListener('click', this.heightOnScrollAndResize)
   },
   changeNavOnScroll() {
+
+    
     let toggleNav = (percantage) => {
       document.getElementById("mySidebar").style.width = percantage;
     }
@@ -27,39 +29,32 @@ let controller = {
     document.getElementsByClassName('closebtn')[0].addEventListener('click', () => {
       document.body.style.overflowY = "visible";
       toggleNav("0")
-  })
+    })
     navbarAttrChanging.forEach(e => {
       e.addEventListener('click', () => {
         document.body.style.overflowY = "visible";
         toggleNav("0")
-    });
-    })
-
-    let removeScrollClasses = (nav) => {
-      nav.forEach(e => e.classList.remove('homeScrolling',
-        'aboutScrolling',
-        'workScrolling',
-        'processScrolling',
-        'servicesScrolling',
-        'contactScrolling'))
-    };
-    let removeAllClasses = (nav,addClass) =>{
-      nav.forEach(e => {
-        e.classList.remove("homeScrolling",
-          "homeScrollingOnHover",
-          "aboutScrolling",
-          "aboutScrollingOnHover",
-          "workScrolling",
-          "workScrollingOnHover",
-          "processScrolling",
-          "processScrollingOnHover",
-          "servicesScrolling",
-          "servicesScrollingOnHover",
-          "contactScrolling",
-          "contactScrollingOnHover",
-          "allATagsWhite")
-          e.classList.add(addClass);
       });
+    })
+  
+    let removeNavClasses = (nav) => {
+      nav.forEach(e => e.classList.remove('homeNav',
+        'aboutNav',
+        'workNav',
+        'processNav',
+        'servicesNav',
+        'contactNav'))
+    };
+    let removeActiveClass = (nav) => {
+      nav.forEach(e => {
+        e.classList.remove('active');
+      });
+    }
+    let addNavClass = (nav,classNav) => {
+      nav.forEach(e => {
+        e.classList.remove('allATagsWhite')
+        e.classList.add(classNav)
+      })
     }
     let openBtnColorChange = (color) => {
       document.getElementsByClassName("openbtn")[0].style.backgroundColor = color;
@@ -68,96 +63,83 @@ let controller = {
       document.getElementById("aboutChanger").src = img;
     }
 
+
+
+
+    let runAllFunctionsOnSmallScreen = (num)=>{
+      removeNavClasses(navbarAttrChanging);
+      navbarAttrChanging.forEach(e => {
+        e.classList.add('allATagsWhite');
+      })
+      removeActiveClass(navbarAttrChanging);
+      navbarAttrChanging[num].classList.add("active"); //btn-active
+    }
+    let runAllFunctions = (navClass,num) => {
+      removeNavClasses(navbarAttrChanging)
+      addNavClass(navbarAttrChanging,navClass);
+      removeActiveClass(navbarAttrChanging);
+      navbarAttrChanging[num].classList.add("active"); //btn-active
+    }
     let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
     if ((scrollTop >= 0 && scrollTop < (height / 6))) {
       changeLogoImg("img/image1.png");
       openBtnColorChange("#16406e");
+
       if (window.innerWidth <= 996) {
-                removeScrollClasses(navbarAttrChanging);
-        navbarAttrChanging.forEach(e => {
-          e.classList.remove('homeScrollingOnHover')
-          e.classList.add('allATagsWhite');
-        })
+        runAllFunctionsOnSmallScreen(0);
       }
       else {
-        removeAllClasses(navbarAttrChanging,'homeScrollingOnHover');
-        navbarAttrChanging[0].classList.add("homeScrolling"); //btn-active
+        runAllFunctions('homeNav',0)
       }
     } else if (scrollTop >= (height / 6) && scrollTop < (height / 3)) {
       changeLogoImg("img/image1.1.png");
       openBtnColorChange("#ac3b61");
       if (window.innerWidth <= 996) {
-                removeScrollClasses(navbarAttrChanging);
-        navbarAttrChanging.forEach(e => {
-          e.classList.remove('aboutScrollingOnHover')
-          e.classList.add('allATagsWhite');
-        })
+        runAllFunctionsOnSmallScreen(1);
       }
       else {
-        removeAllClasses(navbarAttrChanging,'aboutScrollingOnHover')
-        navbarAttrChanging[1].classList.add("aboutScrolling");  //btn-active
+        runAllFunctions('aboutNav',1)
       }
     }
     else if (scrollTop >= (height / 3) && scrollTop < (height / 2)) {
       changeLogoImg("img/image1.2.png")
       openBtnColorChange("#f79e02")
       if (window.innerWidth <= 996) {
-                removeScrollClasses(navbarAttrChanging);
-        navbarAttrChanging.forEach(e => {
-          e.classList.remove('workScrolling', 'workScrollingOnHover')
-          e.classList.add('allATagsWhite');
-        })
+        runAllFunctionsOnSmallScreen(2);
       }
       else {
-        removeAllClasses(navbarAttrChanging,"workScrolling", "workScrollingOnHover")
-        navbarAttrChanging[2].classList.add('allATagsWhite'); //btn-active
+        runAllFunctions('workNav',2)
       }
     }
     else if (scrollTop >= (height / 2) && scrollTop < (height / 1.5)) {
       changeLogoImg("img/image1.2.png");
       openBtnColorChange("#f79e02");
       if (window.innerWidth <= 996) {
-                removeScrollClasses(navbarAttrChanging);
-        navbarAttrChanging.forEach(e => {
-          e.classList.remove("processScrollingOnHover", "processScrolling")
-          e.classList.add('allATagsWhite');
-        })
+        runAllFunctionsOnSmallScreen(3);
       }
       else {
-        removeAllClasses(navbarAttrChanging,'processScrollingOnHover')
-        navbarAttrChanging[3].classList.add('processScrolling') //btn-active
+        runAllFunctions('processNav',3)
       }
     }
     else if (scrollTop >= (height / 1.5) && scrollTop < (height / 1.2)) {
       changeLogoImg("img/image1.3.png")
       openBtnColorChange("#14a76c");
       if (window.innerWidth <= 996) {
-                removeScrollClasses(navbarAttrChanging);
-        navbarAttrChanging.forEach(e => {
-          e.classList.remove('servicesScrolling', 'servicesScrollingOnHover')
-          e.classList.add('allATagsWhite');
-        })
+        runAllFunctionsOnSmallScreen(4);
       }
       else {
-        removeAllClasses(navbarAttrChanging,'servicesScrollingOnHover')
-        navbarAttrChanging[4].classList.add("servicesScrolling"); //btn-active
+        runAllFunctions('servicesNav',4)
       }
     }
     else if (scrollTop >= (height / 1.2) && scrollTop <= height) {
       changeLogoImg("img/image1.4.png")
       openBtnColorChange("#970909");
       if (window.innerWidth <= 996) {
-        
-        removeScrollClasses(navbarAttrChanging);
-        navbarAttrChanging.forEach(e => {
-          e.classList.remove("contactScrollingOnHover")
-          e.classList.add("allATagsWhite");
-        })
+        runAllFunctionsOnSmallScreen(5);
       }
       else {
-        removeAllClasses(navbarAttrChanging,'contactScrollingOnHover')
-        navbarAttrChanging[5].classList.add("contactScrolling"); //btn-active
+        runAllFunctions('contactNav',5)
       }
     }
 
