@@ -3,22 +3,22 @@ let navbarAttrChanging = document.querySelectorAll(".colorChange");
 let height;
 
 let controller = {
-  init() {
-    this.heightOnScrollAndResize();
-    this.changeNavOnScroll();
-    this.animationWithShowClass();
-    this.videoPlayAndPause();
-    this.testimonialSlider();
+  init: () => {
+    controller.heightOnScrollAndResize();
+    controller.changeNavOnScroll();
+    controller.animationWithShowClass();
+    controller.videoPlayAndPause();
+    controller.testimonialSlider();
   },
-  heightOnScrollAndResize() {
+  heightOnScrollAndResize: () => {
     height = window.innerHeight * 6;
-    window.addEventListener('scroll', this.heightOnScrollAndResize)
-    window.addEventListener('resize', this.heightOnScrollAndResize)
-    window.addEventListener('click', this.heightOnScrollAndResize)
+    window.addEventListener('scroll', controller.heightOnScrollAndResize)
+    window.addEventListener('resize', controller.heightOnScrollAndResize)
+    window.addEventListener('click', controller.heightOnScrollAndResize)
   },
-  changeNavOnScroll() {
+  changeNavOnScroll: () => {
 
-    
+
     let toggleNav = (percantage) => {
       document.getElementById("mySidebar").style.width = percantage;
     }
@@ -36,7 +36,7 @@ let controller = {
         toggleNav("0")
       });
     })
-  
+
     let removeNavClasses = (nav) => {
       nav.forEach(e => e.classList.remove('homeNav',
         'aboutNav',
@@ -50,7 +50,7 @@ let controller = {
         e.classList.remove('active');
       });
     }
-    let addNavClass = (nav,classNav) => {
+    let addNavClass = (nav, classNav) => {
       nav.forEach(e => {
         e.classList.remove('allATagsWhite')
         e.classList.add(classNav)
@@ -63,91 +63,58 @@ let controller = {
       document.getElementById("aboutChanger").src = img;
     }
 
-
-
-
-    let runAllFunctionsOnSmallScreen = (num)=>{
+    let runAllFunctionsOnSmallScreen = (num) => {
       removeNavClasses(navbarAttrChanging);
       navbarAttrChanging.forEach(e => {
         e.classList.add('allATagsWhite');
       })
       removeActiveClass(navbarAttrChanging);
-      navbarAttrChanging[num].classList.add("active"); //btn-active
+      navbarAttrChanging[num].classList.add("active");
     }
-    let runAllFunctions = (navClass,num) => {
+    let runAllFunctions = (navClass, num) => {
       removeNavClasses(navbarAttrChanging)
-      addNavClass(navbarAttrChanging,navClass);
+      addNavClass(navbarAttrChanging, navClass);
       removeActiveClass(navbarAttrChanging);
-      navbarAttrChanging[num].classList.add("active"); //btn-active
+      navbarAttrChanging[num].classList.add("active");
     }
     let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
-    if ((scrollTop >= 0 && scrollTop < (height / 6))) {
+    if ((scrollTop >= 0 && scrollTop < (height / 6))) {  //Home Section
       changeLogoImg("img/image1.png");
       openBtnColorChange("#16406e");
+      (window.innerWidth <= 996) ? runAllFunctionsOnSmallScreen(0) : runAllFunctions('homeNav', 0);
 
-      if (window.innerWidth <= 996) {
-        runAllFunctionsOnSmallScreen(0);
-      }
-      else {
-        runAllFunctions('homeNav',0)
-      }
-    } else if (scrollTop >= (height / 6) && scrollTop < (height / 3)) {
+    } else if (scrollTop >= (height / 6) && scrollTop < (height / 3)) { //About Section
       changeLogoImg("img/image1.1.png");
       openBtnColorChange("#ac3b61");
-      if (window.innerWidth <= 996) {
-        runAllFunctionsOnSmallScreen(1);
-      }
-      else {
-        runAllFunctions('aboutNav',1)
-      }
+      (window.innerWidth <= 996) ? runAllFunctionsOnSmallScreen(1) : runAllFunctions('aboutNav', 1);
     }
-    else if (scrollTop >= (height / 3) && scrollTop < (height / 2)) {
-      changeLogoImg("img/image1.2.png")
-      openBtnColorChange("#f79e02")
-      if (window.innerWidth <= 996) {
-        runAllFunctionsOnSmallScreen(2);
-      }
-      else {
-        runAllFunctions('workNav',2)
-      }
-    }
-    else if (scrollTop >= (height / 2) && scrollTop < (height / 1.5)) {
+    else if (scrollTop >= (height / 3) && scrollTop < (height / 2)) { //Work Section
       changeLogoImg("img/image1.2.png");
       openBtnColorChange("#f79e02");
-      if (window.innerWidth <= 996) {
-        runAllFunctionsOnSmallScreen(3);
-      }
-      else {
-        runAllFunctions('processNav',3)
-      }
+      (window.innerWidth <= 996) ? runAllFunctionsOnSmallScreen(2) : runAllFunctions('workNav', 2);
     }
-    else if (scrollTop >= (height / 1.5) && scrollTop < (height / 1.2)) {
-      changeLogoImg("img/image1.3.png")
+    else if (scrollTop >= (height / 2) && scrollTop < (height / 1.5)) { //Process Section
+      changeLogoImg("img/image1.2.png");
+      openBtnColorChange("#f79e02");
+      (window.innerWidth <= 996) ? runAllFunctionsOnSmallScreen(3) : runAllFunctions('processNav', 3);
+    }
+    else if (scrollTop >= (height / 1.5) && scrollTop < (height / 1.2)) { //Services Section
+      changeLogoImg("img/image1.3.png");
       openBtnColorChange("#14a76c");
-      if (window.innerWidth <= 996) {
-        runAllFunctionsOnSmallScreen(4);
-      }
-      else {
-        runAllFunctions('servicesNav',4)
-      }
+      (window.innerWidth <= 996) ? runAllFunctionsOnSmallScreen(4) : runAllFunctions('servicesNav', 4)
+
     }
-    else if (scrollTop >= (height / 1.2) && scrollTop <= height) {
+    else if (scrollTop >= (height / 1.2) && scrollTop <= height) { //Contact Section
       changeLogoImg("img/image1.4.png")
       openBtnColorChange("#970909");
-      if (window.innerWidth <= 996) {
-        runAllFunctionsOnSmallScreen(5);
-      }
-      else {
-        runAllFunctions('contactNav',5)
-      }
+      (window.innerWidth <= 996) ? runAllFunctionsOnSmallScreen(5) : runAllFunctions('contactNav', 5)
     }
-
-    window.addEventListener("resize", this.changeNavOnScroll);
-    window.addEventListener("scroll", this.changeNavOnScroll);
-    window.addEventListener("load", this.changeNavOnScroll);
+    window.addEventListener("resize", controller.changeNavOnScroll);
+    window.addEventListener("scroll", controller.changeNavOnScroll);
+    window.addEventListener("load", controller.changeNavOnScroll);
   },
-  animationWithShowClass() {
+  animationWithShowClass: () => {
     let aboutItems = document.querySelectorAll('.about ul li');
     let skillsItems = document.querySelectorAll('.skills .opacity-image-skills span')
 
@@ -181,7 +148,7 @@ let controller = {
     window.addEventListener('scroll', run);
 
   },
-  videoPlayAndPause() {
+  videoPlayAndPause: () => {
     let videoPlay = document.getElementsByClassName('videoPlay')[0];
     let videoPause = document.getElementsByClassName('videoPause')[0];
     let btnShowing = (number) => videoPlay.style.opacity = `${number}`;
@@ -219,11 +186,11 @@ let controller = {
       positionOfButton(25)
       marginTopOfVideo('5rem')
     }
-    window.addEventListener("resize", this.videoPlayAndPause);
-    window.addEventListener("load", this.videoPlayAndPause);
-    window.addEventListener("scroll", this.videoPlayAndPause);
+    window.addEventListener("resize", controller.videoPlayAndPause);
+    window.addEventListener("load", controller.videoPlayAndPause);
+    window.addEventListener("scroll", controller.videoPlayAndPause);
   },
-  testimonialSlider() {
+  testimonialSlider: () => {
     let carouselSlide = document.querySelector('.slider');
     let sliderItems = document.querySelectorAll('.testimonial-item');
 
@@ -232,13 +199,18 @@ let controller = {
 
     let counter = 1;
     let size;
-    sizeOfCarousel();
 
-    function transformCarousel() {
+    let transformCarousel = () => {
       carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
     }
+    let sizeOfCarousel = () => {
+      size = carouselSlide.clientWidth;
+      transformCarousel()
+    }
 
+    sizeOfCarousel();
     transformCarousel();
+
     nextBtn.addEventListener('click', () => {
       if (counter >= sliderItems.length - 1) {
         return;
@@ -247,7 +219,6 @@ let controller = {
       counter++;
       transformCarousel();
     })
-
     prevBtn.addEventListener('click', () => {
       if (counter <= 0) {
         return;
@@ -268,17 +239,10 @@ let controller = {
         transformCarousel()
       }
     })
-
-    function sizeOfCarousel() {
-      size = carouselSlide.clientWidth;
-      transformCarousel()
-    }
     window.addEventListener("resize", sizeOfCarousel);
     window.addEventListener("load", sizeOfCarousel);
-
   }
 }
-
 window.onload = () => {
   controller.init();
 }
