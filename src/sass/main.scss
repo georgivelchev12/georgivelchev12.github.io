@@ -856,7 +856,7 @@ ul {
 //Contact Section
 
 #contact-section {
-  height: 39rem;
+  min-height: 80vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -969,10 +969,11 @@ ul {
 }
 
 .footer {
+  height: 20vh;
   background: #222;
   color: #fff;
   .footer-content {
-    padding: 1.7rem 2.5rem;
+    padding: 0 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
