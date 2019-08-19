@@ -17,6 +17,13 @@ var controller = {
     window.addEventListener('click', controller.heightOnScrollAndResize);
   },
   changeNavOnScroll: function changeNavOnScroll() {
+    $("input, textarea").focus(function () {
+      $(document.body).addClass('when-keyboard-showing');
+    });
+    $("input, textarea").blur(function () {
+      $(document.body).removeClass('when-keyboard-showing');
+    });
+
     var toggleNav = function toggleNav(percantage) {
       document.getElementById("mySidebar").style.width = percantage;
     };

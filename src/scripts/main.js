@@ -17,7 +17,8 @@ let controller = {
     window.addEventListener('click', controller.heightOnScrollAndResize)
   },
   changeNavOnScroll: () => {
-
+    $("input, textarea").focus(function(){  $(document.body).addClass('when-keyboard-showing');     });
+    $("input, textarea").blur( function(){  $(document.body).removeClass('when-keyboard-showing');  });
 
     let toggleNav = (percantage) => {
       document.getElementById("mySidebar").style.width = percantage;

@@ -694,3 +694,8 @@
         font-weight: 200;
         font-size: 1.1rem;
         color: #fff; } }
+
+@media (max-width: 550px) {
+  body.when-keyboard-showing .header {
+    height: 0;
+    padding: 0; } }

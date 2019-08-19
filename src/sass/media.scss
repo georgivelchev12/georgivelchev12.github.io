@@ -31,21 +31,25 @@ $black-color: #000;
       }
     }
   }
-  #services-and-testimonials-section{
-    .services{
-      grid-template-columns:  repeat(auto-fit,minmax(33%, 1fr));
-      grid-template-rows:  repeat(auto-fit,minmax(33%, 1fr));
-      div{
+  #services-and-testimonials-section {
+    .services {
+      grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
+      grid-template-rows: repeat(auto-fit, minmax(33%, 1fr));
+      div {
         padding: 16% 10% 4% 10%;
-        &:nth-child(6){display: none;}
-        &:nth-child(8){display: none;}
-        i{
-         font-size: 1.8rem;
+        &:nth-child(6) {
+          display: none;
         }
-        h5{
+        &:nth-child(8) {
+          display: none;
+        }
+        i {
+          font-size: 1.8rem;
+        }
+        h5 {
           font-size: 1.35rem;
         }
-        p{
+        p {
           font-size: 0.9rem;
         }
       }
@@ -68,7 +72,7 @@ $black-color: #000;
       }
       .text-fields {
         margin-bottom: 1rem;
-  
+
         .message-input {
           height: 130px;
         }
@@ -86,7 +90,6 @@ $black-color: #000;
   }
 }
 @media screen and (max-width: 996px) {
-
   /* Sidebar slide */
   .sidebar {
     height: 100%;
@@ -179,7 +182,6 @@ $black-color: #000;
             color: $white-color;
             &:hover {
               color: $grey-color;
-
             }
           }
         }
@@ -239,7 +241,6 @@ $black-color: #000;
       text-align: left;
     }
   }
-
 
   #work-section {
     .work-bar {
@@ -327,7 +328,6 @@ $black-color: #000;
     }
   }
 
-
   @media (max-height: 675px) {
     #about-section .about ul li h1 {
       margin-bottom: 0;
@@ -338,7 +338,6 @@ $black-color: #000;
       font-size: 1rem;
       margin-bottom: 0;
     }
-    
   }
   @keyframes fadeIn {
     0% {
@@ -357,7 +356,7 @@ $black-color: #000;
     }
   }
 }
-@media (max-width:750px){
+@media (max-width: 750px) {
   .footer {
     .footer-content {
       padding: 0 1rem;
@@ -387,7 +386,7 @@ $black-color: #000;
           text-align: center;
           padding: 0.5rem;
           transition: all 0.4s;
-  
+
           &:hover {
             background: #c30707;
           }
@@ -422,7 +421,7 @@ $black-color: #000;
     }
   }
   .showcase .showcase-content .lead {
-    margin-top: 0; 
+    margin-top: 0;
     font-size: 1.25rem;
   }
   #main-header {
@@ -475,48 +474,61 @@ $black-color: #000;
   .progress {
     width: 90%;
   }
-  #main-header #navbar ul li a{
+  #main-header #navbar ul li a {
     font-size: 1.3rem;
   }
   #main-header #navbar ul li a:hover {
     color: $grey-color;
-
   }
-  #services-and-testimonials-section{
+  #services-and-testimonials-section {
     height: 100vh;
-  
-    .services{
-      grid-template-columns: repeat(auto-fit,minmax(50%, 1fr));
-      grid-template-rows: repeat(auto-fit,minmax(50%, 1fr));
-      div{
+
+    .services {
+      grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+      grid-template-rows: repeat(auto-fit, minmax(50%, 1fr));
+      div {
         padding: 10%;
-        &:nth-child(3){display: none;}
-        &:nth-child(5){display: none;}
-        &:nth-child(1){padding-bottom: 10%;}
-        &:nth-child(2){padding-bottom: 10%;h5{margin-top:1rem;}}
-        &:nth-child(7){padding-bottom: 10%;}
-        &:nth-child(4){padding-bottom: 10%;}
-        i{
+        &:nth-child(3) {
+          display: none;
+        }
+        &:nth-child(5) {
+          display: none;
+        }
+        &:nth-child(1) {
+          padding-bottom: 10%;
+        }
+        &:nth-child(2) {
+          padding-bottom: 10%;
+          h5 {
+            margin-top: 1rem;
+          }
+        }
+        &:nth-child(7) {
+          padding-bottom: 10%;
+        }
+        &:nth-child(4) {
+          padding-bottom: 10%;
+        }
+        i {
           color: #555;
         }
-        h5{
+        h5 {
           font-size: 1.2rem;
         }
-        p{
+        p {
           font-size: 0.8rem;
         }
       }
     }
-    .testimonials{
-      .slider{
-        .testimonial-item{
-          h5{
+    .testimonials {
+      .slider {
+        .testimonial-item {
+          h5 {
             font-size: 1.2rem;
             font-weight: 350;
           }
         }
       }
-      
     }
   }
   #contact-section {
@@ -525,16 +537,16 @@ $black-color: #000;
       h2 {
         font-size: 1.9rem;
       }
-      p{
-        font-size:0.9rem;
+      p {
+        font-size: 0.9rem;
       }
       .text-fields {
         grid-template-areas:
-        "name"
-        "email"
-        "subject"
-         "phone"
-        "message";
+          "name"
+          "email"
+          "subject"
+          "phone"
+          "message";
         margin-bottom: 0.7rem;
         grid-gap: 0.5rem;
         .message-input {
@@ -548,11 +560,10 @@ $black-color: #000;
       button {
         width: 100%;
         margin-top: 0.7rem;
-        font-size:1.1rem;
+        font-size: 1.1rem;
       }
     }
   }
-
 }
 @media screen and (max-width: 548px) {
   .showcase .showcase-content .l-heading {
@@ -582,13 +593,12 @@ $black-color: #000;
           padding: 0.7rem 0;
           a {
             font-weight: 300;
-            font-size: 1.3rem; 
+            font-size: 1.3rem;
             color: $white-color;
           }
         }
       }
     }
-   
   }
   .opacity-image-skills h1 {
     font-size: 2rem;
@@ -653,51 +663,66 @@ $black-color: #000;
         }
       }
     }
-    .items{
-      .item{
+    .items {
+      .item {
         &:hover .item-image {
           transform: scale(1);
         }
-  
       }
     }
   }
-  #services-and-testimonials-section{
-    .services{
-      div{
+  #services-and-testimonials-section {
+    .services {
+      div {
         padding: 6%;
-        &:nth-child(1){padding-bottom: 0%;padding-top: 15%; padding-left: 10%;padding-right: 0;}
-        &:nth-child(2){padding-bottom: 0%;padding-top: 15%;padding-left: 0%;padding-right: 10%;h5{margin-top:1rem;}}
-        &:nth-child(7){padding-bottom: 0%; padding-top: 0;}
-        &:nth-child(4){padding-bottom: 0%;padding-top: 0;}
-        i{
+        &:nth-child(1) {
+          padding-bottom: 0%;
+          padding-top: 15%;
+          padding-left: 10%;
+          padding-right: 0;
+        }
+        &:nth-child(2) {
+          padding-bottom: 0%;
+          padding-top: 15%;
+          padding-left: 0%;
+          padding-right: 10%;
+          h5 {
+            margin-top: 1rem;
+          }
+        }
+        &:nth-child(7) {
+          padding-bottom: 0%;
+          padding-top: 0;
+        }
+        &:nth-child(4) {
+          padding-bottom: 0%;
+          padding-top: 0;
+        }
+        i {
           color: #555;
           font-size: 1rem;
         }
-        h5{
+        h5 {
           font-size: 1rem;
         }
-        p{
+        p {
           font-size: 0.7rem;
         }
       }
     }
-    .testimonials{
-      .slider{
-        .testimonial-item{
-          h5{
+    .testimonials {
+      .slider {
+        .testimonial-item {
+          h5 {
             font-size: 1rem;
           }
-          p{
-            font-size:0.7rem;
+          p {
+            font-size: 0.7rem;
           }
         }
       }
-      
     }
   }
-
-
 }
 @media (max-width: 400px) {
   .footer {
@@ -750,13 +775,11 @@ $black-color: #000;
   }
   #contact-section {
     .container {
-
       h2 {
-
         font-size: 1.45rem;
       }
-      p{
-        font-size:0.8rem;
+      p {
+        font-size: 0.8rem;
       }
       .text-fields {
         margin-bottom: 0.6rem;
@@ -801,7 +824,6 @@ $black-color: #000;
   }
 }
 @media (max-height: 575px) {
-
   #about-section .skills .opacity-image-skills h1 {
     font-size: 1.5rem;
     font-weight: 400;
@@ -816,46 +838,63 @@ $black-color: #000;
   }
   #main-header #navbar ul li a:hover {
     color: $grey-color;
-
   }
-  #services-and-testimonials-section{
-    .services{
-      div{
+  #services-and-testimonials-section {
+    .services {
+      div {
         padding: 4%;
-        &:nth-child(1){padding-bottom: 0%; padding-top: 10%; padding-left: 10%; padding-right: 0;}
-        &:nth-child(2){padding-bottom: 0%; h5{margin-top:1rem}}
-        &:nth-child(3){padding-bottom: 0%; padding-top: 10%; padding-right: 10%; padding-left: 0;}
-        &:nth-child(7){padding-bottom: 0%;}
-        &:nth-child(4){padding-bottom: 0%;}
-        i{
+        &:nth-child(1) {
+          padding-bottom: 0%;
+          padding-top: 10%;
+          padding-left: 10%;
+          padding-right: 0;
+        }
+        &:nth-child(2) {
+          padding-bottom: 0%;
+          h5 {
+            margin-top: 1rem;
+          }
+        }
+        &:nth-child(3) {
+          padding-bottom: 0%;
+          padding-top: 10%;
+          padding-right: 10%;
+          padding-left: 0;
+        }
+        &:nth-child(7) {
+          padding-bottom: 0%;
+        }
+        &:nth-child(4) {
+          padding-bottom: 0%;
+        }
+        i {
           color: #555;
           font-size: 1rem;
         }
-        h5{
+        h5 {
           font-size: 1rem;
         }
-        p{
+        p {
           font-size: 0.7rem;
         }
       }
     }
-    .testimonials{
-      .slider{
-        .testimonial-item{
-          h5{
+    .testimonials {
+      .slider {
+        .testimonial-item {
+          h5 {
             font-size: 1rem;
           }
-          p{
-            font-size:0.7rem;
+          p {
+            font-size: 0.7rem;
           }
         }
       }
-      
     }
   }
-  @media(min-width:400px){
+  @media (min-width: 400px) {
     #contact-section {
-      .logos{
+      .logos {
         display: none;
       }
       .container {
@@ -864,8 +903,8 @@ $black-color: #000;
         h2 {
           font-size: 1.9rem;
         }
-        p{
-          font-size:0.9rem;
+        p {
+          font-size: 0.9rem;
         }
         .text-fields {
           margin-bottom: 0.5rem;
@@ -882,7 +921,7 @@ $black-color: #000;
           width: 40%;
           height: 2.5rem;
           margin-top: 0.5rem;
-          font-size:1.1rem;
+          font-size: 1.1rem;
         }
       }
     }
@@ -917,7 +956,6 @@ $black-color: #000;
   }
 }
 @media (max-height: 450px) {
-
   #process-section {
     .process-video {
       video {
@@ -925,7 +963,7 @@ $black-color: #000;
       }
     }
     .process-text {
-      h1{
+      h1 {
         margin-top: 0;
       }
       p {
@@ -951,7 +989,6 @@ $black-color: #000;
   }
   #main-header #navbar ul li a:hover {
     color: $grey-color;
-
   }
   #about-section .about ul li h1 {
     font-size: 1.1rem;
@@ -1004,5 +1041,11 @@ $black-color: #000;
         }
       }
     }
+  }
+}
+@media (max-width: 550px) {
+  body.when-keyboard-showing .header {
+    height: 0;
+    padding: 0;
   }
 }
