@@ -409,6 +409,24 @@ $black-color: #000;
       }
     }
   }
+  @media (max-height:400px){
+    .footer {
+      margin-top: 1rem;
+      .footer-content {
+        div {
+          h3 {
+            margin-top: 0.7rem;
+          }
+        }
+        .social {
+          display: none;
+        }
+      }
+    }
+    .footer .footer-content .social{
+      display: none;
+    }
+  }
 }
 @media (max-width: 700px) {
   #process-section {
@@ -734,7 +752,6 @@ $black-color: #000;
       align-items: center;
       div {
         h3 {
-          margin-top: 0;
           margin-bottom: 0.7rem;
         }
         p {
