@@ -491,7 +491,7 @@ ul {
       #work-section .items .item:hover:after {
         transform: scale(2) translateX(0) translateY(0) rotate(-28deg); }
       #work-section .items .item:hover .item-image {
-        transform: scale(1.2); }
+        transform: scale(1.1); }
       #work-section .items .item .item-image {
         display: block;
         transform: translateZ(0);
