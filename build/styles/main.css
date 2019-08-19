@@ -493,10 +493,15 @@ ul {
       #work-section .items .item:hover .item-image {
         transform: scale(1.2); }
       #work-section .items .item .item-image {
-        height: 100%;
         display: block;
         transform: translateZ(0);
-        transition: transform 750ms ease-in-out; }
+        transition: transform 750ms ease-in-out;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        line-height: 0; }
         #work-section .items .item .item-image.img-1 {
           background: url("/img/workSectionImg1.jpg");
           background-position: center center;
