@@ -1043,9 +1043,3 @@ $black-color: #000;
     }
   }
 }
-@media (max-width: 550px) {
-  body.when-keyboard-showing .header {
-    height: 0;
-    padding: 0;
-  }
-}
