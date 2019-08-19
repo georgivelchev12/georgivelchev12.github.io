@@ -222,6 +222,7 @@ ul {
           -webkit-animation-delay: 1.4s;
           animation-delay: 1.4s; }
         #main-header #navbar ul li a {
+          color: #16406e;
           position: relative;
           letter-spacing: 0.5px;
           font-weight: 600;
@@ -800,7 +801,7 @@ ul {
         background-color: #cc0808; }
 
 .footer {
-  min-height: 20vh;
+  height: 20vh;
   background: #222;
   color: #fff; }
   .footer .footer-content {

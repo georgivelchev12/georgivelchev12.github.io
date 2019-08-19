@@ -415,7 +415,7 @@ $black-color: #000;
       .footer-content {
         div {
           h3 {
-            margin-top: 0.7rem;
+            margin-top: 0;
           }
         }
         .social {
@@ -752,6 +752,7 @@ $black-color: #000;
       align-items: center;
       div {
         h3 {
+          margin-top: 0;
           margin-bottom: 0.7rem;
         }
         p {
