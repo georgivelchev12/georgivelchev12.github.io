@@ -712,7 +712,7 @@ ul {
           margin: auto; }
 
 #contact-section {
-  height: 80vh;
+  height: 39rem;
   width: 100%;
   display: flex;
   align-items: center;
@@ -800,11 +800,10 @@ ul {
         background-color: #cc0808; }
 
 .footer {
-  height: 20vh;
   background: #222;
   color: #fff; }
   .footer .footer-content {
-    padding: 0 2.5rem;
+    padding: 1.7rem 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
