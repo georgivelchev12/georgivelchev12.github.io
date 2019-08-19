@@ -446,6 +446,8 @@
     font-size: 0.7rem;
     margin-top: 0;
     margin-bottom: 0.7rem; }
+  #work-section .items .item:hover .item-image {
+    transform: scale(1); }
   #services-and-testimonials-section .services div {
     padding: 6%; }
     #services-and-testimonials-section .services div:nth-child(1) {

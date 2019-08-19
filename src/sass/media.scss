@@ -653,6 +653,14 @@ $black-color: #000;
         }
       }
     }
+    .items{
+      .item{
+        &:hover .item-image {
+          transform: scale(1);
+        }
+  
+      }
+    }
   }
   #services-and-testimonials-section{
     .services{
