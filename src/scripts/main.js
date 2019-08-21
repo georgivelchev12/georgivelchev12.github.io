@@ -1,4 +1,3 @@
-let navbarAttrChanging = document.querySelectorAll(".colorChange");
 
 let height;
 
@@ -9,6 +8,7 @@ let controller = {
     controller.animationWithShowClass();
     controller.videoPlayAndPause();
     controller.testimonialSlider();
+
   },
   heightOnScrollAndResize: () => {
     height = window.innerHeight * 6;
@@ -17,6 +17,7 @@ let controller = {
     window.addEventListener('click', controller.heightOnScrollAndResize)
   },
   changeNavOnScroll: () => {
+    let navbarAttrChanging = document.querySelectorAll(".colorChange");
 
     let toggleNav = (percantage) => {
       document.getElementById("mySidebar").style.width = percantage;

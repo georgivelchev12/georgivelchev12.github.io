@@ -1,6 +1,5 @@
 "use strict";
 
-var navbarAttrChanging = document.querySelectorAll(".colorChange");
 var height;
 var controller = {
   init: function init() {
@@ -17,6 +16,8 @@ var controller = {
     window.addEventListener('click', controller.heightOnScrollAndResize);
   },
   changeNavOnScroll: function changeNavOnScroll() {
+    var navbarAttrChanging = document.querySelectorAll(".colorChange");
+
     var toggleNav = function toggleNav(percantage) {
       document.getElementById("mySidebar").style.width = percantage;
     };

@@ -286,20 +286,20 @@
 
     <section id="contact-section">
       <div class="logos">
-        <img src="./img/logo1.png" alt="">
-        <img src="./img/logo2.png" alt="">
-        <img src="./img/logo3.png" alt="">
+        <img src="img/logo1.png" alt="">
+        <img src="img/logo2.png" alt="">
+        <img src="img/logo3.png" alt="">
       </div>
 
         <div class="container">
           <h2>Need a Project?</h2>
           <div class="bottom-line"></div>
           <p>Let us know what you're looking for in an agency. We'll take a look and see if this could be the start of something beautiful</p>
-          <form name="contact" method="POST" data-netlify="true">
+          <form id="contact-form" action="contactMe" method="post">
             <div class="text-fields">
-              <input name="name" type="text" class="text-input name-input" placeholder="Name">
-              <input name="subject" type="text" class="text-input subject-input" placeholder="Subject">
+              <input name="name" type="text" class="text-input name-input" placeholder="Full name">
               <input name="email" type="email" class="text-input email-input" placeholder="Email Address">
+              <input name="subject" type="text" class="text-input subject-input" placeholder="Subject">
               <input name="phone" type="text" class="text-input phone-input" placeholder="Phone Number">
               <textarea name="message" class="text-input message-input" placeholder="Enter Message"></textarea>
             </div>
@@ -308,9 +308,9 @@
         </div>
 
         <div class="logos logo-1">
-          <img src="./img/logo4.png" alt="">
-          <img src="./img/logo6.jpg" alt="">
-          <img src="./img/logo5.png" alt="">
+          <img src="img/logo4.png" alt="">
+          <img src="img/logo6.jpg" alt="">
+          <img src="img/logo5.png" alt="">
         </div>
       </section>
             
@@ -336,7 +336,7 @@
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
 
-    <script src="build/scripts/main.js">
+    <script src="../build/scripts/main.js">
     </script>
   </body>
 </html>

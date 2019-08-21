@@ -843,6 +843,37 @@ ul {
       .footer .footer-content .social .fas:hover {
         background: #c30707; }
 
+#success-body {
+  background: #000214 !important; }
+
+#box {
+  overflow: hidden;
+  position: absolute;
+  background: #050025;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 15px #555; }
+  #box .fa-check {
+    color: #14a76c;
+    font-size: 2.5rem; }
+  #box h1 {
+    color: #eee;
+    margin-bottom: 2.5rem; }
+  #box .btn-backHome {
+    font-size: 1.5rem;
+    color: #fff;
+    letter-spacing: 1px;
+    text-decoration: none;
+    background: #3251dd;
+    padding: 0.6rem 3rem;
+    border-radius: 10px;
+    margin-bottom: 3rem; }
+    #box .btn-backHome i {
+      font-size: 1.5rem; }
+
 /* Animation */
 @keyframes fadeIn {
   0% {
