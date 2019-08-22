@@ -488,7 +488,19 @@
   #services-and-testimonials-section .testimonials .slider .testimonial-item h5 {
     font-size: 1rem; }
   #services-and-testimonials-section .testimonials .slider .testimonial-item p {
-    font-size: 0.7rem; } }
+    font-size: 0.7rem; }
+  #box {
+    padding: 60px;
+    width: 90%; }
+    #box .fa-check {
+      font-size: 2.1rem; }
+    #box h1 {
+      font-size: 1.8rem; }
+    #box .btn-backHome {
+      font-size: 1.5rem;
+      padding: 0.3rem 1.6rem; }
+      #box .btn-backHome i {
+        font-size: 1.3rem; } }
 
 @media (max-width: 400px) {
   .footer .footer-content {

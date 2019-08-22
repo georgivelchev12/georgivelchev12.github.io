@@ -409,7 +409,7 @@ $black-color: #000;
       }
     }
   }
-  @media (max-height:400px){
+  @media (max-height: 400px) {
     .footer {
       margin-top: 1rem;
       .footer-content {
@@ -423,7 +423,7 @@ $black-color: #000;
         }
       }
     }
-    .footer .footer-content .social{
+    .footer .footer-content .social {
       display: none;
     }
   }
@@ -739,6 +739,24 @@ $black-color: #000;
           }
         }
       }
+    }
+  }
+  #box {
+    padding: 60px;
+    width: 90%;
+    .fa-check {
+      font-size: 2.1rem;
+    }
+    h1 {
+      font-size: 1.8rem;
+    }
+    .btn-backHome {
+      i {
+        font-size: 1.3rem;
+      }
+
+      font-size: 1.5rem;
+      padding: 0.3rem 1.6rem;
     }
   }
 }
