@@ -50,4 +50,4 @@ app.get('/', function (req, res) {
 }).listen(port)
 
 
-console.log("server listening at port " + port);
+console.log("Server listening at port " + port);
