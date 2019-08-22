@@ -2,7 +2,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 
 const mongoose = require('mongoose');
-
+var port = process.env.PORT || 5500;
 mongoose.connect('mongodb+srv://gVelchev:gVelchev@cluster0-k3dfj.azure.mongodb.net/test');
 var db = mongoose.connection;
 db.on('error', console.log.bind(console, "connection error"));
@@ -47,7 +47,7 @@ app.get('/', function (req, res) {
         'Access-control-Allow-Origin': '*'
     });
     return res.redirect('index.html');
-}).listen(5500)
+}).listen(port)
 
 
-console.log("server listening at port 5500");
+console.log("server listening at port " + port);
