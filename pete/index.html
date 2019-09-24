@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <!-- Mirrored from www.le-ve.planastudio.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Sep 2019 21:24:44 GMT -->
+  <head>
+    <title>Maquette</title>
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      media="all"
+      href="http://www.le-ve.planastudio.com/all.css"
+    />
+    <script
+      src="http://www.le-ve.planastudio.com/dist/js/jquery-3.3.1.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="http://www.le-ve.planastudio.com/dist/js/jquery-migrate-1.4.1.min.js"
+      type="text/javascript"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="http://www.le-ve.planastudio.com/dist/fonts/fontawesome-free-5.0.1/web-fonts-with-css/css/fontawesome-all.min.css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="http://www.le-ve.planastudio.com/dist/css/threesixty.css"
+    />
+    <link
+      rel="stylesheet"
+      href="http://www.le-ve.planastudio.com/dist/css/jquery.fancybox.min.css"
+    />
+    <link rel="stylesheet" href="/photoSwiper/photoswipe.css" />
+    <link rel="stylesheet" href="/photoSwiper/default-skin/default-skin.css" />
+    <script src="/photoSwiper/photoswipe.min.js"></script>
+    <script src="/photoSwiper/photoswipe-ui-default.min.js"></script>
+
+    <link rel="stylesheet" href="/photoSwiper/newStyling.css" />
+    <link rel="stylesheet" href="/photoSwiper/swipe.js">
+  </head>
+  <body>
+    <div class="hide">
+      <img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-chargement.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-close-hover.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-close.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-dezoom-hover.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-dezoom.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-galerie-hover.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-galerie.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-jour-hover.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-jour.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-left-hover.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-left.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-main-hover.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-main.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-nuit-hover.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-nuit.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-pdf-hover.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-pdf.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-right-hover.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-right.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-rotation-hover.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-rotation.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-video-hover.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-video.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-vr-hover.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-vr.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-zoom-hover.png"
+      /><img
+        src="http://www.le-ve.planastudio.com/dist/images/icone-zoom.png"
+      />
+    </div>
+    <div class="loader">
+      <div class="load-img"></div>
+      <div class="load-txt">Chargement ...</div>
+    </div>
+    <div class="container fluid">
+      <div class="flex f-s-2">
+        <div class="sidebar">
+          <a
+            href="http://www.le-ve.planastudio.com/index-2.html"
+            title="Accueil"
+          >
+            <img
+              src="http://www.le-ve.planastudio.com/logos/logo.jpg"
+              class="logo-cl"
+          /></a>
+
+          <div class="vertical-center">
+            <div class="menu">
+              <div class="scroll-menu">
+                <div class="inline-btn">
+                  <span id="openGalery1" class="btn-round galerie" href="#"
+                    ><span>Galerie photo</span></span
+                  >
+                </div>
+                <div
+                  class="inline-btn"
+                  style="border-bottom:0;padding-bottom:0;"
+                >
+                  <span class="btn-round move custom_move"
+                    ><span>Déplacer</span></span
+                  >
+                  <span class="btn-round zoom custom_zoomp"
+                    ><span>Zoom +</span></span
+                  >
+                  <span class="btn-round dezoom custom_zoomm"
+                    ><span>Zoom -</span></span
+                  >
+                  <span class="btn-round rotation custom_play"
+                    ><span>Rotation</span></span
+                  >
+                  <span class="btn-round rotation-stop custom_stop hide"
+                    ><span>Rotation</span>
+                  </span>
+                </div>
+                <div class="flex f-s-2 f-grow f-sa f-c inline-vertical-btn">
+                  <div>
+                    <a
+                      href="http://www.le-ve.planastudio.com/index4308.html?e=1_Pi%c3%a9ton"
+                      class="btn active"
+                      >Piéton</a
+                    >
+                    <a
+                      href="http://www.le-ve.planastudio.com/index9a59.html?e=2_A%c3%a9rien"
+                      class="btn"
+                      >Aérien</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a
+              data-fancybox="modal"
+              data-src="#mention"
+              href="javascript:;"
+              class="btn-ml mt-l"
+              ><img
+                src="http://www.le-ve.planastudio.com/logos/ve.png"
+                alt="le-ve"
+            /></a>
+          </div>
+          <div style="display: none;" id="mention">
+            <h2>Mentions légales</h2>
+            <p>Images non contractuelles</p>
+          </div>
+        </div>
+        <div class="container-360">
+          <div class="threesixty maquette">
+            <div class="spinner">
+              <span>Chargement en cours ...</span>
+            </div>
+            <ol class="threesixty_images"></ol>
+          </div>
+          <div class="cover"></div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <!-- Background of PhotoSwipe. 
+             It's a separate element as animating opacity is faster than rgba(). -->
+        <div class="pswp__bg"></div>
+    
+        <!-- Slides wrapper with overflow:hidden. -->
+        <div class="pswp__scroll-wrap">
+    
+            <!-- Container that holds slides. 
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+    
+            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+            <div class="pswp__ui pswp__ui--hidden">
+    
+                <div class="pswp__top-bar">
+    
+                    <!--  Controls are self-explanatory. Order can be changed. -->
+    
+                    <div class="pswp__counter"></div>
+    
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+    
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+    
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+    
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+    
+                    <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                    <!-- element will get class pswp__preloader--active when preloader is running -->
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                          <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div> 
+                </div>
+    
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+    
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+    
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+    
+            </div>
+    
+        </div>
+    
+    </div>
+    <div class="inline-btn res-nav nav2">
+      <span id="openGalery2" class="btn-round galerie" href="#"
+        ><span>Galerie photo</span></span
+      >
+    </div>
+    <div class="inline-btn res-nav nav1">
+      <span class="btn-round move custom_move"><span>Déplacer</span></span
+      ><span class="btn-round zoom custom_zoomp"><span>Zoom +</span></span
+      ><span class="btn-round dezoom custom_zoomm"><span>Zoom -</span></span
+      ><span class="btn-round rotation custom_play"><span>Rotation</span></span
+      ><span class="btn-round rotation-stop custom_stop hide"
+        ><span>Rotation</span></span
+      >
+    </div>
+    <div class="buttons-fixed-middle">
+      <a
+        href="http://www.le-ve.planastudio.com/index4308.html?e=1_Pi%c3%a9ton"
+        class="btn active"
+        >Piéton</a
+      ><a
+        href="http://www.le-ve.planastudio.com/index9a59.html?e=2_A%c3%a9rien"
+        class="btn"
+        >Aérien</a
+      >
+    </div>
+    <div class="hide">
+      <img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/1.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/2.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/3.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/4.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/5.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/6.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/7.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/8.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/9.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/10.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/11.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/12.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/13.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/14.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/15.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/16.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/17.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/18.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/19.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/20.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/21.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/22.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/23.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/24.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/25.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/26.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/27.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/28.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/29.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/30.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/31.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/32.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/33.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/34.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/35.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/36.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/37.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/38.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/39.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/40.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/41.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/42.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/43.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/44.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/45.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/46.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/47.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/48.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/49.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/50.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/51.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/52.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/53.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/54.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/55.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/56.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/57.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/58.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/59.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/60.jpg"
+        id="image_size"
+      /><img class="pinch-zoom"
+        src="http://www.le-ve.planastudio.com/uploads/1_Piéton/360/61.jpg"
+        id="image_size"
+      />
+    </div>
+
+    <script src="http://www.le-ve.planastudio.com/dist/js/threesixty.min.js"></script>
+    <script src="http://www.le-ve.planastudio.com/scripts.inc.html"></script>
+    <script>
+      window.onload = function() {
+        var toto = $(".sidebar").height() - 340;
+        $(".inline-vertical-btn > div").css("max-height", toto);
+        $(window).resize(function() {
+          var toto = $(".sidebar").height() - 340;
+          $(".inline-vertical-btn > div").css("max-height", toto);
+        });
+
+        var pic = $("#image_size")[0];
+        var pic_real_width = pic.naturalWidth;
+        var pic_real_height = pic.naturalHeight;
+
+        var w = $(".container-360").width();
+        var h = (w * pic_real_height) / pic_real_width;
+        if ($(".container-360").height() < h) {
+          var h = $(".container-360").height();
+          var w = (h * pic_real_width) / pic_real_height;
+        }
+
+        var maquette;
+        maquette = $(".maquette").ThreeSixty({
+          totalFrames: 61,
+          endFrame: 61,
+          currentFrame: 1,
+          imgList: ".threesixty_images",
+          progress: ".spinner",
+          imagePath: "uploads/1_Piéton/360/",
+          filePrefix: "",
+          ext: ".jpg",
+          height: h,
+          width: w,
+          navigation: false,
+          responsive: false
+        });
+        $(".custom_play").bind("click", function(e) {
+          maquette.play();
+        });
+        $(".custom_stop").bind("click", function(e) {
+          maquette.stop();
+        });
+
+        // Taille réelle image 360
+        var pic = $("#image_size")[0];
+        var pic_real_width = pic.naturalWidth;
+        var pic_real_height = pic.naturalHeight;
+
+        // Taille responsive image 360
+        var w = $(".container-360").width();
+        var h = (w * pic_real_height) / pic_real_width;
+        if ($(".container-360").height() < h) {
+          var h = $(".container-360").height();
+          var w = (h * pic_real_width) / pic_real_height;
+        }
+        var hbase = h;
+        var wbase = w;
+        $(".imgr").height(h);
+        $(".imgr").width(w);
+
+        $(window).resize(function() {
+          var w = $(".container-360").width();
+          var h = (w * pic_real_height) / pic_real_width;
+          if ($(".container-360").height() < h) {
+            var h = $(window).height();
+            var w = (h * pic_real_width) / pic_real_height;
+          }
+
+          $(".maquette,.maquette img,.imgr").height(h);
+          $(".maquette,.maquette img,.imgr").width(w);
+        });
+
+        // Zoom 360 avec boutons
+        $(".custom_zoomp").on("click", function(e) {
+          var h = $(".maquette img").height() * 1.2;
+          var w = $(".maquette img").width() * 1.2;
+          if (h > hbase * 3) {
+            var h = hbase * 3;
+            var w = wbase * 3;
+          }
+          $(".maquette,.maquette img").height(h);
+          $(".maquette,.maquette img").width(w);
+        });
+
+        $(".custom_zoomm").on("click", function(e) {
+          var h = $(".maquette img").height() / 1.2;
+          var w = $(".maquette img").width() / 1.2;
+          if (h < hbase) {
+            var h = hbase;
+            var w = wbase;
+          }
+          $(".maquette,.maquette img").height(h);
+          $(".maquette,.maquette img").width(w);
+        });
+
+        // Center zoom 360
+        $(".custom_zoomp,.custom_zoomm").on("click", function() {
+          sTop =
+            ($(".maquette img").height() - $(".container-360").height()) / 2 +
+            60;
+          sLeft =
+            ($(".maquette img").width() - $(".container-360").width()) / 2;
+          $("html,body").animate({ scrollTop: sTop, scrollLeft: sLeft }, 0);
+        });
+
+        function oneWheel(event, delta) {
+          setTimeout(function() {
+            $(".container-360").one("mousewheel", oneWheel);
+          }, 1000); // one scroll per second ONLY.
+        }
+        // Zomm avec molette + centrer
+        $(".threesixty").on("wheel", function(event) {
+          event.preventDefault();
+          if (event.originalEvent.deltaY < 0) {
+            var h = $(".maquette img").height() * 1.2;
+            var w = $(".maquette img").width() * 1.2;
+            if (h > hbase * 3) {
+              var h = hbase * 3;
+              var w = wbase * 3;
+            }
+            $(".maquette,.maquette img").height(h);
+            $(".maquette,.maquette img").width(w);
+
+            sTop =
+              ($(".maquette img").height() - $(".container-360").height()) / 2 +
+              60;
+            sLeft =
+              ($(".maquette img").width() - $(".container-360").width()) / 2;
+            $("html,body").animate({ scrollTop: sTop, scrollLeft: sLeft }, 0);
+          } else {
+            var h = $(".maquette img").height() / 1.2;
+            var w = $(".maquette img").width() / 1.2;
+            if (h < hbase) {
+              var h = hbase;
+              var w = wbase;
+            }
+            $(".maquette,.maquette img").height(h);
+            $(".maquette,.maquette img").width(w);
+
+            sTop =
+              ($(".maquette img").height() - $(".container-360").height()) / 2 +
+              60;
+            sLeft =
+              ($(".maquette img").width() - $(".container-360").width()) / 2;
+            $("html,body").animate({ scrollTop: sTop, scrollLeft: sLeft }, 0);
+          }
+        });
+      };
+    </script>
+    <script src="http://www.le-ve.planastudio.com/dist/js/jquery.fancybox.min.js"></script>
+    <script src="/photoSwiper/betterSwiper.js"></script>
+    <script src="http://www.le-ve.planastudio.com/dist/js/script.min.js"></script>
+  </body>
+
+  <!-- Mirrored from www.le-ve.planastudio.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Sep 2019 21:24:44 GMT -->
+</html>
