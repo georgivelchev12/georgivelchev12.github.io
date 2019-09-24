@@ -46,10 +46,8 @@ var openPhotoSwipe = function () {
     // updates the content of slides
     gallery.updateSize(true);
 };
-Array.from(document.querySelectorAll('.pinch-zoom')).forEach(function(el) {
-    new PinchZoom.default(el, {});
-  });
 
 
 document.getElementById("openGalery1").onclick = openPhotoSwipe;
 document.getElementById("openGalery2").onclick = openPhotoSwipe;
+

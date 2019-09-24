@@ -42,7 +42,7 @@
     <script src="/photoSwiper/photoswipe-ui-default.min.js"></script>
 
     <link rel="stylesheet" href="/photoSwiper/newStyling.css" />
-    <link rel="stylesheet" href="/photoSwiper/swipe.js">
+<link href="https://unpkg.com/pinch-zoom-js@2.3.4/dist/pinch-zoom.min.js">
   </head>
   <body>
     <div class="hide">
@@ -465,6 +465,19 @@
       />
     </div>
 
+    <div class="pinch-zoom-parent" style="position: absolute;top:0;left:0;max-width: 100vw;height: 80vh;width: 90vw">
+        <div class="pinch-zoom">
+            <div class="description">
+                <h1>Pinchzoom.js</h1>
+                <p>
+                    Multi-touch zoom in Javascript
+                </p>
+            </div>
+            <img src="./uploads/1_Piéton/360/11.jpg" style="position: relative;display: block;"/>
+        </div>
+    </div>
+
+
     <script src="http://www.le-ve.planastudio.com/dist/js/threesixty.min.js"></script>
     <script src="http://www.le-ve.planastudio.com/scripts.inc.html"></script>
     <script>
@@ -618,6 +631,12 @@
     <script src="http://www.le-ve.planastudio.com/dist/js/jquery.fancybox.min.js"></script>
     <script src="/photoSwiper/betterSwiper.js"></script>
     <script src="http://www.le-ve.planastudio.com/dist/js/script.min.js"></script>
+  
+  <script type="text/javascript">
+let el = document.querySelector('');
+let pz = new PinchZoom.default(el, {});
+  </script>
+  
   </body>
 
   <!-- Mirrored from www.le-ve.planastudio.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Sep 2019 21:24:44 GMT -->
