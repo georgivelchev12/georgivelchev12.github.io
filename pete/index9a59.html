@@ -65,37 +65,57 @@
     <div class="container fluid">
       <div class="flex f-s-2">
         <div class="sidebar">
-          <a href="/index.html?=1_Pi%c3%a9ton" title="Accueil"
-            ><img src="logos/logo.jpg" class="logo-cl"
+          <a
+            href="/index.html?=1_Pi%c3%a9ton"
+            title="Accueil" class="removeAndAddEl"
+          >
+            <img
+              src="/logos/logo.jpg"
+              class="logo-cl"
           /></a>
+
           <div class="vertical-center">
             <div class="menu">
               <div class="scroll-menu">
-                <div class="inline-btn">
+                <div class="inline-btn removeOnFullScr d-flexOnFullScreen">
                   <span id="openGalery1" class="btn-round galerie" href="#"
                     ><span>Galerie photo</span></span
                   >
+                  <span class="btn-round full-screen-btn"
+                  ><span>Full Screen</span></span
+                >
                 </div>
                 <div
-                  class="inline-btn"
+                  class="inline-btn d-flexOnFullScreen"
                   style="border-bottom:0;padding-bottom:0;"
                 >
                   <span class="btn-round move custom_move"
                     ><span>Déplacer</span></span
-                  ><span class="btn-round zoom custom_zoomp"
+                  >
+                  <span class="btn-round zoom custom_zoomp"
                     ><span>Zoom +</span></span
-                  ><span class="btn-round dezoom custom_zoomm"
+                  >
+                  <span class="btn-round dezoom custom_zoomm"
                     ><span>Zoom -</span></span
-                  ><span class="btn-round rotation custom_play"
-                    ><span>Rotation</span></span
-                  ><span class="btn-round rotation-stop custom_stop hide"
+                  >
+                  <span class="btn-round rotation custom_play"
                     ><span>Rotation</span></span
                   >
+                  <span class="btn-round rotation-stop custom_stop hide"
+                    ><span>Rotation</span>
+                  </span>
+                
                 </div>
                 <div class="flex f-s-2 f-grow f-sa f-c inline-vertical-btn">
-                  <div>
-                    <a href="index.html?e=1_Piéton" class="btn">Piéton</a
-                    ><a href="index9a59.html?e=2_Aérien" class="btn active"
+                  <div class="removeAndAddEl">
+                    <a
+                      href="/index.html?=1_Pi%c3%a9ton "
+                      class="btn"
+                      >Piéton</a
+                    >
+                    <a
+                      href="/index9a59.html?e=2_A%c3%a9rien"
+                      class="btn active"
                       >Aérien</a
                     >
                   </div>
@@ -106,8 +126,10 @@
               data-fancybox="modal"
               data-src="#mention"
               href="javascript:;"
-              class="btn-ml mt-l"
-              ><img src="logos/ve.png" alt="le-ve"
+              class="btn-ml mt-l removeAndAddEl"
+              ><img
+                src="/logos/ve.png"
+                alt="le-ve"
             /></a>
           </div>
           <div style="display: none;" id="mention">
@@ -116,7 +138,7 @@
           </div>
         </div>
         <div class="container-360">
-          <div class="threesixty maquette">
+          <div class="threesixty maquette" style="overflow: hidden">
             <div class="spinner">
               <span>Chargement en cours ...</span>
             </div>

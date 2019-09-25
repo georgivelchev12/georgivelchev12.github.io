@@ -91,9 +91,6 @@
   }
 
 }
-.cover.on {
-  display: none;
-}
 
 @media only screen and (min-width: 1001px) {
     .btn-round {
