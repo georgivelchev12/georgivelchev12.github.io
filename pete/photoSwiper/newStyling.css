@@ -1,47 +1,3 @@
-/* .sidebar{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.sidebar >a {
-    flex-basis: 20%;
-
-}
-.sidebar .vertical-center{
-    flex-basis: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-.sidebar .vertical-center a{
-    position: relative;
-    left: 0;
-    margin: 0;
-    bottom: 0;
-    
-}
-.sidebar .vertical-center a:hover{
-    transform: translateY(-10px);
-}
-.sidebar .menu{
-    padding-top: 0;
-}
-
-
-@media (max-width:1001px){
-    .sidebar{
-        display: none;
-    
-    }
-    
-} */
-
 .sidebar .vertical-center {
   height: 70vh !important;
 }
@@ -86,12 +42,19 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  .full-screen-btn{
-    display: none;
-  }
-
+    .inline-btn.res-nav.nav2 .btn-round.full-screen-btn{
+    background-image: url(/dist/images/Artboard1.png)
 }
-
+.inline-btn.res-nav.nav2 .btn-round.full-screen-btn:hover{
+    background-image: url(/dist/images/Artboard2.png)
+}
+  .res-nav.nav-4{
+    bottom:5%;
+  }
+  .container-360{
+    padding-left: 0 !important;
+  }
+}
 @media only screen and (min-width: 1001px) {
     .btn-round {
         margin: 4px !important;
@@ -102,9 +65,8 @@
     .sidebar .inline-btn .btn-round.full-screen-btn:hover{
         background-image: url(/dist/images/Artboard2.png)
     }
-    .container-360{
-      padding-left: 0;
-    }
+
+
 }
 
 
@@ -132,3 +94,5 @@ div.pinch-zoom div.description h1 {
 div.pinch-zoom div.description p {
   margin-bottom: 1em;
 }
+
+
