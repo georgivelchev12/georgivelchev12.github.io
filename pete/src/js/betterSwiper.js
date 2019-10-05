@@ -24,13 +24,23 @@ let controller = {
             h = $(".container-360").height();
             w = (h * pic_real_width) / pic_real_height;
         }
-        let maquette = $(".maquette").ThreeSixty({
+        let maquette;
+        let imgDir;
+        document.querySelectorAll(".btn.active").forEach(e =>{
+            if(e.textContent == "PIÉTON"){
+                imgDir = "WALK"
+            }
+            else if (e.textContent == "AÉRIEN"){
+                imgDir = "AERIAL"
+            }
+        })
+        maquette = $(".maquette").ThreeSixty({
             totalFrames: 61,
             endFrame: 61,
             currentFrame: 1,
             imgList: ".threesixty_images",
             progress: ".loader",
-            imagePath: "uploads/1_Piéton/360/",
+            imagePath: `uploadsConverted/${imgDir}/`,
             filePrefix: "",
             ext: ".jpg",
             height: h,
@@ -148,17 +158,17 @@ let controller = {
             // build items array
             let items = [
                 {
-                    src: "/uploads/galerie/images/r2.jpg",
+                    src: "/uploadsConverted/galerie/images/r2.jpg",
                     w: 964,
                     h: 824
                 },
                 {
-                    src: "/uploads/galerie/images/r1.jpg",
+                    src: "/uploadsConverted/galerie/images/r1.jpg",
                     w: 964,
                     h: 824
                 },
                 {
-                    src: "/uploads/galerie/images/interior.jpg",
+                    src: "/uploadsConverted/galerie/images/interior.jpg",
                     w: 964,
                     h: 824
                 }
@@ -186,7 +196,6 @@ let controller = {
         };
         let btnToOpen = (id) => document.getElementById(id).addEventListener("click", openPhotoSwipe);
         btnToOpen("openGalery1");
-        btnToOpen("openGalery2");
     },
     fullScreenFunct: () => {
         [...document.getElementsByClassName("full-screen-btn")].forEach(item => {
@@ -197,9 +206,8 @@ let controller = {
                 if ((document.fullScreenElement && document.fullScreenElement !== null) ||
                     (!document.mozFullScreen && !document.webkitIsFullScreen)) {
                     document.getElementsByClassName("container-360")[0].style.paddingLeft = "0px";
-                    document.getElementsByClassName('removeOnFullScr')[0].style.borderBottom = "none";
-                    document.getElementsByClassName('sidebar')[0].setAttribute("style", "z-index:auto;position:absolute;border-right:none;");
-                    document.getElementsByClassName('scroll-menu')[0].setAttribute("style", "position:fixed;left:2%;display:block;z-index:10;");
+                    document.getElementsByClassName('sidebar')[0].setAttribute("style", "z-index:auto;position:absolute;border-right:none;justify-content:center;");
+                    document.getElementsByClassName('scroll-menu')[0].setAttribute("style", "position:fixed;left:2%;display:block;z-index:10;padding:0;");
                     [...document.getElementsByClassName('removeAndAddEl')].forEach(elem => elem.style.display = "none");
                     [...document.getElementsByClassName('d-flexOnFullScreen')].forEach(item => {
                         item.style.display = "flex";
@@ -218,9 +226,8 @@ let controller = {
                         document.getElementsByClassName("container-360")[0].style.paddingLeft = "0";
                     }
                     document.getElementsByClassName("container-360")[0].style.paddingLeft = "300px";
-                    document.getElementsByClassName('removeOnFullScr')[0].style.borderBottom = "1px solid #ccc"
-                    document.getElementsByClassName('sidebar')[0].setAttribute("style", "z-index:9;position:fixed;border-right:1px solid #ccc;");
-                    document.getElementsByClassName('scroll-menu')[0].setAttribute("style", "position:relative;left:auto;display:block;z-index:auto");
+                    document.getElementsByClassName('sidebar')[0].setAttribute("style", "z-index:9;position:fixed;border-right:1px solid #ccc;justify-content:space-between");
+                    document.getElementsByClassName('scroll-menu')[0].setAttribute("style", "position:relative;left:auto;display:block;z-index:auto;");
                     [...document.getElementsByClassName('removeAndAddEl')].forEach(elem => elem.style.display = "block");
                     [...document.getElementsByClassName('d-flexOnFullScreen')].forEach(elem => elem.style.display = "block");
 
@@ -253,6 +260,7 @@ let controller = {
             el = elm;
 
         hammertime.on("doubletap pinch pinchend", (ev) => {
+
             if (ev.type == "doubletap") {
                 transform = "translate3d(0, 0, 0) " + "scale3d(2, 2, 1) ";
                 scale = 2;
@@ -292,6 +300,7 @@ let controller = {
                 }
             }
             //pinch
+  
             if (ev.type == "pinch") {
                 scale = Math.max(0.999, Math.min(last_scale * ev.scale, 4));
             }
