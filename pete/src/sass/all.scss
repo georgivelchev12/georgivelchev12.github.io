@@ -40,10 +40,6 @@ p {
   line-height: 25px;
 }
 
-ul {
-  margin: 0;
-  padding: 0 0 0 20px;
-}
 img {
   max-width: 100%;
   height: auto;
@@ -69,6 +65,7 @@ img {
   transition-duration: 1s;
   padding: 8px 16px;
   background: #000;
+  cursor: pointer;
   &:hover {
     background: #ccc;
     border-color: #ccc;
@@ -83,14 +80,14 @@ img {
 }
 
 .loader {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #fff;
-  z-index: 9;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #fff;
   opacity: 0.9;
+  display: block !important;
   .load-img {
     background: url("/dist/images/icone-chargement.png") no-repeat center
       center/cover;
@@ -118,6 +115,7 @@ img {
     }
   }
 }
+
 .container-360 {
   height: 100vh;
   background-color: #fff;
@@ -125,6 +123,7 @@ img {
   display: grid;
   padding-left: 300px;
   align-items: center;
+
   @include breakpoint(max, width, 1001px) {
     padding-left: 0 !important;
   }
@@ -138,7 +137,6 @@ img {
     }
   }
 }
-
 .cover {
   top: 0;
   left: 0;
@@ -161,7 +159,7 @@ img {
   padding: 20px 20px 0 20px;
   position: fixed;
   height: 100%;
-  min-height: 400px;
+  min-height: 200px;
   z-index: 9;
   border-right: 1px solid #ccc;
   display: flex;
@@ -174,6 +172,7 @@ img {
     position: absolute !important;
     border-right: none !important;
     justify-content: center !important;
+    width: 0;
   }
   .logo-cl {
     display: block;
@@ -222,8 +221,8 @@ img {
         background-position: center;
         margin: 5px;
         position: relative;
+        transition: background 0.5s;
         cursor: pointer;
-        transition: background 0.7s;
         & > span {
           display: none;
           position: absolute;
@@ -251,8 +250,6 @@ img {
       padding: 20px 0 0 0;
       & > div {
         padding: 0 5px;
-        overflow-y: auto;
-        overflow-x: hidden;
         margin: 0 auto;
       }
       @include breakpoint(max, width, 1001px) {
@@ -324,6 +321,47 @@ img {
   background-image: url("/dist/images/Artboard2.png");
 }
 
+.side-navigation{
+  height: 100%;
+  width: 300px;
+  transform: translateX(-100%);
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  opacity: 0.95;
+  overflow: hidden;
+  transition: all 0.4s;
+  .closebtn {
+    display: block;
+    position: absolute;
+    top: 1.2%;
+    right: 5.5%;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #fff;
+  }
+  ul{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    list-style: none;
+    transition: all 0.3s;
+    li{
+      margin: 1rem 0;
+    }
+  }
+}
+.sidebar-visible{
+  transform: translateX(0);
+}
+
+
 @keyframes rotate {
   to {
     transform: rotate(360deg);
@@ -370,147 +408,3 @@ img {
     opacity: 1;
   }
 }
-
-// @media only screen and (max-width: 1001px) {
-//   body .container-360 {
-//     padding-left: 0;
-//   }
-
-//   .res-nav .btn-round {
-//     height: 40px;
-//     width: 40px;
-//     display: inline-block;
-//     background-repeat: no-repeat;
-//     background-repeat: no-repeat;
-//     background-size: 40px;
-//     background-position: center;
-//     margin: 5px;
-//     position: relative;
-//     cursor: pointer;
-//   }
-//   .res-nav .btn-round > span {
-//     display: none;
-//     position: absolute;
-//     width: max-content;
-//     min-width: 100px;
-//     padding: 5px 10px;
-//     top: 45px;
-//     left: -30px;
-//     background-color: #fff;
-//     color: #1b222a;
-//     border: 1px solid #ddd;
-//     z-index: 999999;
-//     -webkit-animation: slideup 1s;
-//     -moz-animation: slideup 1s;
-//     -ms-animation: slideup 1s;
-//     -o-animation: slideup 1s;
-//     animation: slideup 1s;
-//   }
-//   .res-nav .btn-round:hover > span {
-//     display: block;
-//   }
-//   .res-nav .btn-round.move {
-//     background-image: url("/dist/images/icone-main.png");
-//   }
-//   .res-nav .btn-round.move:hover,
-//   .res-nav .btn-round.move.active {
-//     background-image: url("/dist/images/icone-main-hover.png");
-//   }
-//   .res-nav .btn-round.zoom {
-//     background-image: url("/dist/images/icone-zoom.png");
-//   }
-//   .res-nav .btn-round.zoom:hover {
-//     background-image: url("/dist/images/icone-zoom-hover.png");
-//   }
-//   .res-nav .btn-round.dezoom {
-//     background-image: url("/dist/images/icone-dezoom.png");
-//   }
-//   .res-nav .btn-round.dezoom:hover {
-//     background-image: url("/dist/images/icone-dezoom-hover.png");
-//   }
-//   .res-nav .btn-round.rotation {
-//     background-image: url("/dist/images/icone-rotation.png");
-//   }
-//   .res-nav .btn-round.rotation:hover {
-//     background-image: url("/dist/images/icone-rotation-hover.png");
-//   }
-//   .res-nav .btn-round.rotation-stop {
-//     background-image: url("/dist/images/icone-rotation-hover.png");
-//   }
-//   .res-nav .btn-round.rotation-stop:hover {
-//     background-image: url("/dist/images/icone-rotation-hover.png");
-//   }
-//   .res-nav .btn-round.galerie {
-//     background-image: url("/dist/images/icone-galerie.png");
-//   }
-//   .res-nav .btn-round.galerie:hover {
-//     background-image: url("/dist/images/icone-galerie-hover.png");
-//   }
-//   .res-nav.nav1 {
-//     display: inline-block;
-//     position: fixed;
-//     top: calc(50% - 105px);
-//     left: 0;
-//     z-index: 999;
-//     width: 100%;
-//     text-align: center;
-//     width: 60px;
-//   }
-//   .res-nav.nav1 .btn-round > span {
-//     top: 5px;
-//     left: 50px;
-//   }
-//   .res-nav.nav2 {
-//     display: inline-block;
-//     position: fixed;
-//     top: calc(50% - 105px);
-//     right: 0;
-//     z-index: 999;
-//     width: 100%;
-//     text-align: center;
-//     width: 60px;
-//   }
-//   .res-nav.nav2 .btn-round > span {
-//     top: 5px;
-//     left: -110px;
-//   }
-//   .res-nav.nav3 {
-//     display: inline-block;
-//     position: fixed;
-//     bottom: 0;
-//     left: 0;
-//     z-index: 999;
-//     width: 100%;
-//     text-align: center;
-//     width: 100%;
-//   }
-//   .res-nav.nav3 .btn-round > span {
-//     top: -37px;
-//     left: -30px;
-//   }
-//   .res-nav.nav4 {
-//     display: inline-block;
-//     position: fixed;
-//     bottom: 0;
-//     left: 0;
-//     z-index: 999;
-//     width: 100%;
-//     text-align: center;
-//   }
-//   .loader {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     background: #fff;
-//     z-index: 9;
-//     opacity: 0.9;
-//   }
-//   .loader .load-img {
-//     margin: -15px 0 0 -15px;
-//   }
-//   .loader .load-txt {
-//     margin: 30px 0 0 -45px;
-//   }
-// }

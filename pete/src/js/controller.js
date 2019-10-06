@@ -5,6 +5,7 @@ let controller = {
         controller.phostoSwipeFunct();
         controller.fullScreenFunct();
         controller.hammerFunct($(".threesixty")[0]);
+        controller.sideNavToggler();
     },
     maquetteFunct: () => {
         let toto = $(".sidebar").height() - 340;
@@ -25,22 +26,13 @@ let controller = {
             w = (h * pic_real_width) / pic_real_height;
         }
         let maquette;
-        let imgDir;
-        document.querySelectorAll(".btn.active").forEach(e =>{
-            if(e.textContent == "PIÉTON"){
-                imgDir = "WALK"
-            }
-            else if (e.textContent == "AÉRIEN"){
-                imgDir = "AERIAL"
-            }
-        })
         maquette = $(".maquette").ThreeSixty({
             totalFrames: 61,
             endFrame: 61,
             currentFrame: 1,
             imgList: ".threesixty_images",
             progress: ".loader",
-            imagePath: `uploadsConverted/${imgDir}/`,
+            imagePath: `uploadsConverted/WALK/`,
             filePrefix: "",
             ext: ".jpg",
             height: h,
@@ -48,6 +40,30 @@ let controller = {
             navigation: false,
             responsive: false
         });
+        $('.maq-change').click((e)=> {
+            var itemAttr = $(e.target).attr('data-maquette');
+            
+            $(".loader").animate({opacity: 1}, 50);
+            $(".loader").animate({opacity: 0}, 500);
+
+            maquette = $(".maquette").ThreeSixty({
+                totalFrames: 61,
+                endFrame: 61,
+                currentFrame: 1,
+                imgList: ".threesixty_images",
+                progress: ".loader",
+                imagePath: `uploadsConverted/${itemAttr}/`,
+                filePrefix: "",
+                ext: ".jpg",
+                height: h,
+                width: w,
+                navigation: false,
+                responsive: false
+            });
+            $('.maq-change').removeClass('active');
+            $('a[data-maquette =' +itemAttr + "]").addClass('active');
+        });
+
         $(".custom_play").bind("click", () => {
             maquette.play();
         });
@@ -152,25 +168,25 @@ let controller = {
         });
     },
     phostoSwipeFunct: () => {
- 
+
         let openPhotoSwipe = () => {
             let pswpElement = document.querySelectorAll('.pswp')[0];
             // build items array
             let items = [
                 {
                     src: "/uploadsConverted/galerie/images/r2.jpg",
-                    w: 964,
-                    h: 824
+                    w: 1800,
+                    h: 1200
                 },
                 {
                     src: "/uploadsConverted/galerie/images/r1.jpg",
-                    w: 964,
-                    h: 824
+                    w: 1800,
+                    h: 1200
                 },
                 {
                     src: "/uploadsConverted/galerie/images/interior.jpg",
-                    w: 964,
-                    h: 824
+                    w: 1800,
+                    h: 1200
                 }
             ];
             let options = {
@@ -194,8 +210,7 @@ let controller = {
             // updates the content of slides
             gallery.updateSize(true);
         };
-        let btnToOpen = (id) => document.getElementById(id).addEventListener("click", openPhotoSwipe);
-        btnToOpen("openGalery1");
+        document.getElementById("openGalery1").addEventListener("click", openPhotoSwipe);
     },
     fullScreenFunct: () => {
         [...document.getElementsByClassName("full-screen-btn")].forEach(item => {
@@ -300,7 +315,7 @@ let controller = {
                 }
             }
             //pinch
-  
+
             if (ev.type == "pinch") {
                 scale = Math.max(0.999, Math.min(last_scale * ev.scale, 4));
             }
@@ -329,6 +344,26 @@ let controller = {
                 el.style.webkitTransform = transform;
             }
         });
+    },
+    sideNavToggler: () => {
+        let navButtons = document.querySelectorAll(".side-nav");
+
+        document.getElementsByClassName('openbtn')[0].addEventListener('click', () => {
+            document.getElementById("sidebar-toggler").classList.contains("sidebar-visible") ? 
+            document.getElementById("sidebar-toggler").classList.remove('sidebar-visible'):
+            document.getElementById("sidebar-toggler").classList.add('sidebar-visible')
+
+        })
+        document.getElementsByClassName('closebtn')[0].addEventListener('click', () => {
+            document.getElementById("sidebar-toggler").classList.remove('sidebar-visible');
+
+        })
+        navButtons.forEach(e => {
+            e.addEventListener('click', () => {
+                document.getElementById("sidebar-toggler").classList.remove('sidebar-visible');
+
+            });
+        })
     }
 }
 
