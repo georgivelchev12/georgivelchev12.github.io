@@ -1,50 +1,54 @@
-
+let maquette;
 let controller = {
     initController: () => {
         controller.maquetteFunct();
-        controller.phostoSwipeFunct();
-        controller.fullScreenFunct();
-        controller.hammerFunct($(".threesixty")[0]);
-        controller.sideNavToggler();
+        // controller.sideNavToggler();
     },
     maquetteFunct: () => {
-        let toto = $(".sidebar").height() - 340;
-        $(".inline-vertical-btn > div").css("max-height", toto);
-        $(window).resize(() => {
-            toto = $(".sidebar").height() - 340;
-            $(".inline-vertical-btn > div").css("max-height", toto);
-        });
-
-        let pic = $("#image_size")[0];
+        let pic = $(".image_size")[0];
         let pic_real_width = pic.naturalWidth;
         let pic_real_height = pic.naturalHeight;
-
+        
         let w = $(".container-360").width();
         let h = (w * pic_real_height) / pic_real_width;
         if ($(".container-360").height() < h) {
             h = $(".container-360").height();
             w = (h * pic_real_width) / pic_real_height;
         }
-        let maquette;
         maquette = $(".maquette").ThreeSixty({
             totalFrames: 61,
             endFrame: 61,
             currentFrame: 1,
             imgList: ".threesixty_images",
-            progress: ".loader",
-            imagePath: `uploadsConverted/WALK/`,
+            progress: ".bluredImg",
+            imagePath: `uploads/WALK/`,
             filePrefix: "",
             ext: ".jpg",
             height: h,
             width: w,
             navigation: false,
-            responsive: false
+            responsive: false,
+            disableSpin: true,
+            onReady: function () {
+                controller.dropdownMenu();
+                controller.phostoSwipeFunct();
+                controller.fullScreenFunct();
+                controller.hammerFunct($(".threesixty")[0]);
+                controller.removeHoverOnMobile();
+            },
         });
-        $('.maq-change').click((e)=> {
-            var itemAttr = $(e.target).attr('data-maquette');
-            
-            $(".loader").animate({opacity: 1}, 50);
-            $(".loader").animate({opacity: 0}, 500);
+        $('.maq-change').click((e) => {
+            w = $(".container-360").width();
+            h = (w * pic_real_height) / pic_real_width;
+            if ($(".container-360").height() < h) {
+                h = $(window).height();
+                w = (h * pic_real_width) / pic_real_height;
+            }
+            $(".maquette,.maquette img").height(h);
+            $(".maquette,.maquette img").width(w);
+
+            let itemAttr = $(e.target).attr('data-maquette');
+            $(".loader")[0].style.display = "block";
 
             maquette = $(".maquette").ThreeSixty({
                 totalFrames: 61,
@@ -52,17 +56,19 @@ let controller = {
                 currentFrame: 1,
                 imgList: ".threesixty_images",
                 progress: ".loader",
-                imagePath: `uploadsConverted/${itemAttr}/`,
+                imagePath: `uploads/${itemAttr}/`,
                 filePrefix: "",
                 ext: ".jpg",
                 height: h,
                 width: w,
                 navigation: false,
-                responsive: false
+                responsive: false,
+                disableSpin: true,
             });
             $('.maq-change').removeClass('active');
-            $('a[data-maquette =' +itemAttr + "]").addClass('active');
+            $('a[data-maquette =' + itemAttr + "]").addClass('active');
         });
+
 
         $(".custom_play").bind("click", () => {
             maquette.play();
@@ -70,7 +76,6 @@ let controller = {
         $(".custom_stop").bind("click", () => {
             maquette.stop();
         });
-
 
         if ($(".container-360").height() < h) {
             h = $(".container-360").height();
@@ -129,6 +134,7 @@ let controller = {
                 $(".container-360").one("mousewheel", oneWheel);
             }, 1000); // one scroll per second ONLY.
         }
+
         // Zomm avec molette + centrer
         $(".threesixty").on("wheel", (event) => {
             event.preventDefault();
@@ -168,23 +174,22 @@ let controller = {
         });
     },
     phostoSwipeFunct: () => {
-
         let openPhotoSwipe = () => {
             let pswpElement = document.querySelectorAll('.pswp')[0];
             // build items array
             let items = [
                 {
-                    src: "/uploadsConverted/galerie/images/r2.jpg",
+                    src: "/uploads/galerie/images/r2.jpg",
                     w: 1800,
                     h: 1200
                 },
                 {
-                    src: "/uploadsConverted/galerie/images/r1.jpg",
+                    src: "/uploads/galerie/images/r1.jpg",
                     w: 1800,
                     h: 1200
                 },
                 {
-                    src: "/uploadsConverted/galerie/images/interior.jpg",
+                    src: "/uploads/galerie/images/interior.jpg",
                     w: 1800,
                     h: 1200
                 }
@@ -213,49 +218,31 @@ let controller = {
         document.getElementById("openGalery1").addEventListener("click", openPhotoSwipe);
     },
     fullScreenFunct: () => {
-        [...document.getElementsByClassName("full-screen-btn")].forEach(item => {
+        document.querySelector(".full-screen-btn").addEventListener('click', () => {
+            let isOnFullScr =
+                (document.fullScreenElement &&
+                    document.fullScreenElement !== null) ||
+                (!document.mozFullScreen &&
+                    !document.webkitIsFullScreen)
 
-            let innerWidth = window.innerWidth;
-
-            item.addEventListener('click', () => {
-                if ((document.fullScreenElement && document.fullScreenElement !== null) ||
-                    (!document.mozFullScreen && !document.webkitIsFullScreen)) {
-                    document.getElementsByClassName("container-360")[0].style.paddingLeft = "0px";
-                    document.getElementsByClassName('sidebar')[0].setAttribute("style", "z-index:auto;position:absolute;border-right:none;justify-content:center;");
-                    document.getElementsByClassName('scroll-menu')[0].setAttribute("style", "position:fixed;left:2%;display:block;z-index:10;padding:0;");
-                    [...document.getElementsByClassName('removeAndAddEl')].forEach(elem => elem.style.display = "none");
-                    [...document.getElementsByClassName('d-flexOnFullScreen')].forEach(item => {
-                        item.style.display = "flex";
-                        item.style.flexDirection = "column"
-                    });
-
-                    if (document.documentElement.requestFullScreen) {
-                        document.documentElement.requestFullScreen();
-                    } else if (document.documentElement.mozRequestFullScreen) {
-                        document.documentElement.mozRequestFullScreen();
-                    } else if (document.documentElement.webkitRequestFullScreen) {
-                        document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-                    }
-                } else {
-                    if (innerWidth <= 1001) {
-                        document.getElementsByClassName("container-360")[0].style.paddingLeft = "0";
-                    }
-                    document.getElementsByClassName("container-360")[0].style.paddingLeft = "300px";
-                    document.getElementsByClassName('sidebar')[0].setAttribute("style", "z-index:9;position:fixed;border-right:1px solid #ccc;justify-content:space-between");
-                    document.getElementsByClassName('scroll-menu')[0].setAttribute("style", "position:relative;left:auto;display:block;z-index:auto;");
-                    [...document.getElementsByClassName('removeAndAddEl')].forEach(elem => elem.style.display = "block");
-                    [...document.getElementsByClassName('d-flexOnFullScreen')].forEach(elem => elem.style.display = "block");
-
-                    if (document.cancelFullScreen) {
-                        document.cancelFullScreen();
-                    } else if (document.mozCancelFullScreen) {
-                        document.mozCancelFullScreen();
-                    } else if (document.webkitCancelFullScreen) {
-                        document.webkitCancelFullScreen();
-                    }
+            if (isOnFullScr) {
+                if (document.documentElement.requestFullScreen) {
+                    document.documentElement.requestFullScreen();
+                } else if (document.documentElement.mozRequestFullScreen) {
+                    document.documentElement.mozRequestFullScreen();
+                } else if (document.documentElement.webkitRequestFullScreen) {
+                    document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
                 }
-            })
-        });
+            } else {
+                if (document.cancelFullScreen) {
+                    document.cancelFullScreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.webkitCancelFullScreen) {
+                    document.webkitCancelFullScreen();
+                }
+            }
+        })
     },
     hammerFunct: (elm) => {
         let hammertime = new Hammer(elm, {});
@@ -274,28 +261,53 @@ let controller = {
             transform = "",
             el = elm;
 
-        hammertime.on("doubletap pinch pinchend", (ev) => {
-
-            if (ev.type == "doubletap") {
-                transform = "translate3d(0, 0, 0) " + "scale3d(2, 2, 1) ";
-                scale = 2;
-                last_scale = 2;
-                try {
-                    if (
-                        window
-                            .getComputedStyle(el, null)
-                            .getPropertyValue("-webkit-transform")
-                            .toString() != "matrix(1, 0, 0, 1, 0, 0)"
-                    ) {
-                        transform = "translate3d(0, 0, 0) " + "scale3d(1, 1, 1) ";
-                        scale = 1;
-                        last_scale = 1;
-                    }
-                } catch (err) { }
-                el.style.webkitTransform = transform;
-                transform = "";
+        hammertime.on("doubletap pinch pinchend pinchstart", (ev) => {
+            let evType = {
+                pinch: () => {
+                    scale = Math.max(0.999, Math.min(last_scale * ev.scale, 4))
+                },
+                pinchstart: () => {
+                    // maquette.getConfig().ticker = 1;
+                    // maquette.getConfig().drag = false;
+                },
+                pinchend: () => {
+                    // setTimeout(() => {
+                    //     maquette.getConfig().ticker = 0;
+                    //     maquette.getConfig().drag = true;
+                    // }, 1000);
+                    last_scale = scale;
+                },
+                doubletap: () => {
+                    transform = "translate3d(0, 0, 0) " + "scale3d(2, 2, 1) ";
+                    scale = 2;
+                    last_scale = 2;
+                    try {
+                        if (
+                            window
+                                .getComputedStyle(el, null)
+                                .getPropertyValue("-webkit-transform")
+                                .toString() != "matrix(1, 0, 0, 1, 0, 0)"
+                        ) {
+                            transform = "translate3d(0, 0, 0) " + "scale3d(1, 1, 1) ";
+                            scale = 1;
+                            last_scale = 1;
+                        }
+                    } catch (err) { }
+                    el.style.webkitTransform = transform;
+                    transform = "";
+                },
+                panend: () => {
+                    last_posX = posX < max_pos_x ? posX : max_pos_x;
+                    last_posY = posY < max_pos_y ? posY : max_pos_y;
+                }
             }
-            //pan
+            document.querySelectorAll(".maq-change").forEach(e => {
+                e.addEventListener("click", () => {
+                    el.style.webkitTransform = "translate3d(0, 0, 0) " + "scale3d(1, 1, 1) ";
+                    transform = "";
+                })
+            })
+            evType[ev.type]();
             if (scale != 1) {
                 posX = last_posX + ev.deltaX;
                 posY = last_posY + ev.deltaY;
@@ -313,21 +325,6 @@ let controller = {
                 if (posY < -max_pos_y) {
                     posY = -max_pos_y;
                 }
-            }
-            //pinch
-
-            if (ev.type == "pinch") {
-                scale = Math.max(0.999, Math.min(last_scale * ev.scale, 4));
-            }
-            if (ev.type == "pinchend") {
-                last_scale = scale;
-            }
-            //panend
-            if (ev.type == "panend") {
-                last_posX = posX < max_pos_x ? posX : max_pos_x;
-                last_posY = posY < max_pos_y ? posY : max_pos_y;
-            }
-            if (scale != 1) {
                 transform =
                     "translate3d(" +
                     posX +
@@ -340,31 +337,57 @@ let controller = {
                     scale +
                     ", 1)";
             }
+
             if (transform) {
                 el.style.webkitTransform = transform;
             }
         });
     },
-    sideNavToggler: () => {
-        let navButtons = document.querySelectorAll(".side-nav");
-
-        document.getElementsByClassName('openbtn')[0].addEventListener('click', () => {
-            document.getElementById("sidebar-toggler").classList.contains("sidebar-visible") ? 
-            document.getElementById("sidebar-toggler").classList.remove('sidebar-visible'):
-            document.getElementById("sidebar-toggler").classList.add('sidebar-visible')
+    // sideNavToggler: () => {
+    //     document.querySelectorAll(".side-nav-cl").forEach(e => {
+    //         e.addEventListener('click', () => {
+    //             document.getElementById("sidebar-toggler").classList.contains("sidebar-visible") ? 
+    //             document.getElementById("sidebar-toggler").classList.remove('sidebar-visible'):
+    //             document.getElementById("sidebar-toggler").classList.add('sidebar-visible')
+    //         });
+    //     })
+    // }
+    dropdownMenu: () => {
+        document.querySelector('.btn-showMore').addEventListener('click', e => {
+            let dropdown = e.currentTarget.parentElement;
+            if (dropdown.classList.contains('active-dropdown')) {
+                dropdown.classList.remove('active-dropdown')
+            }
+            else {
+                dropdown.classList.add('active-dropdown')
+            }
 
         })
-        document.getElementsByClassName('closebtn')[0].addEventListener('click', () => {
-            document.getElementById("sidebar-toggler").classList.remove('sidebar-visible');
-
-        })
-        navButtons.forEach(e => {
-            e.addEventListener('click', () => {
-                document.getElementById("sidebar-toggler").classList.remove('sidebar-visible');
-
-            });
-        })
+    },
+    removeHoverOnMobile: () =>{
+        function hasTouch() {
+            return 'ontouchstart' in document.documentElement
+                   || navigator.maxTouchPoints > 0
+                   || navigator.msMaxTouchPoints > 0;
+        }
+        
+        if (hasTouch()) { // remove all the :hover stylesheets
+            try { // prevent exception on browsers not supporting DOM styleSheets properly
+                for (var si in document.styleSheets) {
+                    var styleSheet = document.styleSheets[si];
+                    if (!styleSheet.rules) continue;
+        
+                    for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+                        if (!styleSheet.rules[ri].selectorText) continue;
+        
+                        if (styleSheet.rules[ri].selectorText.match(':hover')) {
+                            styleSheet.deleteRule(ri);
+                        }
+                    }
+                }
+            } catch (ex) {}
+        }
     }
 }
-
-window.addEventListener("load", () => controller.initController());
+// dont change it to window.ONLOAD!!!!!!!! 
+document.addEventListener('DOMContentLoaded', () => controller.initController());

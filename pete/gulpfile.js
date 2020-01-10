@@ -23,14 +23,14 @@ gulp.task('default', () =>
     .pipe(gulp.dest('dist/js'))
 );
 
-gulp.task('images', function(cb) {
+gulp.task('images', function (cb) {
   gulp.src(
-    ['dist/uploads/**/*.png','dist/uploads/**/*.jpg','dist/uploads/**/*.gif','dist/uploads/**/*.jpeg'])
+    ['dist/uploads/**/*.png', 'dist/uploads/**/*.jpg', 'dist/uploads/**/*.gif', 'dist/uploads/**/*.jpeg'])
     .pipe(imagemin())
     .pipe(gulp.dest('uploadsConverted/')).on('end', cb).on('error', cb);
 });
 
-gulp.task('pages', function() {
+gulp.task('pages', function () {
   return gulp.src(['./src/**/*.html'])
     .pipe(htmlmin({
       collapseWhitespace: true,
