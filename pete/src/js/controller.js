@@ -8,14 +8,12 @@ let controller = {
         let pic = $(".image_size")[0];
         let pic_real_width = pic.naturalWidth;
         let pic_real_height = pic.naturalHeight;
+        let w, h;
 
-        let w = $(".container-360").width();
-        let h = (w * pic_real_height) / pic_real_width;
-        if ($(".container-360").height() < h) {
-            h = $(".container-360").height();
-            w = (h * pic_real_width) / pic_real_height;
-        }
+        initWithAndHight();
+
         let toggleDoubletap = true;
+
         maquette = $(".maquette").ThreeSixty({
             totalFrames: 61,
             endFrame: 61,
@@ -35,19 +33,13 @@ let controller = {
                 controller.phostoSwipeFunct();
                 controller.fullScreenFunct();
                 controller.removeHoverOnMobile();
-                controller.hammerFunct($(".threesixty")[0], w, h, wbase, hbase, toggleDoubletap);
+                hammerFunct($(".threesixty")[0]);
             },
         });
+
         $('.maq-change').click((e) => {
             toggleDoubletap = true;
-            w = $(".container-360").width();
-            h = (w * pic_real_height) / pic_real_width;
-            if ($(".container-360").height() < h) {
-                h = $(window).height();
-                w = (h * pic_real_width) / pic_real_height;
-            }
-            $(".maquette,.maquette img").height(h);
-            $(".maquette,.maquette img").width(w);
+            initWithAndHight();
 
             let itemAttr = $(e.target).attr('data-maquette');
             $(".loader")[0].style.display = "block";
@@ -71,183 +63,107 @@ let controller = {
             $('a[data-maquette =' + itemAttr + "]").addClass('active');
         });
 
-        $(".custom_play").bind("click", () => {
-            maquette.play();
-        });
-
-        $(".custom_stop").bind("click", () => {
-            maquette.stop();
-        });
-
-        if ($(".container-360").height() < h) {
-            h = $(".container-360").height();
-            w = (h * pic_real_width) / pic_real_height;
-        }
+      
         let hbase = h;
         let wbase = w;
 
-        $(window).resize(() => {
+        $(window).resize(() => initWithAndHight());
+
+        $(".custom_play").bind("click", () => maquette.play());
+        $(".custom_stop").bind("click", () => maquette.stop());
+        // Zoom In/Out
+        $(".custom_zoomp").on("click", () => zoomIn(1.2));
+
+        $(".custom_zoomm").on("click", () => zoomOut(1.2));
+
+        // Center zoom
+        $(".custom_zoomp,.custom_zoomm").on("click", () => zoomCentering());
+
+        // Zoom In/Out + Centering on scroll
+        $(".threesixty").on("wheel", (event) => {
+            event.preventDefault();
+            event.originalEvent.deltaY < 0 ? zoomIn(1.2) : zoomOut(1.2);
+            zoomCentering();
+        });
+
+        function hammerFunct(elm){
+            let hammertime = new Hammer(elm, {});
+
+            hammertime.get('pinch').set({ enable: true });
+
+            hammertime.on("doubletap pinch pinchend pinchstart pinchin pinchout", (ev) => {
+                
+                let evType = {
+                    pinchin: () => {
+                        zoomIn(1.2);
+                    },
+                    pinchout: () => {
+                        zoomOut(1.2);
+                    },
+                    pinchstart: () => {
+                        maquette.getConfig().ticker = 1;
+                        maquette.getConfig().drag = false;
+                    },
+                    pinchend: () => {
+                        setTimeout(() => {
+                            maquette.getConfig().ticker = 0;
+                            maquette.getConfig().drag = true;
+                        }, 1000);
+                    },
+                    doubletap: () => {
+
+                        if (toggleDoubletap) {
+                            zoomIn(3);
+                            toggleDoubletap = false;
+                        }
+                        else {
+                            zoomOut(3);
+                            toggleDoubletap = true;
+                        }
+
+                        zoomCentering();
+                    },
+                }
+
+                evType[ev.type]();
+            });
+        }
+        function initWithAndHight() {
             w = $(".container-360").width();
             h = (w * pic_real_height) / pic_real_width;
             if ($(".container-360").height() < h) {
-                h = $(window).height();
+                h = $(".container-360").height();
                 w = (h * pic_real_width) / pic_real_height;
             }
-
             $(".maquette,.maquette img").height(h);
             $(".maquette,.maquette img").width(w);
-        });
-
-        // Zoom 360 avec boutons
-        $(".custom_zoomp").on("click", () => {
-            h = $(".maquette img").height() * 1.2;
-            w = $(".maquette img").width() * 1.2;
+        }
+        function zoomCentering() {
+            let sTop = ($(".maquette img").height() - $(".container-360").height()) / 2 + 60;
+            let sLeft = ($(".maquette img").width() - $(".container-360").width()) / 2;
+            $("html,body").animate({ scrollTop: sTop, scrollLeft: sLeft }, 0);
+        }
+        function zoomIn(zoomLevel) {
+            h = $(".maquette img").height() * zoomLevel;
+            w = $(".maquette img").width() * zoomLevel;
             if (h > hbase * 3) {
                 h = hbase * 3;
                 w = wbase * 3;
             }
             $(".maquette,.maquette img").height(h);
             $(".maquette,.maquette img").width(w);
-        });
-
-        $(".custom_zoomm").on("click", () => {
-            h = $(".maquette img").height() / 1.2;
-            w = $(".maquette img").width() / 1.2;
+        }
+        function zoomOut(zoomLevel){
+            h = $(".maquette img").height() / zoomLevel;
+            w = $(".maquette img").width() / zoomLevel;
             if (h < hbase) {
                 h = hbase;
                 w = wbase;
             }
             $(".maquette,.maquette img").height(h);
             $(".maquette,.maquette img").width(w);
-        });
-
-        // Center zoom 360
-        $(".custom_zoomp,.custom_zoomm").on("click", () => {
-            let sTop =
-                ($(".maquette img").height() - $(".container-360").height()) / 2 +
-                60;
-            let sLeft =
-                ($(".maquette img").width() - $(".container-360").width()) / 2;
-            $("html,body").animate({ scrollTop: sTop, scrollLeft: sLeft }, 0);
-        });
-
-        let oneWheel = () => {
-            setTimeout(() => {
-                $(".container-360").one("mousewheel", oneWheel);
-            }, 1000); // one scroll per second ONLY.
         }
-        // Zomm avec molette + centrer
-        $(".threesixty").on("wheel", (event) => {
-            event.preventDefault();
-            if (event.originalEvent.deltaY < 0) {
-                h = $(".maquette img").height() * 1.2;
-                w = $(".maquette img").width() * 1.2;
-                if (h > hbase * 3) {
-                    h = hbase * 3;
-                    w = wbase * 3;
-                }
-                $(".maquette,.maquette img").height(h);
-                $(".maquette,.maquette img").width(w);
-
-                let sTop =
-                    ($(".maquette img").height() - $(".container-360").height()) / 2 +
-                    60;
-                let sLeft =
-                    ($(".maquette img").width() - $(".container-360").width()) / 2;
-                $("html,body").animate({ scrollTop: sTop, scrollLeft: sLeft }, 0);
-            } else {
-                h = $(".maquette img").height() / 1.2;
-                w = $(".maquette img").width() / 1.2;
-                if (h < hbase) {
-                    h = hbase;
-                    w = wbase;
-                }
-                $(".maquette,.maquette img").height(h);
-                $(".maquette,.maquette img").width(w);
-
-                let sTop =
-                    ($(".maquette img").height() - $(".container-360").height()) / 2 +
-                    60;
-                let sLeft =
-                    ($(".maquette img").width() - $(".container-360").width()) / 2;
-                $("html,body").animate({ scrollTop: sTop, scrollLeft: sLeft }, 0);
-            }
-        });
-
     },
-    hammerFunct: (elm, w, h, wbase, hbase, toggleDoubletap) => {
-        let hammertime = new Hammer(elm, {});
-
-        hammertime.get('pinch').set({ enable: true });
-
-        hammertime.on("doubletap pinch pinchend pinchstart pinchin pinchout", (ev) => {
-            let evType = {
-                pinchin: () => {
-
-                    h = $(".maquette img").height() * 1.2;
-                    w = $(".maquette img").width() * 1.2;
-                    if (h > hbase * 3) {
-                        h = hbase * 3;
-                        w = wbase * 3;
-                    }
-                    $(".maquette,.maquette img").height(h);
-                    $(".maquette,.maquette img").width(w);
-                },
-                pinchout: () => {
-                    h = $(".maquette img").height() / 1.2;
-                    w = $(".maquette img").width() / 1.2;
-                    if (h < hbase) {
-                        h = hbase;
-                        w = wbase;
-                    }
-                    $(".maquette,.maquette img").height(h);
-                    $(".maquette,.maquette img").width(w);
-                },
-                pinchstart: () => {
-                    maquette.getConfig().ticker = 1;
-                    maquette.getConfig().drag = false;
-                },
-                pinchend: () => {
-                    setTimeout(() => {
-                        maquette.getConfig().ticker = 0;
-                        maquette.getConfig().drag = true;
-                    }, 1000);
-                },
-                doubletap: () => {
-
-                    if (toggleDoubletap) {
-                        h = $(".maquette img").height() * 3;
-                        w = $(".maquette img").width() * 3;
-                        if (h > hbase * 3) {
-                            h = hbase * 3;
-                            w = wbase * 3;
-                        }
-                        $(".maquette,.maquette img").height(h);
-                        $(".maquette,.maquette img").width(w);
-                        toggleDoubletap = false;
-                    }
-                    else {
-                        h = $(".maquette img").height() / 3;
-                        w = $(".maquette img").width() / 3;
-                        if (h > hbase) {
-                            h = hbase;
-                            w = wbase;
-                        }
-                        $(".maquette,.maquette img").height(h);
-                        $(".maquette,.maquette img").width(w);
-                        toggleDoubletap = true;
-                    }
-
-                    let sTop = ($(".maquette img").height() - $(".container-360").height()) / 2 + 60;
-                    let sLeft = ($(".maquette img").width() - $(".container-360").width()) / 2;
-                    $("html,body").animate({ scrollTop: sTop, scrollLeft: sLeft }, 0);
-                },
-            }
-
-            evType[ev.type]();
-        });
-    },
-
     phostoSwipeFunct: () => {
         let openPhotoSwipe = () => {
             let pswpElement = document.querySelectorAll('.pswp')[0];
@@ -269,6 +185,7 @@ let controller = {
                     h: 1200
                 }
             ];
+
             let options = {
                 history: false,
                 focus: false,
@@ -284,6 +201,7 @@ let controller = {
                 maxSpreadZoom: 3
             };
             let gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+
             gallery.init();
             // sets a flag that slides should be updated
             gallery.invalidateCurrItems();
@@ -319,9 +237,6 @@ let controller = {
             }
         })
     },
-    // hammerFunct: (elm) => {
-
-    // },
     // sideNavToggler: () => {
     //     document.querySelectorAll(".side-nav-cl").forEach(e => {
     //         e.addEventListener('click', () => {
@@ -340,7 +255,6 @@ let controller = {
             else {
                 dropdown.classList.add('active-dropdown')
             }
-
         })
     },
     removeHoverOnMobile: () => {
