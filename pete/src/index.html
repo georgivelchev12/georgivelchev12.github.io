@@ -8,11 +8,12 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no"
     />
     <link
-      type="text/css"
       rel="stylesheet"
-      media="all"
       href="dist/css/all.css"
     />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+       
     <script src="/dist/js/jquery-3.3.1.min.js" type="text/javascript"></script>
     <script
       src="/dist/js/jquery-migrate-1.4.1.min.js"
@@ -25,6 +26,7 @@
       rel="stylesheet"
       href="/dist/photoSwiper/default-skin/default-skin.css"
     />
+
   </head>
   <body>
     <div class="hide">
@@ -43,6 +45,7 @@
       <img src="/dist/images/zoom_in_red.png" />
       <img src="/dist/images/zoom_out_black.png" />
       <img src="/dist/images/zoom_out_red.png" />
+      <img src="/uploads/WALK/1.1.jpg" class="image_size" />
       <img src="/uploads/WALK/1.jpg" class="image_size" />
       <img src="/uploads/WALK/2.jpg" class="image_size" />
       <img src="/uploads/WALK/3.jpg" class="image_size" />
@@ -144,6 +147,16 @@
             <div class="removeAndAddEl">
               <a data-maquette="WALK" class="maq-change btn active">PIÉTON</a>
               <a data-maquette="AERIAL" class="maq-change btn">AÉRIEN</a>
+              <span class="dropdown-menu">
+                <a class="btn btn-showMore">Show more <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-inner">
+                  <li class="dropdown-btn"><a data-maquette="WALK" class="maq-change active"><i class="fas fa-caret-right"></i> PIÉTON <i class="fas fa-caret-left"></i></a></li>
+                  <li class="dropdown-btn"><a data-maquette="AERIAL" class="maq-change"><i class="fas fa-caret-right"></i> AÉRIEN <i class="fas fa-caret-left"></i></a></li>
+                  <li class="dropdown-btn"><a data-maquette="" class="maq-change"><i class="fas fa-caret-right"></i> asdasd <i class="fas fa-caret-left"></i></a></li>
+                  <li class="dropdown-btn"><a data-maquette="" class="maq-change"><i class="fas fa-caret-right"></i> asdasd <i class="fas fa-caret-left"></i></a></li>
+                  <li class="dropdown-btn"><a data-maquette="" class="maq-change"><i class="fas fa-caret-right"></i> asdasd <i class="fas fa-caret-left"></i></a></li>
+                </ul>
+              </span>
               <!-- <a class="side-nav-cl openbtn btn">Show more</a> -->
             </div>
           </div>
@@ -244,10 +257,10 @@
 
     <script src="/dist/js/threesixty.min.js"></script>
     <script src="/dist/js/script.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
     <script src="/dist/js/controller.js"></script>
     <script src="/dist/js/jquery.fancybox.min.js"></script>
     <script src="/dist/photoSwiper/photoswipe.min.js"></script>
     <script src="/dist/photoSwiper/photoswipe-ui-default.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
   </body>
 </html>

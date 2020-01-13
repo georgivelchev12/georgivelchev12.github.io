@@ -1,4 +1,3 @@
-let maquette;
 let controller = {
     initController: () => {
         controller.maquetteFunct();
@@ -13,6 +12,7 @@ let controller = {
         initWithAndHight();
 
         let toggleDoubletap = true;
+        let maquette;
 
         maquette = $(".maquette").ThreeSixty({
             totalFrames: 61,
@@ -34,7 +34,7 @@ let controller = {
                 controller.fullScreenFunct();
                 controller.removeHoverOnMobile();
                 hammerFunct($(".threesixty")[0]);
-                maquetteControl();
+                maquetteControls();
             },
         });
 
@@ -60,17 +60,17 @@ let controller = {
                 responsive: false,
                 disableSpin: true,
             });
+
             $('.maq-change').removeClass('active');
             $('a[data-maquette =' + itemAttr + "]").addClass('active');
         });
-
 
         let hbase = h;
         let wbase = w;
 
         $(window).resize(() => initWithAndHight());
 
-        function maquetteControl() {
+        function maquetteControls() {
             $(".custom_play").bind("click", () => maquette.play());
             $(".custom_stop").bind("click", () => maquette.stop());
 
@@ -235,15 +235,6 @@ let controller = {
             }
         })
     },
-    // sideNavToggler: () => {
-    //     document.querySelectorAll(".side-nav-cl").forEach(e => {
-    //         e.addEventListener('click', () => {
-    //             document.getElementById("sidebar-toggler").classList.contains("sidebar-visible") ? 
-    //             document.getElementById("sidebar-toggler").classList.remove('sidebar-visible'):
-    //             document.getElementById("sidebar-toggler").classList.add('sidebar-visible')
-    //         });
-    //     })
-    // }
     dropdownMenu: () => {
         document.querySelector('.btn-showMore').addEventListener('click', e => {
             let dropdown = e.currentTarget.parentElement;
@@ -281,7 +272,16 @@ let controller = {
                 } catch (ex) { }
             }
         }
-    }
+    },
+    // sideNavToggler: () => {
+    //     document.querySelectorAll(".side-nav-cl").forEach(e => {
+    //         e.addEventListener('click', () => {
+    //             document.getElementById("sidebar-toggler").classList.contains("sidebar-visible") ? 
+    //             document.getElementById("sidebar-toggler").classList.remove('sidebar-visible'):
+    //             document.getElementById("sidebar-toggler").classList.add('sidebar-visible')
+    //         });
+    //     })
+    // }
 }
 // dont change it to window.ONLOAD!!!!!!!! 
 document.addEventListener('DOMContentLoaded', () => controller.initController());

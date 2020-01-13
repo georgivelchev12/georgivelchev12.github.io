@@ -260,7 +260,6 @@ img {
         }
         cursor: pointer;
         & > span {
-          display: none;
           position: absolute;
           width: max-content;
           min-width: 100px;
@@ -271,9 +270,14 @@ img {
           color: #1b222a;
           border: 1px solid #ddd;
           z-index: 1;
+          transform: rotateX(-90deg);
+          transform-origin: top;
+          transition: color 0.3s, transform 0.5s;
+          color: #fff;
         }
         &:hover > span {
-          display: block;
+          color: #1b222a;
+          transform: rotateX(0);
         }
       }
     }
