@@ -236,14 +236,20 @@ let controller = {
         })
     },
     dropdownMenu: () => {
-        document.querySelector('.btn-showMore').addEventListener('click', e => {
-            let dropdown = e.currentTarget.parentElement;
-            if (dropdown.classList.contains('active-dropdown')) {
+        document.querySelector('.dropdown-menu').addEventListener('click', e => {
+            let dropdown = e.currentTarget;
+            if(e.target.classList.contains('btn-showMore')){
+                if (dropdown.classList.contains('active-dropdown')) {
+                    dropdown.classList.remove('active-dropdown')
+                }
+                else {
+                    dropdown.classList.add('active-dropdown')
+                }
+            }
+            else{
                 dropdown.classList.remove('active-dropdown')
             }
-            else {
-                dropdown.classList.add('active-dropdown')
-            }
+            
         })
     },
     removeHoverOnMobile: () => {

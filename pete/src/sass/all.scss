@@ -384,6 +384,7 @@ img {
       transform-origin: bottom;
     }
     &:before {
+      display: none; // you can remove it later
       content: "";
       height: 0;
       border-top: 7px solid #777;
