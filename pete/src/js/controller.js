@@ -34,6 +34,7 @@ let controller = {
                 controller.fullScreenFunct();
                 controller.removeHoverOnMobile();
                 hammerFunct($(".threesixty")[0]);
+                maquetteControl();
             },
         });
 
@@ -63,43 +64,40 @@ let controller = {
             $('a[data-maquette =' + itemAttr + "]").addClass('active');
         });
 
-      
+
         let hbase = h;
         let wbase = w;
 
         $(window).resize(() => initWithAndHight());
 
-        $(".custom_play").bind("click", () => maquette.play());
-        $(".custom_stop").bind("click", () => maquette.stop());
-        // Zoom In/Out
-        $(".custom_zoomp").on("click", () => zoomIn(1.2));
+        function maquetteControl() {
+            $(".custom_play").bind("click", () => maquette.play());
+            $(".custom_stop").bind("click", () => maquette.stop());
 
-        $(".custom_zoomm").on("click", () => zoomOut(1.2));
+            // Zoom In/Out
+            $(".custom_zoomp").on("click", () => zoomIn(1.2));
+            $(".custom_zoomm").on("click", () => zoomOut(1.2));
 
-        // Center zoom
-        $(".custom_zoomp,.custom_zoomm").on("click", () => zoomCentering());
+            // Center zoom
+            $(".custom_zoomp,.custom_zoomm").on("click", () => zoomCentering());
 
-        // Zoom In/Out + Centering on scroll
-        $(".threesixty").on("wheel", (event) => {
-            event.preventDefault();
-            event.originalEvent.deltaY < 0 ? zoomIn(1.2) : zoomOut(1.2);
-            zoomCentering();
-        });
-
-        function hammerFunct(elm){
+            // Zoom In/Out + Centering on scroll
+            $(".threesixty").on("wheel", (event) => {
+                event.preventDefault();
+                event.originalEvent.deltaY < 0 ? zoomIn(1.2) : zoomOut(1.2);
+                zoomCentering();
+            });
+        }
+        function hammerFunct(elm) {
             let hammertime = new Hammer(elm, {});
 
             hammertime.get('pinch').set({ enable: true });
 
             hammertime.on("doubletap pinch pinchend pinchstart pinchin pinchout", (ev) => {
-                
+
                 let evType = {
-                    pinchin: () => {
-                        zoomIn(1.2);
-                    },
-                    pinchout: () => {
-                        zoomOut(1.2);
-                    },
+                    pinchin: zoomIn(1.2),
+                    pinchout: zoomOut(1.2),
                     pinchstart: () => {
                         maquette.getConfig().ticker = 1;
                         maquette.getConfig().drag = false;
@@ -153,7 +151,7 @@ let controller = {
             $(".maquette,.maquette img").height(h);
             $(".maquette,.maquette img").width(w);
         }
-        function zoomOut(zoomLevel){
+        function zoomOut(zoomLevel) {
             h = $(".maquette img").height() / zoomLevel;
             w = $(".maquette img").width() / zoomLevel;
             if (h < hbase) {
