@@ -8,13 +8,14 @@ let controller = {
         let pic = $(".image_size")[0];
         let pic_real_width = pic.naturalWidth;
         let pic_real_height = pic.naturalHeight;
-        
+
         let w = $(".container-360").width();
         let h = (w * pic_real_height) / pic_real_width;
         if ($(".container-360").height() < h) {
             h = $(".container-360").height();
             w = (h * pic_real_width) / pic_real_height;
         }
+        let toggleDoubletap = true;
         maquette = $(".maquette").ThreeSixty({
             totalFrames: 61,
             endFrame: 61,
@@ -33,11 +34,12 @@ let controller = {
                 controller.dropdownMenu();
                 controller.phostoSwipeFunct();
                 controller.fullScreenFunct();
-                controller.hammerFunct($(".threesixty")[0]);
                 controller.removeHoverOnMobile();
+                controller.hammerFunct($(".threesixty")[0], w, h, wbase, hbase, toggleDoubletap);
             },
         });
         $('.maq-change').click((e) => {
+            toggleDoubletap = true;
             w = $(".container-360").width();
             h = (w * pic_real_height) / pic_real_width;
             if ($(".container-360").height() < h) {
@@ -69,10 +71,10 @@ let controller = {
             $('a[data-maquette =' + itemAttr + "]").addClass('active');
         });
 
-
         $(".custom_play").bind("click", () => {
             maquette.play();
         });
+
         $(".custom_stop").bind("click", () => {
             maquette.stop();
         });
@@ -134,7 +136,6 @@ let controller = {
                 $(".container-360").one("mousewheel", oneWheel);
             }, 1000); // one scroll per second ONLY.
         }
-
         // Zomm avec molette + centrer
         $(".threesixty").on("wheel", (event) => {
             event.preventDefault();
@@ -172,7 +173,81 @@ let controller = {
                 $("html,body").animate({ scrollTop: sTop, scrollLeft: sLeft }, 0);
             }
         });
+
     },
+    hammerFunct: (elm, w, h, wbase, hbase, toggleDoubletap) => {
+        let hammertime = new Hammer(elm, {});
+
+        hammertime.get('pinch').set({ enable: true });
+
+        hammertime.on("doubletap pinch pinchend pinchstart pinchin pinchout", (ev) => {
+            let evType = {
+                pinchin: () => {
+
+                    h = $(".maquette img").height() * 1.2;
+                    w = $(".maquette img").width() * 1.2;
+                    if (h > hbase * 3) {
+                        h = hbase * 3;
+                        w = wbase * 3;
+                    }
+                    $(".maquette,.maquette img").height(h);
+                    $(".maquette,.maquette img").width(w);
+                },
+                pinchout: () => {
+                    h = $(".maquette img").height() / 1.2;
+                    w = $(".maquette img").width() / 1.2;
+                    if (h < hbase) {
+                        h = hbase;
+                        w = wbase;
+                    }
+                    $(".maquette,.maquette img").height(h);
+                    $(".maquette,.maquette img").width(w);
+                },
+                pinchstart: () => {
+                    maquette.getConfig().ticker = 1;
+                    maquette.getConfig().drag = false;
+                },
+                pinchend: () => {
+                    setTimeout(() => {
+                        maquette.getConfig().ticker = 0;
+                        maquette.getConfig().drag = true;
+                    }, 1000);
+                },
+                doubletap: () => {
+
+                    if (toggleDoubletap) {
+                        h = $(".maquette img").height() * 3;
+                        w = $(".maquette img").width() * 3;
+                        if (h > hbase * 3) {
+                            h = hbase * 3;
+                            w = wbase * 3;
+                        }
+                        $(".maquette,.maquette img").height(h);
+                        $(".maquette,.maquette img").width(w);
+                        toggleDoubletap = false;
+                    }
+                    else {
+                        h = $(".maquette img").height() / 3;
+                        w = $(".maquette img").width() / 3;
+                        if (h > hbase) {
+                            h = hbase;
+                            w = wbase;
+                        }
+                        $(".maquette,.maquette img").height(h);
+                        $(".maquette,.maquette img").width(w);
+                        toggleDoubletap = true;
+                    }
+
+                    let sTop = ($(".maquette img").height() - $(".container-360").height()) / 2 + 60;
+                    let sLeft = ($(".maquette img").width() - $(".container-360").width()) / 2;
+                    $("html,body").animate({ scrollTop: sTop, scrollLeft: sLeft }, 0);
+                },
+            }
+
+            evType[ev.type]();
+        });
+    },
+
     phostoSwipeFunct: () => {
         let openPhotoSwipe = () => {
             let pswpElement = document.querySelectorAll('.pswp')[0];
@@ -244,105 +319,9 @@ let controller = {
             }
         })
     },
-    hammerFunct: (elm) => {
-        let hammertime = new Hammer(elm, {});
+    // hammerFunct: (elm) => {
 
-        hammertime.get("pinch").set({
-            enable: true
-        });
-        let posX = 0,
-            posY = 0,
-            scale = 1,
-            last_scale = 1,
-            last_posX = 0,
-            last_posY = 0,
-            max_pos_x = 0,
-            max_pos_y = 0,
-            transform = "",
-            el = elm;
-
-        hammertime.on("doubletap pinch pinchend pinchstart", (ev) => {
-            let evType = {
-                pinch: () => {
-                    scale = Math.max(0.999, Math.min(last_scale * ev.scale, 4))
-                },
-                pinchstart: () => {
-                    // maquette.getConfig().ticker = 1;
-                    // maquette.getConfig().drag = false;
-                },
-                pinchend: () => {
-                    // setTimeout(() => {
-                    //     maquette.getConfig().ticker = 0;
-                    //     maquette.getConfig().drag = true;
-                    // }, 1000);
-                    last_scale = scale;
-                },
-                doubletap: () => {
-                    transform = "translate3d(0, 0, 0) " + "scale3d(2, 2, 1) ";
-                    scale = 2;
-                    last_scale = 2;
-                    try {
-                        if (
-                            window
-                                .getComputedStyle(el, null)
-                                .getPropertyValue("-webkit-transform")
-                                .toString() != "matrix(1, 0, 0, 1, 0, 0)"
-                        ) {
-                            transform = "translate3d(0, 0, 0) " + "scale3d(1, 1, 1) ";
-                            scale = 1;
-                            last_scale = 1;
-                        }
-                    } catch (err) { }
-                    el.style.webkitTransform = transform;
-                    transform = "";
-                },
-                panend: () => {
-                    last_posX = posX < max_pos_x ? posX : max_pos_x;
-                    last_posY = posY < max_pos_y ? posY : max_pos_y;
-                }
-            }
-            document.querySelectorAll(".maq-change").forEach(e => {
-                e.addEventListener("click", () => {
-                    el.style.webkitTransform = "translate3d(0, 0, 0) " + "scale3d(1, 1, 1) ";
-                    transform = "";
-                })
-            })
-            evType[ev.type]();
-            if (scale != 1) {
-                posX = last_posX + ev.deltaX;
-                posY = last_posY + ev.deltaY;
-                max_pos_x = Math.ceil(((scale - 1) * el.clientWidth) / 2);
-                max_pos_y = Math.ceil(((scale - 1) * el.clientHeight) / 2);
-                if (posX > max_pos_x) {
-                    posX = max_pos_x;
-                }
-                if (posX < -max_pos_x) {
-                    posX = -max_pos_x;
-                }
-                if (posY > max_pos_y) {
-                    posY = max_pos_y;
-                }
-                if (posY < -max_pos_y) {
-                    posY = -max_pos_y;
-                }
-                transform =
-                    "translate3d(" +
-                    posX +
-                    "px," +
-                    posY +
-                    "px, 0) " +
-                    "scale3d(" +
-                    scale +
-                    ", " +
-                    scale +
-                    ", 1)";
-            }
-
-            if (transform) {
-                el.style.webkitTransform = transform;
-            }
-        });
-    },
+    // },
     // sideNavToggler: () => {
     //     document.querySelectorAll(".side-nav-cl").forEach(e => {
     //         e.addEventListener('click', () => {
@@ -364,28 +343,31 @@ let controller = {
 
         })
     },
-    removeHoverOnMobile: () =>{
-        function hasTouch() {
-            return 'ontouchstart' in document.documentElement
-                   || navigator.maxTouchPoints > 0
-                   || navigator.msMaxTouchPoints > 0;
-        }
-        
-        if (hasTouch()) { // remove all the :hover stylesheets
-            try { // prevent exception on browsers not supporting DOM styleSheets properly
-                for (var si in document.styleSheets) {
-                    var styleSheet = document.styleSheets[si];
-                    if (!styleSheet.rules) continue;
-        
-                    for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
-                        if (!styleSheet.rules[ri].selectorText) continue;
-        
-                        if (styleSheet.rules[ri].selectorText.match(':hover')) {
-                            styleSheet.deleteRule(ri);
+    removeHoverOnMobile: () => {
+
+        if (window.innerWidth <= 1001) {
+            function hasTouch() {
+                return 'ontouchstart' in document.documentElement
+                    || navigator.maxTouchPoints > 0
+                    || navigator.msMaxTouchPoints > 0;
+            }
+
+            if (hasTouch()) { // remove all the :hover stylesheets
+                try { // prevent exception on browsers not supporting DOM styleSheets properly
+                    for (var si in document.styleSheets) {
+                        var styleSheet = document.styleSheets[si];
+                        if (!styleSheet.rules) continue;
+
+                        for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+                            if (!styleSheet.rules[ri].selectorText) continue;
+
+                            if (styleSheet.rules[ri].selectorText.match(':hover')) {
+                                styleSheet.deleteRule(ri);
+                            }
                         }
                     }
-                }
-            } catch (ex) {}
+                } catch (ex) { }
+            }
         }
     }
 }
