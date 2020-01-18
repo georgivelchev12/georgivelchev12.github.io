@@ -27,7 +27,7 @@ let controller = {
             width: w,
             navigation: false,
             responsive: false,
-            disableSpin: true,
+            disableSpin: false,
             onReady: function () {
                 controller.dropdownMenu();
                 controller.phostoSwipeFunct();
