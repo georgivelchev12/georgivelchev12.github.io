@@ -1,7 +1,6 @@
 let controller = {
     initController: () => {
         controller.maquetteFunct();
-        // controller.sideNavToggler();
     },
     maquetteFunct: () => {
         let pic = $(".image_size")[0];
@@ -251,11 +250,9 @@ let controller = {
             else {
                 dropdown.classList.remove('active-dropdown');
             }
-
         });
     },
     removeHoverOnMobile: () => {
-
         if (window.innerWidth <= 1001) {
             function hasTouch() {
                 return 'ontouchstart' in document.documentElement
@@ -281,15 +278,6 @@ let controller = {
             }
         }
     }
-    // sideNavToggler: () => {
-    //     document.querySelectorAll(".side-nav-cl").forEach(e => {
-    //         e.addEventListener('click', () => {
-    //             document.getElementById("sidebar-toggler").classList.contains("sidebar-visible") ? 
-    //             document.getElementById("sidebar-toggler").classList.remove('sidebar-visible'):
-    //             document.getElementById("sidebar-toggler").classList.add('sidebar-visible')
-    //         });
-    //     })
-    // }
 };
 // dont change it to window.ONLOAD!!!!!!!! 
 document.addEventListener('DOMContentLoaded', () => controller.initController());
