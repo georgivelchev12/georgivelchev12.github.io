@@ -12,9 +12,8 @@ let controller = {
         initWithAndHight();
 
         let toggleDoubletap = true;
-        let maquette;
-
-        maquette = $(".maquette").ThreeSixty({
+        
+        let maquette = $(".maquette").ThreeSixty({
             totalFrames: 61,
             endFrame: 61,
             currentFrame: 1,
@@ -33,8 +32,9 @@ let controller = {
                 controller.phostoSwipeFunct();
                 controller.fullScreenFunct();
                 controller.removeHoverOnMobile();
-                hammerFunct($(".threesixty")[0]);
                 maquetteControls();
+                //the set time out is for prevent pinch bug on init maquette
+                setTimeout(() => hammerFunct($(".threesixty")[0]), 1400);
             },
         });
 
@@ -87,22 +87,25 @@ let controller = {
                 event.originalEvent.deltaY < 0 ? zoomIn(1.2) : zoomOut(1.2);
                 zoomCentering();
             });
-        }
+        };
         function hammerFunct(elm) {
             let hammertime = new Hammer(elm, {});
 
             hammertime.get('pinch').set({ enable: true });
 
-            hammertime.on("doubletap pinch pinchend pinchstart pinchin pinchout", (ev) => {
-
+            hammertime.on("doubletap pinchend pinchin pinchout", (ev) => {
+                let zoomCentAndDisableDrag = (inOrOut) => {
+                    // its equal to zoomOut(1.2) and zoomIn(1.2)
+                    eval("zoom" + inOrOut)(1.2);
+                    zoomCentering();
+                    maquette.getConfig().ticker = 1;
+                    maquette.getConfig().drag = false;
+                };
                 let evType = {
-                    pinchin: zoomIn(1.2),
-                    pinchout: zoomOut(1.2),
-                    pinchstart: () => {
-                        maquette.getConfig().ticker = 1;
-                        maquette.getConfig().drag = false;
-                    },
+                    pinchin: () => zoomCentAndDisableDrag("Out"),
+                    pinchout: () => zoomCentAndDisableDrag("In"),
                     pinchend: () => {
+                        // it's for prevent maq rotation after the pinch event. 
                         setTimeout(() => {
                             maquette.getConfig().ticker = 0;
                             maquette.getConfig().drag = true;
@@ -120,12 +123,11 @@ let controller = {
                         }
 
                         zoomCentering();
-                    },
-                }
-
+                    }
+                };
                 evType[ev.type]();
             });
-        }
+        };
         function initWithAndHight() {
             w = $(".container-360").width();
             h = (w * pic_real_height) / pic_real_width;
@@ -135,12 +137,12 @@ let controller = {
             }
             $(".maquette,.maquette img").height(h);
             $(".maquette,.maquette img").width(w);
-        }
+        };
         function zoomCentering() {
             let sTop = ($(".maquette img").height() - $(".container-360").height()) / 2 + 60;
             let sLeft = ($(".maquette img").width() - $(".container-360").width()) / 2;
             $("html,body").animate({ scrollTop: sTop, scrollLeft: sLeft }, 0);
-        }
+        };
         function zoomIn(zoomLevel) {
             h = $(".maquette img").height() * zoomLevel;
             w = $(".maquette img").width() * zoomLevel;
@@ -150,7 +152,7 @@ let controller = {
             }
             $(".maquette,.maquette img").height(h);
             $(".maquette,.maquette img").width(w);
-        }
+        };
         function zoomOut(zoomLevel) {
             h = $(".maquette img").height() / zoomLevel;
             w = $(".maquette img").width() / zoomLevel;
@@ -160,7 +162,7 @@ let controller = {
             }
             $(".maquette,.maquette img").height(h);
             $(".maquette,.maquette img").width(w);
-        }
+        };
     },
     phostoSwipeFunct: () => {
         let openPhotoSwipe = () => {
@@ -214,7 +216,7 @@ let controller = {
                 (document.fullScreenElement &&
                     document.fullScreenElement !== null) ||
                 (!document.mozFullScreen &&
-                    !document.webkitIsFullScreen)
+                    !document.webkitIsFullScreen);
 
             if (isOnFullScr) {
                 if (document.documentElement.requestFullScreen) {
@@ -233,24 +235,24 @@ let controller = {
                     document.webkitCancelFullScreen();
                 }
             }
-        })
+        });
     },
     dropdownMenu: () => {
         document.querySelector('.dropdown-menu').addEventListener('click', e => {
             let dropdown = e.currentTarget;
-            if(e.target.classList.contains('btn-showMore')){
+            if (e.target.classList.contains('btn-showMore')) {
                 if (dropdown.classList.contains('active-dropdown')) {
-                    dropdown.classList.remove('active-dropdown')
+                    dropdown.classList.remove('active-dropdown');
                 }
                 else {
-                    dropdown.classList.add('active-dropdown')
+                    dropdown.classList.add('active-dropdown');
                 }
             }
-            else{
-                dropdown.classList.remove('active-dropdown')
+            else {
+                dropdown.classList.remove('active-dropdown');
             }
-            
-        })
+
+        });
     },
     removeHoverOnMobile: () => {
 
@@ -278,7 +280,7 @@ let controller = {
                 } catch (ex) { }
             }
         }
-    },
+    }
     // sideNavToggler: () => {
     //     document.querySelectorAll(".side-nav-cl").forEach(e => {
     //         e.addEventListener('click', () => {
@@ -288,6 +290,6 @@ let controller = {
     //         });
     //     })
     // }
-}
+};
 // dont change it to window.ONLOAD!!!!!!!! 
 document.addEventListener('DOMContentLoaded', () => controller.initController());

@@ -7,6 +7,9 @@ var uglify = require('gulp-uglify');
 var minify = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
 const htmlmin = require('gulp-htmlmin');
+// var semi = require('gulp-semi').add;
+// var semi = require('gulp-semi').remove;
+ 
 gulp.task('sass', function () {
   return gulp.src('src/sass/*.scss')
     .pipe(sass().on('error', sass.logError))
@@ -42,4 +45,12 @@ gulp.task('watch', function () {
   gulp.watch('src/sass/**/*.scss', gulp.series('sass'));
   gulp.watch('./src/**/*.html', gulp.series('pages'));
   gulp.watch('src/js/*.js', gulp.series('default'));
+  // gulp.watch('src/js/*.js', gulp.series('semi'));
 });
+
+
+// gulp.task('semi', function() {
+//   return gulp.src('src/js/*.js')
+//     .pipe(semi({ leading: true }))
+//     .pipe(gulp.dest('dist/js'));
+// });
