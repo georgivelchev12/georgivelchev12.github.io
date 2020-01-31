@@ -1,5 +1,6 @@
 let controller = {
     initController: () => {
+        controller.removeHoverOnMobile();
         controller.maquetteFunct();
     },
     maquetteFunct: () => {
@@ -27,13 +28,12 @@ let controller = {
             responsive: false,
             disableSpin: false,
             onReady: function () {
+                //the set time out is for prevent pinch bug on init maquette
+                setTimeout(() => hammerFunct($(".threesixty")[0]), 1400);
+                maquetteControls();
                 controller.dropdownMenu();
                 controller.phostoSwipeFunct();
                 controller.fullScreenFunct();
-                controller.removeHoverOnMobile();
-                maquetteControls();
-                //the set time out is for prevent pinch bug on init maquette
-                setTimeout(() => hammerFunct($(".threesixty")[0]), 1400);
             },
         });
 
@@ -280,4 +280,5 @@ let controller = {
     }
 };
 // dont change it to window.ONLOAD!!!!!!!! 
-document.addEventListener('DOMContentLoaded', () => controller.initController());
+window.addEventListener('load', () => controller.initController())
+// document.addEventListener('DOMContentLoaded', () => controller.initController());

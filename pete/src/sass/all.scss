@@ -356,6 +356,10 @@ img {
 .dropdown-menu {
   position: relative;
   .btn-showMore {
+    background-color: #777;
+    &:hover{
+      background-color: #ccc;
+    }
     i {
       @include breakpoint(max, width, 1001px) {
         transform: rotateX(180deg);
