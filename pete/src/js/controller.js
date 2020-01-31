@@ -108,7 +108,7 @@ let controller = {
                         setTimeout(() => {
                             maquette.getConfig().ticker = 0;
                             maquette.getConfig().drag = true;
-                        }, 1000);
+                        }, 1500);
                     },
                     doubletap: () => {
 
