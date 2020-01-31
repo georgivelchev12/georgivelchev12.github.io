@@ -145,6 +145,7 @@ let controller = {
         function zoomIn(zoomLevel) {
             h = $(".maquette img").height() * zoomLevel;
             w = $(".maquette img").width() * zoomLevel;
+            //4.5 is the zoom encrease number
             if (h > hbase * 4.5) {
                 h = hbase * 4.5;
                 w = wbase * 4.5;
