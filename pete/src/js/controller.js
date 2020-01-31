@@ -145,9 +145,9 @@ let controller = {
         function zoomIn(zoomLevel) {
             h = $(".maquette img").height() * zoomLevel;
             w = $(".maquette img").width() * zoomLevel;
-            if (h > hbase * 3) {
-                h = hbase * 3;
-                w = wbase * 3;
+            if (h > hbase * 4.5) {
+                h = hbase * 4.5;
+                w = wbase * 4.5;
             }
             $(".maquette,.maquette img").height(h);
             $(".maquette,.maquette img").width(w);
