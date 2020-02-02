@@ -32,7 +32,7 @@
     <script src="/dist/js/threesixty.min.js"></script>
     <script src="/dist/js/script.min.js"></script>
     <script src="/dist/js/hammerjs.js"></script>
-    <script src="/dist/js/controller.js"></script>
+    <script src="/src/js/controller.js"></script>
     <script src="/dist/js/jquery.fancybox.min.js"></script>
     <script src="/dist/photoSwiper/photoswipe.min.js"></script>
     <script src="/dist/photoSwiper/photoswipe-ui-default.min.js"></script>
@@ -155,18 +155,26 @@
           <div class="inline-vertical-btn">
             <div class="removeAndAddEl">
               <a data-maquette="WALK" class="maq-change btn active">PIÉTON</a>
+              <a data-maquette="RDC" class="maq-change btn">RDC</a>
+              <a data-maquette="R1" class="maq-change btn">R1</a>
+              <a data-maquette="R2" class="maq-change btn">R2</a>
+              <a data-maquette="R3" class="maq-change btn">R3</a>
+              <a data-maquette="R4" class="maq-change btn">R4</a>
+              <a data-maquette="R6" class="maq-change btn">R6</a>
+              <a class="btn-disabled">Two rooms</a>
               <a data-maquette="AERIAL" class="maq-change btn">AÉRIEN</a>
-              <span class="dropdown-menu">
-                <a class="btn btn-showMore">Show more <i class="fas fa-chevron-down"></i></a>
-                <ul class="dropdown-inner">
-                  <li class="dropdown-btn"><a data-maquette="WALK" class="maq-change active"><i class="fas fa-caret-right"></i> PIÉTON <i class="fas fa-caret-left"></i></a></li>
-                  <li class="dropdown-btn"><a data-maquette="AERIAL" class="maq-change"><i class="fas fa-caret-right"></i> AÉRIEN <i class="fas fa-caret-left"></i></a></li>
-                  <li class="dropdown-btn"><a data-maquette="" class="maq-change"><i class="fas fa-caret-right"></i> asdasd <i class="fas fa-caret-left"></i></a></li>
-                  <li class="dropdown-btn"><a data-maquette="" class="maq-change"><i class="fas fa-caret-right"></i> asdasd <i class="fas fa-caret-left"></i></a></li>
-                  <li class="dropdown-btn"><a data-maquette="" class="maq-change"><i class="fas fa-caret-right"></i> asdasd <i class="fas fa-caret-left"></i></a></li>
-                </ul>
-              </span>
+              
             </div>
+            <span class="dropdown-menu">
+              <a class="btn btn-showMore">Show more <i class="fas fa-chevron-down"></i></a>
+              <ul class="dropdown-inner">
+                <li class="dropdown-btn"><a data-maquette="WALK" class="maq-change active">PIÉTON</a></li>
+                <li class="dropdown-btn"><a data-maquette="AERIAL" class="maq-change">AÉRIEN</a></li>
+                <li class="dropdown-btn"><a data-maquette="R1" class="maq-change">R1</a></li>
+                <li class="dropdown-btn"><a data-maquette="R2" class="maq-change">R2</a></li>
+                <li class="dropdown-btn"><a data-maquette="R3" class="maq-change">R3</a></li>
+              </ul>
+            </span>
           </div>
         </div>
         <a
@@ -185,7 +193,10 @@
       <div class="container-360">
         <div class="threesixty maquette" style="overflow: hidden">
           <ol class="threesixty_images"></ol>
-          <div class="bluredImg"></div>
+          <div class="bluredImg">
+                <div class="load-img"></div>
+                <div class="load-txt">Chargement ...</div>
+          </div>
         </div>
         <div class="cover"></div>
       </div>

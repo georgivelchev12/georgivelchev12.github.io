@@ -48,9 +48,20 @@ img {
   display: none !important;
 }
 .bluredImg {
+  position: relative;
   background: url(/uploads/WALK/1.1.jpg) no-repeat center center/cover;
   width: 100%;
   height: 100%;
+  .load-img{
+    margin: 0;
+  
+  }
+  .load-txt{
+    margin: 40px 0 0 -30px;
+    @include breakpoint(max, width, 1001px){
+      margin: 40px 0 0 -20px;
+    }
+  }
 }
 .loader {
   display: none;
@@ -61,34 +72,34 @@ img {
   bottom: 0;
   background: #fff;
   opacity: 0.9;
-  .load-img {
-    background: url("/dist/images/loading_gray.png") no-repeat center
-      center/cover;
-    height: 30px;
-    width: 30px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin: -15px 0 0 100px;
-    animation: rotate 1.5s linear infinite;
-    @include breakpoint(max, width, 1001px) {
-      margin: -15px 0 0 -15px;
-    }
-  }
-  .load-txt {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin: 30px 0 0 70px;
-    text-align: center;
-    color: #1b222a;
-    font-weight: 600;
-    @include breakpoint(max, width, 1001px) {
-      margin: 30px 0 0 -45px;
-    }
+ 
+}
+.load-img {
+  background: url("/dist/images/loading_gray.png") no-repeat center
+    center/cover;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -15px 0 0 100px;
+  animation: rotate 1.5s linear infinite;
+  @include breakpoint(max, width, 1001px) {
+    margin: -15px 0 0 -15px;
   }
 }
-
+.load-txt {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 30px 0 0 70px;
+  text-align: center;
+  color: #1b222a;
+  font-weight: 600;
+  @include breakpoint(max, width, 1001px) {
+    margin: 30px 0 0 -45px;
+  }
+}
 .container-360 {
   height: 100vh;
   background-color: #fff;
@@ -133,7 +144,7 @@ img {
 .sidebar {
   width: 300px;
   background: #fff;
-  padding: 20px 20px 0 20px;
+  padding: 0 20px 0 20px;
   position: fixed;
   height: 100%;
   min-height: 200px;
@@ -169,7 +180,7 @@ img {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 3.5rem;
+    padding-top: 2rem;
     @include breakpoint(max, width, 1001px) {
       position: fixed !important;
       z-index: 10 !important;
@@ -179,7 +190,7 @@ img {
     }
 
     .inline-btn {
-      padding: 5px 0 5px 0;
+      padding: 2px 0;
       @include breakpoint(max, width, 1001px) {
         display: flex !important;
         flex-direction: column !important;
@@ -254,9 +265,16 @@ img {
           background-size: 37px;
         }
         @include breakpoint(max, width, 400px) {
-          height: 20px;
-          width: 20px;
-          background-size: 20px;
+          height: 25px;
+          width: 25px;
+          background-size: 25px;
+        }
+        @include breakpoint(max, height, 650px){
+          @include breakpoint(min, width, 1001px){
+            height: 35px;
+            width: 35px;
+            background-size: 35px;
+          }
         }
         cursor: pointer;
         & > span {
@@ -301,6 +319,12 @@ img {
             transform: rotate(180deg);
           }
         }
+        @include breakpoint(max, height, 650px){
+          @include breakpoint(min, width, 1001px){
+            flex-direction:row;
+            flex-wrap:wrap;
+          }
+        }
       }
       @include breakpoint(max, width, 1001px) {
         position: fixed;
@@ -314,8 +338,9 @@ img {
   .le-veLogo {
     height: auto;
     margin: 0 auto;
+    margin-top: -3rem;
     display: block;
-    max-width: 90%;
+    max-width: 80%;
     transition-duration: 0.5s;
     transform: translateY(15px);
     &:hover {
@@ -326,19 +351,44 @@ img {
     }
   }
 }
-
+.btn-disabled{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin: 1.5px;
+  color: #000;
+  font-weight: 500;
+  padding: 6px 46px;
+  background: yellow;
+  transition: background 0.5s, color 0.5s, border 0.5s;
+  z-index:1;
+  @include breakpoint(min, width, 1001px){
+    display: none;
+  }
+}
 .btn {
   position: relative;
   display: inline-block;
   text-align: center;
-  margin: 2px;
+  margin: 1.5px;
   border: 1px solid #fff;
   color: #fff;
   font-weight: 500;
   padding: 6px 46px;
   background: #000;
   transition: background 0.5s, color 0.5s, border 0.5s;
+  z-index:1;
   cursor: pointer;
+  @include breakpoint(max, width, 1001px){
+    display: none;
+  }
+  @include breakpoint(max, height, 650px){
+    @include breakpoint(min, width, 1001px){
+      flex:1;
+      padding: 5px 46px;
+      font-size: 0.9rem;
+    }
+  }
   &:hover {
     background: #ccc;
     border-color: #ccc;
@@ -354,16 +404,23 @@ img {
   }
 }
 .dropdown-menu {
-  position: relative;
+  position: fixed;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
   .btn-showMore {
+    display: none;
+    @include breakpoint(max, width, 1001px){
+      display: block !important;
+    }
     background-color: #777;
     &:hover{
       background-color: #ccc;
     }
     i {
-      @include breakpoint(max, width, 1001px) {
-        transform: rotateX(180deg);
-      }
+      // @include breakpoint(max, width, 1001px) {
+      //   transform: rotateX(180deg);
+      // }
       margin-left: 5px;
       transform: rotateX(0deg);
       transition: transform 0.3s linear;
@@ -383,10 +440,10 @@ img {
     width: auto;
     z-index: 200;
     transform: rotateX(-90deg);
-    @include breakpoint(max, width, 1001px) {
-      bottom: 95%;
-      transform-origin: bottom;
-    }
+    // @include breakpoint(max, width, 1001px) {
+    //   bottom: 95%;
+    //   transform-origin: bottom;
+    // }
     &:before {
       display: none; // you can remove it later
       content: "";
@@ -432,10 +489,10 @@ img {
       color: #000;
       text-align: center;
       i {
-        @include breakpoint(max, width, 1001px) {
-          transform: rotateX(0deg);
-        }
-        transform: rotateX(-180deg);
+        // @include breakpoint(max, width, 1001px) {
+        //   transform: rotateX(0deg);
+        // }
+        transform: rotateX(180deg);
       }
     }
     .dropdown-btn .maq-change {
@@ -533,11 +590,12 @@ img {
     flex-direction: column;
   }
   .btn-round {
-    height: 40px;
-    width: 40px;
+    height: 37px;
+    width: 37px;
     display: inline-block;
     background-repeat: no-repeat;
-    background-size: 40px;
+    background-size: 37px;
+    
   }
 }
 
