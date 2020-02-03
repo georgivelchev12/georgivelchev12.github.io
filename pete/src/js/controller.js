@@ -12,7 +12,7 @@ let controller = {
         initWithAndHight();
 
         let toggleDoubletap = true;
-        
+
         let maquette = $(".maquette").ThreeSixty({
             totalFrames: 61,
             endFrame: 61,
@@ -238,7 +238,9 @@ let controller = {
         });
     },
     dropdownMenu: () => {
+        let showMoreBtn = document.querySelector('.btn-showMore');
         document.querySelector('.dropdown-menu').addEventListener('click', e => {
+            
             let dropdown = e.currentTarget;
             if (e.target.classList.contains('btn-showMore')) {
                 if (dropdown.classList.contains('active-dropdown')) {
@@ -249,6 +251,7 @@ let controller = {
                 }
             }
             else {
+                showMoreBtn.innerHTML = e.target.classList.contains('maq-change') ? e.target.innerHTML + ' <i class="fas fa-chevron-down"></i>' : showMoreBtn.innerHTML;
                 dropdown.classList.remove('active-dropdown');
             }
         });
