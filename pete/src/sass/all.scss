@@ -170,6 +170,9 @@ img {
     @include breakpoint(max, width, 1001px) {
       display: none;
     }
+    @include breakpoint(max, height, 505px) {
+      display: none;
+    }
   }
   .scroll-menu {
     display: flex !important;
@@ -184,6 +187,9 @@ img {
       padding: 0 !important;
       top: 0;
       bottom: 0;
+    }
+    @include breakpoint(max, height, 505px) {
+      padding-top: 0.5rem;
     }
 
     .inline-btn {
@@ -284,7 +290,7 @@ img {
           background-color: #fff;
           color: #1b222a;
           border: 1px solid #ddd;
-          z-index: 1;
+          z-index: 3;
           transform: rotateX(-90deg);
           transform-origin: top;
           transition: color 0.3s, transform 0.5s;
@@ -346,9 +352,18 @@ img {
     @include breakpoint(max, width, 1001px) {
       display: none;
     }
+    @include breakpoint(max, height, 505px) {
+      display: none;
+    }
   }
 }
 .legend{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  display: none;
+
   @include breakpoint(min, width, 1001px) {
     // display: none; // you must add buttons on bottom! dont forget
     position: fixed;
@@ -360,6 +375,7 @@ img {
     margin: auto;
     left: 45%;
     bottom: 3%;
+    display: none;
 
   }
 }
@@ -400,7 +416,7 @@ img {
   border: 1px solid #fff;
   color: #fff;
   font-weight: 500;
-  padding: 6px 46px;
+  padding: 6px 48px;
   background: #000;
   transition: background 0.5s, color 0.5s, border 0.5s;
   z-index: 1;
@@ -411,7 +427,7 @@ img {
   @include breakpoint(max, height, 650px) {
     @include breakpoint(min, width, 1001px) {
       flex: 1;
-      padding: 5px 46px;
+      padding: 5px 48px;
       font-size: 0.9rem;
     }
   }
@@ -434,8 +450,13 @@ img {
   left: 50%;
   top: 3%;
   transform: translateX(-50%);
+
+  @include breakpoint(min, width, 1001px) {
+    display: none !important;
+  }
   .btn-showMore {
     display: none;
+    padding: 6px 46px;
     width: 160px;
     height: 30px;
     @include breakpoint(max, width, 1001px) {
