@@ -52,8 +52,8 @@ let controller = {
       }
 
       maquette = $(".maquette").ThreeSixty({
-        totalFrames: 1,
-        endFrame: 1,
+        totalFrames: 61,
+        endFrame: 61,
         currentFrame: 1,
         imgList: ".threesixty_images",
         progress: ".loader",
