@@ -64,7 +64,7 @@ let controller = {
         width: w,
         navigation: false,
         responsive: false,
-        disableSpin: true
+        disableSpin: false
       });
 
       $(".maq-change").removeClass("active");
@@ -177,17 +177,17 @@ let controller = {
       // build items array
       let items = [
         {
-          src: "/uploads/galerie/images/r2.jpg",
+          src: "/uploads/galerie/images/R1.jpg",
           w: 1800,
           h: 1200
         },
         {
-          src: "/uploads/galerie/images/r1.jpg",
+          src: "/uploads/galerie/images/R2.jpg",
           w: 1800,
           h: 1200
         },
         {
-          src: "/uploads/galerie/images/interior.jpg",
+          src: "/uploads/galerie/images/R3.jpg",
           w: 1800,
           h: 1200
         }
