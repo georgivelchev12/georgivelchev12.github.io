@@ -42,7 +42,7 @@ let controller = {
       initWithAndHight();
 
       let itemAttr = $(e.target).attr("data-maquette");
-      $(".loader")[0].style.display = "block";
+      // $(".loader")[0].style.display = "block";
 
       let legend = document.querySelector(".legend");
       if (itemAttr == "WALK" || itemAttr == "AERIAL") {
@@ -50,13 +50,13 @@ let controller = {
       } else {
         legend.style.display = "block";
       }
-
+      document.querySelector('.bluredImg').style.backgroundImage = `url(/uploads/${itemAttr}/1.1.jpg)`;
       maquette = $(".maquette").ThreeSixty({
         totalFrames: 61,
         endFrame: 61,
         currentFrame: 1,
         imgList: ".threesixty_images",
-        progress: ".loader",
+        progress: ".bluredImg",
         imagePath: `uploads/${itemAttr}/`,
         filePrefix: "",
         ext: ".jpg",

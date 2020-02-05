@@ -49,7 +49,10 @@ img {
 }
 .bluredImg {
   position: relative;
-  background: url(/uploads/WALK/1.1.jpg) no-repeat center center/cover;
+  background-image: url(/uploads/WALK/1.1.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   width: 100%;
   height: 100%;
   .load-img {
@@ -376,7 +379,7 @@ img {
     margin: auto;
     flex-direction: row;
     margin: auto;
-    left: calc(45% - 26px);
+    left: calc(50% + 35px);
     bottom: 3%;
     display: none;
 
@@ -395,16 +398,16 @@ img {
   z-index: 1;
   cursor:default;
   &.b-1 {
-    background: blue;
+    background: rgb(132, 182, 108);
   }
   &.b-2 {
-    background: green !important;
+    background: rgb(84,179,207);
   }
   &.b-3{
-    background: goldenrod;
+    background: rgb(157,130,213);
   }
   &.b-4 {
-    background: saddlebrown;
+    background: rgb(184,103,91);
   }
   @include breakpoint(min, width, 1001px) {
     // display: none; // you must add buttons on bottom! dont forget
