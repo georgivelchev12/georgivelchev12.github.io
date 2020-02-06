@@ -58,7 +58,7 @@ let controller = {
         imgList: ".threesixty_images",
         progress: ".bluredImg",
         imagePath: `uploads/${itemAttr}/`,
-        filePrefix: "",
+        filePrefix: `${itemAttr}-`,
         ext: ".jpg",
         height: h,
         width: w,
@@ -66,7 +66,7 @@ let controller = {
         responsive: false,
         disableSpin: false
       });
-
+      
       $(".maq-change").removeClass("active");
       $("a[data-maquette =" + itemAttr + "]").addClass("active");
     });
