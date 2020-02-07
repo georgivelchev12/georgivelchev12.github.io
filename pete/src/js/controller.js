@@ -1,9 +1,10 @@
 let controller = {
-  initController: () => {
+  initController: (currentMaquette) => {
+    controller.dropdownMenu();
     controller.removeHoverOnMobile();
-    controller.maquetteFunct();
+    controller.maquetteFunct(currentMaquette);
   },
-  maquetteFunct: () => {
+  maquetteFunct: (currentMaquette) => {
     let pic = $(".image_size")[0];
     let pic_real_width = pic.naturalWidth;
     let pic_real_height = pic.naturalHeight;
@@ -11,6 +12,14 @@ let controller = {
 
     initWithAndHight();
 
+    let legend = document.querySelector(".legend");
+    if (currentMaquette == "WALK" || currentMaquette == "AERIAL") {
+        legend.style.display = "none";
+    } else {
+        legend.style.display = "block";
+    }
+
+    document.querySelector('.bluredImg').style.backgroundImage = `url(/uploads/${currentMaquette}/1.1.jpg)`;
     let toggleDoubletap = true;
 
     let maquette = $(".maquette").ThreeSixty({
@@ -19,7 +28,7 @@ let controller = {
       currentFrame: 1,
       imgList: ".threesixty_images",
       progress: ".bluredImg",
-      imagePath: `uploads/WALK/`,
+      imagePath: `uploads/${currentMaquette}/`,
       filePrefix: "",
       ext: ".jpg",
       height: h,
@@ -31,45 +40,45 @@ let controller = {
         //the set time out is for prevent pinch bug on init maquette
         setTimeout(() => hammerFunct($(".threesixty")[0]), 1400);
         maquetteControls();
-        controller.dropdownMenu();
+        // controller.dropdownMenu();
         controller.phostoSwipeFunct();
         controller.fullScreenFunct();
       }
     });
 
-    $(".maq-change").click(e => {
-      toggleDoubletap = true;
-      initWithAndHight();
+    // $(".maq-change").click(e => {
+    //   toggleDoubletap = true;
+    //   initWithAndHight();
 
-      let itemAttr = $(e.target).attr("data-maquette");
-      // $(".loader")[0].style.display = "block";
+    //   let itemAttr = $(e.target).attr("data-maquette");
+    //   // $(".loader")[0].style.display = "block";
 
-      let legend = document.querySelector(".legend");
-      if (itemAttr == "WALK" || itemAttr == "AERIAL") {
-        legend.style.display = "none";
-      } else {
-        legend.style.display = "block";
-      }
-      document.querySelector('.bluredImg').style.backgroundImage = `url(/uploads/${itemAttr}/1.1.jpg)`;
-      maquette = $(".maquette").ThreeSixty({
-        totalFrames: 61,
-        endFrame: 61,
-        currentFrame: 1,
-        imgList: ".threesixty_images",
-        progress: ".bluredImg",
-        imagePath: `uploads/${itemAttr}/`,
-        filePrefix: `${itemAttr}-`,
-        ext: ".jpg",
-        height: h,
-        width: w,
-        navigation: false,
-        responsive: false,
-        disableSpin: false
-      });
-      
-      $(".maq-change").removeClass("active");
-      $("a[data-maquette =" + itemAttr + "]").addClass("active");
-    });
+    //   let legend = document.querySelector(".legend");
+    //   if (itemAttr == "WALK" || itemAttr == "AERIAL") {
+    //     legend.style.display = "none";
+    //   } else {
+    //     legend.style.display = "block";
+    //   }
+    //   document.querySelector('.bluredImg').style.backgroundImage = `url(/uploads/${itemAttr}/1.1.jpg)`;
+    //   maquette = $(".maquette").ThreeSixty({
+    //     totalFrames: 61,
+    //     endFrame: 61,
+    //     currentFrame: 1,
+    //     imgList: ".threesixty_images",
+    //     progress: ".bluredImg",
+    //     imagePath: `uploads/${itemAttr}/`,
+    //     filePrefix: "",
+    //     ext: ".jpg",
+    //     height: h,
+    //     width: w,
+    //     navigation: false,
+    //     responsive: false,
+    //     disableSpin: false
+    //   });
+
+    //   $(".maq-change").removeClass("active");
+    //   $("a[data-maquette =" + itemAttr + "]").addClass("active");
+    // });
 
     let hbase = h;
     let wbase = w;
@@ -252,23 +261,23 @@ let controller = {
     });
   },
   dropdownMenu: () => {
-    let showMoreBtn = document.querySelector(".btn-showMore");
-    let activeMaqText = () => {
-      let currentBtn = [...document.querySelector(".dropdown-inner").children].find(e => e.classList.contains("active"));
+    // let showMoreBtn = document.querySelector(".btn-showMore");
+    // let activeMaqText = () => {
+    //   let currentBtn = [...document.querySelector(".dropdown-inner").children].find(e => e.classList.contains("active"));
 
-      let legend = document.querySelector(".legend");
-      if (
-        currentBtn.getAttribute("data-maquette") == "WALK" ||
-        currentBtn.getAttribute("data-maquette") == "AERIAL"
-      ) {
-        legend.style.display = "none";
-      } else {
-        legend.style.display = "block";
-      }
-      showMoreBtn.innerHTML = currentBtn.textContent + ' <i class="fas fa-chevron-down"></i>';
-    };
+    //   let legend = document.querySelector(".legend");
+    //   if (
+    //     currentBtn.getAttribute("data-maquette") == "WALK" ||
+    //     currentBtn.getAttribute("data-maquette") == "AERIAL"
+    //   ) {
+    //     legend.style.display = "none";
+    //   } else {
+    //     legend.style.display = "block";
+    //   }
+    //   showMoreBtn.innerHTML = currentBtn.textContent + ' <i class="fas fa-chevron-down"></i>';
+    // };
 
-    activeMaqText();
+    // activeMaqText();
 
     document.querySelector(".dropdown-menu").addEventListener("click", e => {
       let dropdown = e.currentTarget;
@@ -279,12 +288,12 @@ let controller = {
           dropdown.classList.add("active-dropdown");
         }
       } else {
-        activeMaqText();
+        // activeMaqText();
         dropdown.classList.remove("active-dropdown");
       }
     });
 
-    window.addEventListener("resize", activeMaqText);
+    // window.addEventListener("resize", activeMaqText);
   },
   removeHoverOnMobile: () => {
     if (window.innerWidth <= 1001) {
@@ -317,6 +326,7 @@ let controller = {
     }
   }
 };
-window.addEventListener("load", () => controller.initController());
+// window.addEventListener("load", () => controller.initController("WALK"));
 // dont change it to window.ONLOAD!!!!!!!!
 // document.addEventListener('DOMContentLoaded', () => controller.initController());
+

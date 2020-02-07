@@ -369,7 +369,7 @@ img {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  display: none;
+  // display: none;
 
   @include breakpoint(min, width, 1001px) {
     // display: none; // you must add buttons on bottom! dont forget
