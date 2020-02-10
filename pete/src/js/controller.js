@@ -19,7 +19,7 @@ let controller = {
         legend.style.display = "block";
     }
 
-    document.querySelector('.bluredImg').style.backgroundImage = `url(/uploads/${currentMaquette}/1.1.jpg)`;
+    document.querySelector('.bluredImg').style.backgroundImage = `url(http://maquette.planastudio.com/paralleles/uploads/${currentMaquette}/1.1.jpg)`;
     let toggleDoubletap = true;
 
     let maquette = $(".maquette").ThreeSixty({
@@ -186,17 +186,17 @@ let controller = {
       // build items array
       let items = [
         {
-          src: "/uploads/galerie/images/R1.jpg",
+          src: "http://maquette.planastudio.com/paralleles/uploads/galerie/images/R1.jpg",
           w: 1800,
           h: 1200
         },
         {
-          src: "/uploads/galerie/images/R2.jpg",
+          src: "http://maquette.planastudio.com/paralleles/uploads/galerie/images/R2.jpg",
           w: 1800,
           h: 1200
         },
         {
-          src: "/uploads/galerie/images/R3.jpg",
+          src: "http://maquette.planastudio.com/paralleles/uploads/galerie/images/R3.jpg",
           w: 1800,
           h: 1200
         }
