@@ -1,25 +1,151 @@
+let viewer;
+
+
+FWDUtils.onReady(() => {
+  let pic = $(".image_size")[0];
+  let pic_real_width = 2560;
+  let pic_real_height = 1440;
+  let w, h, widthImage, heightImage;
+
+  w = $(".container-360").width();
+  h = $(".container-360").height();
+
+  widthImage = $(".container-360").width();
+  heightImage = (widthImage * pic_real_height) / pic_real_width;
+  if ($(".container-360").height() < heightImage) {
+    heightImage = $(".container-360").height();
+    widthImage = (heightImage * pic_real_width) / pic_real_height;
+  }
+
+
+  viewer1(w, h, widthImage, heightImage)
+}
+);
+
+function viewer1(w, h, widthImage, heightImage) {
+
+  viewer = new FWDViewer({
+    //----main----//
+    divHolderId: "threesixty",
+    skinPath: "uploads/WALK",
+    playListId: "viewerPlaylist",
+    displayType: "responsive",
+    preloaderText: "Loading 3D object:",
+    startDraggingMode: "rotate",
+    showLargeImageVersionOnZoom: "no",
+    useEntireScreenFor3dObject: "no",
+    stopRotationHorizontalAtEnds: "no",
+    stopRotationVerticalAtEnds: "no",
+    addCorrectionForWebKit: "yes",
+    addDragAndSpinSupport: "yes",
+    disableMouseWheelZoom: "no",
+    autoScale: "yes",
+    startAtImage: 0,
+    startAtSet: 0,
+    viewerWidth: w,
+    viewerHeight: h,
+    imageWidth: widthImage,
+    imageHeight: heightImage,
+    zoomFactor: 3,
+    zoomSpeed: 0.1,
+    dragRotationSpeed: .7,
+    dragAndSpinSpeed: .6,
+    buttonsRotationSpeed: 300,
+    slideShowDelay: 300,
+    backgroundColor: "#FFFFFF",
+    preloaderFontColor: "#585858",
+    preloaderBackgroundColor: "#FFFFFF",
+    //----lightbox-----//
+    lightBoxWidth: 1000,
+    lightBoxHeight: 1000,
+    lightBoxBackgroundOpacity: .8,
+    lightBoxBackgroundColor: "#000000",
+    //----controller----//
+    buttons: "rotate, pan, roteteleft, rotateright, scrollbar, play, info, link, fullscreen",
+    buttonsToolTips: "Rotate, Move/Pan, Rotate left, Rotate right, Zoom level: , Play/Pause, Info, Custom link, Full screen/Normal screen",
+    controllerHorizontalPosition: "center",
+    controllerVerticalPosition: "bottom",
+    inverseNextAndPrevRotation: "yes",
+    addKeyboardSupport: "yes",
+    slideShowAutoPlay: "no",
+    startSpaceBetweenButtons: 10,
+    spaceBetweenButtons: 10,
+    startSpaceForScrollBarButtons: 20,
+    startSpaceForScrollBar: 6,
+    hideControllerDelay: 0,
+    controllerMaxWidth: 900,
+    controllerBackgroundOpacity: 1,
+    controllerOffsetY: 0,
+    scrollBarOffsetX: 0,
+    scrollBarHandlerToolTipOffsetY: 4,
+    zoomInAndOutToolTipOffsetY: -4,
+    buttonsToolTipOffsetY: 0,
+    link: "http://www.google.com",
+    buttonToolTipFontColor: "#585858",
+    //----navigator----//
+    showNavigator: "no",
+    navigatorPosition: "topright",
+    navigatorWidth: 120,
+    navigatorOffsetX: 6,
+    navigatorOffsetY: 6,
+    navigatorHandlerColor: "#FF0000",
+    navigatorBorderColor: "#AAAAAA",
+    //----info window----//
+    infoWindowBackgroundOpacity: .6,
+    infoWindowBackgroundColor: "#FFFFFF",
+    infoWindowScrollBarColor: "#585858",
+    //----markers-----//
+    showMarkersInfo: "yes",
+    markerToolTipOffsetY: 2,
+    toolTipWindowMaxWidth: 500,
+    //----context menu----//
+    showScriptDeveloper: "no",
+    contextMenuLabels: "Rotate, Move/Pan, Rotate left, Rotate right, Zoom in/Zoom out, Play/Pause, Info, Custom link, Full screen/Normal screen",
+    contextMenuBackgroundColor: "#d1cfcf",
+    contextMenuBorderColor: "#8f8d8d",
+    contextMenuSpacerColor: "#acacac",
+    contextMenuItemNormalColor: "#585858",
+    contextMenuItemSelectedColor: "#FFFFFF",
+    contextMenuItemDisabledColor: "#b7b4b4"
+
+  });
+}
+
 let controller = {
   initController: (currentMaquette) => {
     controller.dropdownMenu();
     controller.removeHoverOnMobile();
     controller.maquetteFunct(currentMaquette);
+
   },
   maquetteFunct: (currentMaquette) => {
+
     let pic = $(".image_size")[0];
-    let pic_real_width = pic.naturalWidth;
-    let pic_real_height = pic.naturalHeight;
+    let pic_real_width = 2560;
+    let pic_real_height = 1440;
     let w, h;
+
 
     initWithAndHight();
 
+    console.log(w, h);
+
+    // viewer.props_obj.viewerWidth = w;
+    // viewer.props_obj.viewerHeight = h;
+    // viewer.originalWidth = w;
+    // viewer.stageWidth = w;
+    // viewer.originalHeight = h;
+    // viewer.stageHeight = h;
+    console.log(viewer);
+
     let legend = document.querySelector(".legend");
     if (currentMaquette == "WALK" || currentMaquette == "AERIAL") {
-        legend.style.display = "none";
+      legend.style.display = "none";
     } else {
-        legend.style.display = "block";
+      legend.style.display = "block";
     }
 
-    document.querySelector('.bluredImg').style.backgroundImage = `url(http://maquette.planastudio.com/paralleles/uploads/${currentMaquette}/1.1.jpg)`;
+    // document.querySelector('.bluredImg').style.backgroundImage = `url(http://maquette.planastudio.com/paralleles/uploads/${currentMaquette}/1.1.jpg)`;
     let toggleDoubletap = true;
 
     let maquette = $(".maquette").ThreeSixty({
@@ -28,7 +154,7 @@ let controller = {
       currentFrame: 1,
       imgList: ".threesixty_images",
       progress: ".bluredImg",
-      imagePath: `uploads/${currentMaquette}/`,
+      imagePath: `uploads/${currentMaquette}/small_images/`,
       filePrefix: "",
       ext: ".jpg",
       height: h,
@@ -36,9 +162,9 @@ let controller = {
       navigation: false,
       responsive: false,
       disableSpin: false,
-      onReady: function() {
+      onReady: function () {
         //the set time out is for prevent pinch bug on init maquette
-        setTimeout(() => hammerFunct($(".threesixty")[0]), 1400);
+        // setTimeout(() => hammerFunct($(".threesixty")[0]), 1400);
         maquetteControls();
         // controller.dropdownMenu();
         controller.phostoSwipeFunct();
@@ -82,9 +208,47 @@ let controller = {
 
     let hbase = h;
     let wbase = w;
+    maquetteControls();
 
-    $(window).resize(() => initWithAndHight());
+    $(window).resize(() => {
+      let w, h, widthImage, heightImage;
 
+      w = $(".container-360").width();
+      h = $(".container-360").height();
+
+      widthImage = $(".container-360").width();
+      heightImage = (widthImage * pic_real_height) / pic_real_width;
+      if ($(".container-360").height() < widthImage) {
+        heightImage = $(".container-360").height();
+        widthImage = (heightImage * pic_real_width) / pic_real_height;
+      }
+
+      viewer.stageContainer.style.width = w + "px"
+      viewer.stageContainer.lastChild.style.width = w + "px"
+      viewer.stageContainer.lastChild.firstChild.style.width = w + "px"
+      viewer.stageContainer.style.height = h + "px";
+      viewer.stageContainer.lastChild.style.height = h + "px";
+      viewer.stageContainer.lastChild.firstChild.style.height = h + "px";
+      $("#threesixty > div > div:nth-child(1) > div:nth-child(6)").width(w)
+      $("#threesixty > div > div:nth-child(1) > div:nth-child(6)").height(h)
+
+      // viewer.stageWidth = w;
+      // viewer.stageHeight = h;
+      // viewer.props_obj.viewerWidth = widthImage;
+      // viewer.props_obj.viewerHeight = heightImage;
+
+      viewer.originalWidth = w;
+      viewer.originalHeight = h;
+      viewer.stageWidth = w;
+      viewer.stageHeight = h;
+      viewer.props_obj.imageWidth = widthImage;
+      viewer.props_obj.imageHeight = heightImage;
+      // viewer.zoomOut()
+
+      console.log(viewer);
+
+    });
+ 
     function maquetteControls() {
       $(".custom_play").bind("click", () => maquette.play());
       $(".custom_stop").bind("click", () => maquette.stop());
@@ -97,10 +261,25 @@ let controller = {
       $(".custom_zoomp,.custom_zoomm").on("click", () => zoomCentering());
 
       // Zoom In/Out + Centering on scroll
+
       $(".threesixty").on("wheel", event => {
         event.preventDefault();
-        event.originalEvent.deltaY < 0 ? zoomIn(1.2) : zoomOut(1.2);
-        zoomCentering();
+        console.log("smth");
+        console.log();
+        // let imageWidth = $("#threesixty > div > div:nth-child(1) > div:nth-child(1) img").width();
+        // let imageHeight = $("#threesixty > div > div:nth-child(1) > div:nth-child(1) img").height()
+        // viewer.props_obj.viewerWidth = imageWidth;
+        // viewer.props_obj.viewerHeight = imageHeight;
+        // viewer.originalWidth = imageWidth;
+        // viewer.stageWidth = imageWidth;
+        // viewer.originalHeight = imageHeight;
+        // viewer.stageHeight = imageHeight;
+        console.log(viewer);
+
+        // if (event.preventDefault) event.preventDefault();
+        // viewer.zoomIn();
+        // event.originalEvent.deltaY < 0 ? zoomIn(1.2) : zoomOut(1.2);
+        // zoomCentering();
       });
     }
     function hammerFunct(elm) {
@@ -321,7 +500,7 @@ let controller = {
               }
             }
           }
-        } catch (ex) {}
+        } catch (ex) { }
       }
     }
   }

@@ -1,1 +1,1 @@
-"use strict";window.addEventListener("load",function(){return controller.initController("WALK")});
+"use strict";FWDUtils.onReady(function(){controller.initController("WALK")});
