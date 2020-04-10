@@ -76,7 +76,8 @@ img {
   opacity: 0.9;
 }
 .load-img {
-  background: url("https://maquette.planastudio.com/paralleles/dist/images/loading_gray.png") no-repeat center center/cover;
+  background: url("https://maquette.planastudio.com/paralleles/dist/images/loading_gray.png")
+    no-repeat center center/cover;
   height: 30px;
   width: 30px;
   position: absolute;
@@ -116,6 +117,10 @@ img {
     cursor: ew-resize;
     margin: 0 auto;
     width: 100% !important;
+    position: relative;
+    overflow: auto;
+    margin: 0 auto;
+    overflow: hidden;
     img {
       max-width: inherit;
     }
@@ -299,7 +304,7 @@ img {
           transition: color 0.3s, transform 0.5s;
           color: #fff;
           @include breakpoint(max, width, 1001px) {
-            display:none;
+            display: none;
           }
         }
         &:hover > span {
@@ -352,7 +357,7 @@ img {
     max-width: 80%;
     transition-duration: 0.5s;
     transform: translateY(0px);
-    margin-bottom:2rem;
+    margin-bottom: 2rem;
     &:hover {
       transform: translateY(-15px);
     }
@@ -364,7 +369,7 @@ img {
     }
   }
 }
-.legend{
+.legend {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -383,7 +388,6 @@ img {
     left: calc(50% + 35px);
     bottom: 3%;
     display: none;
-
   }
 }
 .btn-disabled {
@@ -397,22 +401,21 @@ img {
   padding: 6px 16px;
   transition: background 0.5s, color 0.5s, border 0.5s;
   z-index: 1;
-  cursor:default;
+  cursor: default;
   &.b-1 {
     background: rgb(132, 182, 108);
   }
   &.b-2 {
-    background: rgb(84,179,207);
+    background: rgb(84, 179, 207);
   }
-  &.b-3{
-    background: rgb(157,130,213);
+  &.b-3 {
+    background: rgb(157, 130, 213);
   }
   &.b-4 {
-    background: rgb(184,103,91);
+    background: rgb(184, 103, 91);
   }
   @include breakpoint(min, width, 1001px) {
     // display: none; // you must add buttons on bottom! dont forget
-    
   }
 }
 .btn {
@@ -470,7 +473,7 @@ img {
       display: block !important;
     }
     background: #666;
-    &:hover{
+    &:hover {
       background: #f00;
       color: #fff;
     }
@@ -587,41 +590,41 @@ img {
 //   transform: translateX(0);
 // }
 
-:fullscreen {
-  .container-360 {
-    padding-left: 0;
-  }
-  .sidebar {
-    z-index: auto;
-    position: absolute;
-    border-right: none;
-    justify-content: center;
-  }
-  .scroll-menu {
-    position: fixed;
-    left: 2%;
-    display: block;
-    z-index: 10;
-    padding: 0;
-  }
-  .removeAndAddEl {
-    display: none !important;
-  }
-  .inline-btn {
-    display: flex;
-    flex-direction: column;
-  }
-  .btn-round {
-    height: 37px;
-    width: 37px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-size: 37px;
-    & > span {
-      display:none;
-    }
-  }
-}
+// :fullscreen {
+//   .container-360 {
+//     padding-left: 0;
+//   }
+//   .sidebar {
+//     z-index: auto;
+//     position: absolute;
+//     border-right: none;
+//     justify-content: center;
+//   }
+//   .scroll-menu {
+//     position: fixed;
+//     left: 2%;
+//     display: block;
+//     z-index: 10;
+//     padding: 0;
+//   }
+//   .removeAndAddEl {
+//     display: none !important;
+//   }
+//   .inline-btn {
+//     display: flex;
+//     flex-direction: column;
+//   }
+//   .btn-round {
+//     height: 37px;
+//     width: 37px;
+//     display: inline-block;
+//     background-repeat: no-repeat;
+//     background-size: 37px;
+//     & > span {
+//       display:none;
+//     }
+//   }
+// }
 
 @keyframes rotate {
   to {

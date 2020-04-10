@@ -1,142 +1,102 @@
-let viewer;
-
-
-FWDUtils.onReady(() => {
-  let pic = $(".image_size")[0];
-  let pic_real_width = 2560;
-  let pic_real_height = 1440;
-  let w, h, widthImage, heightImage;
-
-  w = $(".container-360").width();
-  h = $(".container-360").height();
-
-  widthImage = $(".container-360").width();
-  heightImage = (widthImage * pic_real_height) / pic_real_width;
-  if ($(".container-360").height() < heightImage) {
-    heightImage = $(".container-360").height();
-    widthImage = (heightImage * pic_real_width) / pic_real_height;
-  }
-
-
-  viewer1(w, h, widthImage, heightImage)
-}
-);
-
-function viewer1(w, h, widthImage, heightImage) {
-
-  viewer = new FWDViewer({
-    //----main----//
-    divHolderId: "threesixty",
-    skinPath: "uploads/WALK",
-    playListId: "viewerPlaylist",
-    displayType: "responsive",
-    preloaderText: "Loading 3D object:",
-    startDraggingMode: "rotate",
-    showLargeImageVersionOnZoom: "no",
-    useEntireScreenFor3dObject: "no",
-    stopRotationHorizontalAtEnds: "no",
-    stopRotationVerticalAtEnds: "no",
-    addCorrectionForWebKit: "yes",
-    addDragAndSpinSupport: "yes",
-    disableMouseWheelZoom: "no",
-    autoScale: "yes",
-    startAtImage: 0,
-    startAtSet: 0,
-    viewerWidth: w,
-    viewerHeight: h,
-    imageWidth: widthImage,
-    imageHeight: heightImage,
-    zoomFactor: 3,
-    zoomSpeed: 0.1,
-    dragRotationSpeed: .7,
-    dragAndSpinSpeed: .6,
-    buttonsRotationSpeed: 300,
-    slideShowDelay: 300,
-    backgroundColor: "#FFFFFF",
-    preloaderFontColor: "#585858",
-    preloaderBackgroundColor: "#FFFFFF",
-    //----lightbox-----//
-    lightBoxWidth: 1000,
-    lightBoxHeight: 1000,
-    lightBoxBackgroundOpacity: .8,
-    lightBoxBackgroundColor: "#000000",
-    //----controller----//
-    buttons: "rotate, pan, roteteleft, rotateright, scrollbar, play, info, link, fullscreen",
-    buttonsToolTips: "Rotate, Move/Pan, Rotate left, Rotate right, Zoom level: , Play/Pause, Info, Custom link, Full screen/Normal screen",
-    controllerHorizontalPosition: "center",
-    controllerVerticalPosition: "bottom",
-    inverseNextAndPrevRotation: "yes",
-    addKeyboardSupport: "yes",
-    slideShowAutoPlay: "no",
-    startSpaceBetweenButtons: 10,
-    spaceBetweenButtons: 10,
-    startSpaceForScrollBarButtons: 20,
-    startSpaceForScrollBar: 6,
-    hideControllerDelay: 0,
-    controllerMaxWidth: 900,
-    controllerBackgroundOpacity: 1,
-    controllerOffsetY: 0,
-    scrollBarOffsetX: 0,
-    scrollBarHandlerToolTipOffsetY: 4,
-    zoomInAndOutToolTipOffsetY: -4,
-    buttonsToolTipOffsetY: 0,
-    link: "http://www.google.com",
-    buttonToolTipFontColor: "#585858",
-    //----navigator----//
-    showNavigator: "no",
-    navigatorPosition: "topright",
-    navigatorWidth: 120,
-    navigatorOffsetX: 6,
-    navigatorOffsetY: 6,
-    navigatorHandlerColor: "#FF0000",
-    navigatorBorderColor: "#AAAAAA",
-    //----info window----//
-    infoWindowBackgroundOpacity: .6,
-    infoWindowBackgroundColor: "#FFFFFF",
-    infoWindowScrollBarColor: "#585858",
-    //----markers-----//
-    showMarkersInfo: "yes",
-    markerToolTipOffsetY: 2,
-    toolTipWindowMaxWidth: 500,
-    //----context menu----//
-    showScriptDeveloper: "no",
-    contextMenuLabels: "Rotate, Move/Pan, Rotate left, Rotate right, Zoom in/Zoom out, Play/Pause, Info, Custom link, Full screen/Normal screen",
-    contextMenuBackgroundColor: "#d1cfcf",
-    contextMenuBorderColor: "#8f8d8d",
-    contextMenuSpacerColor: "#acacac",
-    contextMenuItemNormalColor: "#585858",
-    contextMenuItemSelectedColor: "#FFFFFF",
-    contextMenuItemDisabledColor: "#b7b4b4"
-
-  });
-}
 
 let controller = {
   initController: (currentMaquette) => {
     controller.dropdownMenu();
     controller.removeHoverOnMobile();
     controller.maquetteFunct(currentMaquette);
-
+    controller.phostoSwipeFunct();
   },
   maquetteFunct: (currentMaquette) => {
+    let widthImage = 2560;
+    let heightImage = 1440;
+    
+    // initWithAndHight();
 
-    let pic = $(".image_size")[0];
-    let pic_real_width = 2560;
-    let pic_real_height = 1440;
-    let w, h;
+    let viewer = new FWDViewer({
+      //----main----//
+      divHolderId: "threesixty",
+      skinPath: "uploads/WALK",
+      playListId: "viewerPlaylist",
+      displayType: "fullscreen",
+      preloaderText: "Loading 3D object:",
+      startDraggingMode: "rotate",
+      showLargeImageVersionOnZoom: "no",
+      useEntireScreenFor3dObject: "no",
+      stopRotationHorizontalAtEnds: "no",
+      stopRotationVerticalAtEnds: "no",
+      addCorrectionForWebKit: "yes",
+      addDragAndSpinSupport: "yes",
+      disableMouseWheelZoom: "no",
+      autoScale: "no",
+      startAtImage: 0,
+      startAtSet: 0,
+      viewerWidth: widthImage,
+      viewerHeight: heightImage,
+      imageWidth: widthImage,
+      imageHeight: heightImage,
+      zoomFactor: 3,
+      zoomSpeed: 0.1,
+      dragRotationSpeed: .7,
+      dragAndSpinSpeed: .6,
+      buttonsRotationSpeed: 300,
+      slideShowDelay: 300,
+      backgroundColor: "#FFFFFF",
+      preloaderFontColor: "#585858",
+      preloaderBackgroundColor: "#FFFFFF",
+      //----lightbox-----//
+      lightBoxWidth: 1000,
+      lightBoxHeight: 1000,
+      lightBoxBackgroundOpacity: .8,
+      lightBoxBackgroundColor: "#000000",
+      //----controller----//
+      buttons: "rotate, pan, roteteleft, rotateright, scrollbar, play, info, link, fullscreen",
+      buttonsToolTips: "Rotate, Move/Pan, Rotate left, Rotate right, Zoom level: , Play/Pause, Info, Custom link, Full screen/Normal screen",
+      controllerHorizontalPosition: "center",
+      controllerVerticalPosition: "bottom",
+      inverseNextAndPrevRotation: "yes",
+      addKeyboardSupport: "yes",
+      slideShowAutoPlay: "no",
+      startSpaceBetweenButtons: 10,
+      spaceBetweenButtons: 10,
+      startSpaceForScrollBarButtons: 20,
+      startSpaceForScrollBar: 6,
+      hideControllerDelay: 0,
+      controllerMaxWidth: 900,
+      controllerBackgroundOpacity: 1,
+      controllerOffsetY: -500,
+      scrollBarOffsetX: 0,
+      scrollBarHandlerToolTipOffsetY: 4,
+      zoomInAndOutToolTipOffsetY: -4,
+      buttonsToolTipOffsetY: 0,
+      link: "http://www.google.com",
+      buttonToolTipFontColor: "#585858",
+      //----navigator----//
+      showNavigator: "no",
+      navigatorPosition: "topright",
+      navigatorWidth: 120,
+      navigatorOffsetX: 6,
+      navigatorOffsetY: 6,
+      navigatorHandlerColor: "#FF0000",
+      navigatorBorderColor: "#AAAAAA",
+      //----info window----//
+      infoWindowBackgroundOpacity: .6,
+      infoWindowBackgroundColor: "#FFFFFF",
+      infoWindowScrollBarColor: "#585858",
+      //----markers-----//
+      showMarkersInfo: "yes",
+      markerToolTipOffsetY: 2,
+      toolTipWindowMaxWidth: 500,
+      //----context menu----//
+      showScriptDeveloper: "no",
+      contextMenuLabels: "Rotate, Move/Pan, Rotate left, Rotate right, Zoom in/Zoom out, Play/Pause, Info, Custom link, Full screen/Normal screen",
+      contextMenuBackgroundColor: "#d1cfcf",
+      contextMenuBorderColor: "#8f8d8d",
+      contextMenuSpacerColor: "#acacac",
+      contextMenuItemNormalColor: "#585858",
+      contextMenuItemSelectedColor: "#FFFFFF",
+      contextMenuItemDisabledColor: "#b7b4b4"
 
-
-    initWithAndHight();
-
-    console.log(w, h);
-
-    // viewer.props_obj.viewerWidth = w;
-    // viewer.props_obj.viewerHeight = h;
-    // viewer.originalWidth = w;
-    // viewer.stageWidth = w;
-    // viewer.originalHeight = h;
-    // viewer.stageHeight = h;
-    console.log(viewer);
+    });
 
     let legend = document.querySelector(".legend");
     if (currentMaquette == "WALK" || currentMaquette == "AERIAL") {
@@ -145,219 +105,93 @@ let controller = {
       legend.style.display = "block";
     }
 
-    // document.querySelector('.bluredImg').style.backgroundImage = `url(http://maquette.planastudio.com/paralleles/uploads/${currentMaquette}/1.1.jpg)`;
-    let toggleDoubletap = true;
+    addButtonsEvents();
 
-    let maquette = $(".maquette").ThreeSixty({
-      totalFrames: 61,
-      endFrame: 61,
-      currentFrame: 1,
-      imgList: ".threesixty_images",
-      progress: ".bluredImg",
-      imagePath: `uploads/${currentMaquette}/small_images/`,
-      filePrefix: "",
-      ext: ".jpg",
-      height: h,
-      width: w,
-      navigation: false,
-      responsive: false,
-      disableSpin: false,
-      onReady: function () {
-        //the set time out is for prevent pinch bug on init maquette
-        // setTimeout(() => hammerFunct($(".threesixty")[0]), 1400);
-        maquetteControls();
-        // controller.dropdownMenu();
-        controller.phostoSwipeFunct();
-        controller.fullScreenFunct();
+    window.addEventListener("resize", () => {
+      viewer.zoomOut()
+
+      // initWithAndHight();
+
+      //make parent and all inner dives with equal w/h;
+
+      //comment down lines of code later!
+      // if (viewer.stageContainer != null && viewer.stageContainer.lastChild) {
+      //   viewer.stageContainer.style.width = w + "px"
+      //   viewer.stageContainer.style.height = h + "px";
+      //   viewer.stageContainer.lastChild.style.width = w + "px"
+      //   viewer.stageContainer.lastChild.style.height = h + "px";
+      //   viewer.stageContainer.lastChild.firstChild.style.width = w + "px"
+      //   viewer.stageContainer.lastChild.firstChild.style.height = h + "px";
+      //   $("#threesixty > div > div:nth-child(1) > div:nth-child(6)").width(w)
+      //   $("#threesixty > div > div:nth-child(1) > div:nth-child(6)").height(h)
+      // }
+
+      // viewer.originalWidth = w;
+      // viewer.originalHeight = h;
+
+      // viewer.props_obj.imageWidth = widthImage;
+      // viewer.props_obj.imageHeight = heightImage;
+
+    })
+
+    let viewerFunctionality = function (e) {
+      if (e.preventDefault) e.preventDefault();
+      return {
+        pan: () => viewer.pan(),
+        rotate: () => viewer.rotate(),
+        rotateLeft: () => viewer.rotateLeft(),
+        rotateRight: () => viewer.rotateRight(),
+        zoomOut: () => viewer.zoomOut(),
+        zoomIn: () => viewer.zoomIn(),
+        play: () => viewer.play(),
+        pause: () => viewer.pause(),
+        info: () => viewer.info(),
+        fullScreen: () => {
+          viewer.controller_do.controllerOffsetY = 0
+          viewer.fullScreen()
+        },
+        normalScreen: () => viewer.normalScreen()
+      };
+    }
+    function addButtonsEvents() {
+      $(".custom_play,.custom_stop").bind("mousedown touchstart", () => {
+        $(".custom_play,.custom_stop").toggleClass("hide");
+      })
+      // $(".customFullScreen,.customNormalScreen").bind("mousedown touchstart", () => {
+      //   $(".customFullScreen,.customNormalScreen").toggleClass("hide")
+      // })
+      $(".custom_pan,.custom_rotate").bind("mousedown touchstart", () => {
+        $(".custom_pan,.custom_rotate").toggleClass("hide");
+      })
+      $(".custom_play").bind("mousedown touchstart", (e) => viewerFunctionality(e).play());
+      $(".custom_stop").bind("mousedown touchstart", (e) => viewerFunctionality(e).pause());
+      $(".custom_zoomp").bind("mousedown touchstart", (e) => viewerFunctionality(e).zoomIn());
+      $(".custom_zoomm").bind("mousedown touchstart", (e) => viewerFunctionality(e).zoomOut());
+      $(".customFullScreen").bind("mousedown touchstart", (e) => viewerFunctionality(e).fullScreen());
+      // $(".customNormalScreen").bind("mousedown touchstart", (e) => viewerFunctionality(e).normalScreen());
+      $(".custom_pan").bind("mousedown touchstart", (e) => {
+        $(".threesixty")[0].style.cursor = "grab";
+        viewerFunctionality(e).pan()
       }
-    });
+      );
+      $(".custom_rotate").bind("mousedown touchstart", (e) => {
+        $(".threesixty")[0].style.cursor = "ew-resize";
+        viewerFunctionality(e).rotate()
+      });
+    }
 
-    // $(".maq-change").click(e => {
-    //   toggleDoubletap = true;
-    //   initWithAndHight();
 
-    //   let itemAttr = $(e.target).attr("data-maquette");
-    //   // $(".loader")[0].style.display = "block";
-
-    //   let legend = document.querySelector(".legend");
-    //   if (itemAttr == "WALK" || itemAttr == "AERIAL") {
-    //     legend.style.display = "none";
-    //   } else {
-    //     legend.style.display = "block";
+    // function initWithAndHight() {
+    //   w = $(".container-360").width();
+    //   h = $(".container-360").height();
+    //   //calculate size of image (fill in container)
+    //   widthImage = $(".container-360").width();
+    //   heightImage = (widthImage * pic_real_height) / pic_real_width;
+    //   if ($(".container-360").height() < widthImage) {
+    //     heightImage = $(".container-360").height();
+    //     widthImage = (heightImage * pic_real_width) / pic_real_height;
     //   }
-    //   document.querySelector('.bluredImg').style.backgroundImage = `url(/uploads/${itemAttr}/1.1.jpg)`;
-    //   maquette = $(".maquette").ThreeSixty({
-    //     totalFrames: 61,
-    //     endFrame: 61,
-    //     currentFrame: 1,
-    //     imgList: ".threesixty_images",
-    //     progress: ".bluredImg",
-    //     imagePath: `uploads/${itemAttr}/`,
-    //     filePrefix: "",
-    //     ext: ".jpg",
-    //     height: h,
-    //     width: w,
-    //     navigation: false,
-    //     responsive: false,
-    //     disableSpin: false
-    //   });
-
-    //   $(".maq-change").removeClass("active");
-    //   $("a[data-maquette =" + itemAttr + "]").addClass("active");
-    // });
-
-    let hbase = h;
-    let wbase = w;
-    maquetteControls();
-
-    $(window).resize(() => {
-      let w, h, widthImage, heightImage;
-
-      w = $(".container-360").width();
-      h = $(".container-360").height();
-
-      widthImage = $(".container-360").width();
-      heightImage = (widthImage * pic_real_height) / pic_real_width;
-      if ($(".container-360").height() < widthImage) {
-        heightImage = $(".container-360").height();
-        widthImage = (heightImage * pic_real_width) / pic_real_height;
-      }
-
-      viewer.stageContainer.style.width = w + "px"
-      viewer.stageContainer.lastChild.style.width = w + "px"
-      viewer.stageContainer.lastChild.firstChild.style.width = w + "px"
-      viewer.stageContainer.style.height = h + "px";
-      viewer.stageContainer.lastChild.style.height = h + "px";
-      viewer.stageContainer.lastChild.firstChild.style.height = h + "px";
-      $("#threesixty > div > div:nth-child(1) > div:nth-child(6)").width(w)
-      $("#threesixty > div > div:nth-child(1) > div:nth-child(6)").height(h)
-
-      // viewer.stageWidth = w;
-      // viewer.stageHeight = h;
-      // viewer.props_obj.viewerWidth = widthImage;
-      // viewer.props_obj.viewerHeight = heightImage;
-
-      viewer.originalWidth = w;
-      viewer.originalHeight = h;
-      viewer.stageWidth = w;
-      viewer.stageHeight = h;
-      viewer.props_obj.imageWidth = widthImage;
-      viewer.props_obj.imageHeight = heightImage;
-      // viewer.zoomOut()
-
-      console.log(viewer);
-
-    });
- 
-    function maquetteControls() {
-      $(".custom_play").bind("click", () => maquette.play());
-      $(".custom_stop").bind("click", () => maquette.stop());
-
-      // Zoom In/Out
-      $(".custom_zoomp").on("click", () => zoomIn(1.2));
-      $(".custom_zoomm").on("click", () => zoomOut(1.2));
-
-      // Center zoom
-      $(".custom_zoomp,.custom_zoomm").on("click", () => zoomCentering());
-
-      // Zoom In/Out + Centering on scroll
-
-      $(".threesixty").on("wheel", event => {
-        event.preventDefault();
-        console.log("smth");
-        console.log();
-        // let imageWidth = $("#threesixty > div > div:nth-child(1) > div:nth-child(1) img").width();
-        // let imageHeight = $("#threesixty > div > div:nth-child(1) > div:nth-child(1) img").height()
-        // viewer.props_obj.viewerWidth = imageWidth;
-        // viewer.props_obj.viewerHeight = imageHeight;
-        // viewer.originalWidth = imageWidth;
-        // viewer.stageWidth = imageWidth;
-        // viewer.originalHeight = imageHeight;
-        // viewer.stageHeight = imageHeight;
-        console.log(viewer);
-
-        // if (event.preventDefault) event.preventDefault();
-        // viewer.zoomIn();
-        // event.originalEvent.deltaY < 0 ? zoomIn(1.2) : zoomOut(1.2);
-        // zoomCentering();
-      });
-    }
-    function hammerFunct(elm) {
-      let hammertime = new Hammer(elm, {});
-
-      hammertime.get("pinch").set({ enable: true });
-
-      hammertime.on("doubletap pinchend pinchin pinchout", ev => {
-        let zoomCentAndDisableDrag = inOrOut => {
-          // its equal to zoomOut(1.2) and zoomIn(1.2)
-          eval("zoom" + inOrOut)(1.2);
-          zoomCentering();
-          maquette.getConfig().ticker = 1;
-          maquette.getConfig().drag = false;
-        };
-        let evType = {
-          pinchin: () => zoomCentAndDisableDrag("Out"),
-          pinchout: () => zoomCentAndDisableDrag("In"),
-          pinchend: () => {
-            // it's for prevent maq rotation after the pinch event.
-            setTimeout(() => {
-              maquette.getConfig().ticker = 0;
-              maquette.getConfig().drag = true;
-            }, 1500);
-          },
-          doubletap: () => {
-            if (toggleDoubletap) {
-              zoomIn(3);
-              toggleDoubletap = false;
-            } else {
-              zoomOut(3);
-              toggleDoubletap = true;
-            }
-
-            zoomCentering();
-          }
-        };
-        evType[ev.type]();
-      });
-    }
-    function initWithAndHight() {
-      w = $(".container-360").width();
-      h = (w * pic_real_height) / pic_real_width;
-      if ($(".container-360").height() < h) {
-        h = $(".container-360").height();
-        w = (h * pic_real_width) / pic_real_height;
-      }
-      $(".maquette,.maquette img").height(h);
-      $(".maquette,.maquette img").width(w);
-    }
-    function zoomCentering() {
-      let sTop =
-        ($(".maquette img").height() - $(".container-360").height()) / 2 + 60;
-      let sLeft =
-        ($(".maquette img").width() - $(".container-360").width()) / 2;
-      $("html,body").animate({ scrollTop: sTop, scrollLeft: sLeft }, 0);
-    }
-    function zoomIn(zoomLevel) {
-      h = $(".maquette img").height() * zoomLevel;
-      w = $(".maquette img").width() * zoomLevel;
-      //4.5 is the zoom encrease number
-      if (h > hbase * 4.5) {
-        h = hbase * 4.5;
-        w = wbase * 4.5;
-      }
-      $(".maquette,.maquette img").height(h);
-      $(".maquette,.maquette img").width(w);
-    }
-    function zoomOut(zoomLevel) {
-      h = $(".maquette img").height() / zoomLevel;
-      w = $(".maquette img").width() / zoomLevel;
-      if (h < hbase) {
-        h = hbase;
-        w = wbase;
-      }
-      $(".maquette,.maquette img").height(h);
-      $(".maquette,.maquette img").width(w);
-    }
+    // }
   },
   phostoSwipeFunct: () => {
     let openPhotoSwipe = () => {
@@ -412,51 +246,7 @@ let controller = {
       .getElementById("openGalery1")
       .addEventListener("click", openPhotoSwipe);
   },
-  fullScreenFunct: () => {
-    document.querySelector(".full-screen-btn").addEventListener("click", () => {
-      let isOnFullScr =
-        (document.fullScreenElement && document.fullScreenElement !== null) ||
-        (!document.mozFullScreen && !document.webkitIsFullScreen);
-
-      if (isOnFullScr) {
-        if (document.documentElement.requestFullScreen) {
-          document.documentElement.requestFullScreen();
-        } else if (document.documentElement.mozRequestFullScreen) {
-          document.documentElement.mozRequestFullScreen();
-        } else if (document.documentElement.webkitRequestFullScreen) {
-          document.documentElement.webkitRequestFullScreen(
-            Element.ALLOW_KEYBOARD_INPUT
-          );
-        }
-      } else {
-        if (document.cancelFullScreen) {
-          document.cancelFullScreen();
-        } else if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
-        } else if (document.webkitCancelFullScreen) {
-          document.webkitCancelFullScreen();
-        }
-      }
-    });
-  },
   dropdownMenu: () => {
-    // let showMoreBtn = document.querySelector(".btn-showMore");
-    // let activeMaqText = () => {
-    //   let currentBtn = [...document.querySelector(".dropdown-inner").children].find(e => e.classList.contains("active"));
-
-    //   let legend = document.querySelector(".legend");
-    //   if (
-    //     currentBtn.getAttribute("data-maquette") == "WALK" ||
-    //     currentBtn.getAttribute("data-maquette") == "AERIAL"
-    //   ) {
-    //     legend.style.display = "none";
-    //   } else {
-    //     legend.style.display = "block";
-    //   }
-    //   showMoreBtn.innerHTML = currentBtn.textContent + ' <i class="fas fa-chevron-down"></i>';
-    // };
-
-    // activeMaqText();
 
     document.querySelector(".dropdown-menu").addEventListener("click", e => {
       let dropdown = e.currentTarget;
@@ -467,12 +257,10 @@ let controller = {
           dropdown.classList.add("active-dropdown");
         }
       } else {
-        // activeMaqText();
         dropdown.classList.remove("active-dropdown");
       }
     });
 
-    // window.addEventListener("resize", activeMaqText);
   },
   removeHoverOnMobile: () => {
     if (window.innerWidth <= 1001) {
@@ -505,7 +293,3 @@ let controller = {
     }
   }
 };
-// window.addEventListener("load", () => controller.initController("WALK"));
-// dont change it to window.ONLOAD!!!!!!!!
-// document.addEventListener('DOMContentLoaded', () => controller.initController());
-
