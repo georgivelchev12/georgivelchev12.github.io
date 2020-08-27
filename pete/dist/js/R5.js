@@ -1,1 +1,1 @@
-"use strict";window.addEventListener("load",function(){return controller.initController("R5")});
+"use strict";FWDUtils.onReady(function(){window.addEventListener("load",function(){return controller.initController("R5")})});

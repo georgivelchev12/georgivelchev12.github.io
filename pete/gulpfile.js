@@ -33,17 +33,17 @@ gulp.task('images', function (cb) {
     .pipe(gulp.dest('uploadsConverted/')).on('end', cb).on('error', cb);
 });
 
-gulp.task('pages', function () {
-  return gulp.src(['./src/**/*.html'])
-    .pipe(htmlmin({
-      collapseWhitespace: true,
-      removeComments: true
-    }))
-    .pipe(gulp.dest('./'));
-});
+// gulp.task('pages', function () {
+//   return gulp.src(['./src/**/*.html'])
+//     .pipe(htmlmin({
+//       collapseWhitespace: true,
+//       removeComments: true
+//     }))
+//     .pipe(gulp.dest('./'));
+// });
 gulp.task('watch', function () {
   gulp.watch('src/sass/**/*.scss', gulp.series('sass'));
-  gulp.watch('./src/**/*.html', gulp.series('pages'));
+  // gulp.watch('./src/**/*.html', gulp.series('pages'));
   gulp.watch('src/js/*.js', gulp.series('default'));
   // gulp.watch('src/js/*.js', gulp.series('semi'));
 });

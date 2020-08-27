@@ -1,1 +1,3 @@
-window.addEventListener("load", () => controller.initController("R4"));
+FWDUtils.onReady(function(){
+    window.addEventListener("load", () => controller.initController("R4"));
+});

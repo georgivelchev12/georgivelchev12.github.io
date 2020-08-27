@@ -10912,8 +10912,8 @@ var FWDController = function(
 			self.fullScreenButton_do.addListener(FWDComplexButton.MOUSE_OVER, self.fullscreenButtonOnMouseOverHandler);
 			self.fullScreenButton_do.addListener(FWDComplexButton.MOUSE_OUT, self.fullscreenButtonOnMouseOutHandler);
 			self.fullScreenButton_do.addListener(FWDComplexButton.MOUSE_DOWN, self.fullScreenButtonStartHandler);
-			self.mainHolder_do.addChild(self.fullScreenButton_do);
-			
+			// self.mainHolder_do.addChild(self.fullScreenButton_do);
+			// unncomment it if u want to use fullscreen button !!!!!!!!
 			if(self.showButtonsLabels_bl){
 				FWDButtonToolTip.setPrototype();
 				self.fullscreenToolTip_do = new FWDButtonToolTip(

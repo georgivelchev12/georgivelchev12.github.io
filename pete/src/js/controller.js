@@ -15,12 +15,12 @@ let controller = {
     let viewer = new FWDViewer({
       //----main----//
       divHolderId: "threesixty",
-      skinPath: "uploads/WALK",
+      skinPath: `uploads/${currentMaquette}`,
       playListId: "viewerPlaylist",
       displayType: "fullscreen",
       preloaderText: "Loading 3D object:",
       startDraggingMode: "rotate",
-      showLargeImageVersionOnZoom: "no",
+      showLargeImageVersionOnZoom: "yes",
       useEntireScreenFor3dObject: "no",
       stopRotationHorizontalAtEnds: "no",
       stopRotationVerticalAtEnds: "no",
@@ -49,8 +49,10 @@ let controller = {
       lightBoxBackgroundOpacity: .8,
       lightBoxBackgroundColor: "#000000",
       //----controller----//
-      buttons: "rotate, pan, roteteleft, rotateright, scrollbar, play, info, link, fullscreen",
-      buttonsToolTips: "Rotate, Move/Pan, Rotate left, Rotate right, Zoom level: , Play/Pause, Info, Custom link, Full screen/Normal screen",
+      // buttons: "rotate, pan, roteteleft, rotateright, scrollbar, play, info, link, fullscreen",
+      // buttonsToolTips: "Rotate, Move/Pan, Rotate left, Rotate right, Zoom level: , Play/Pause, Info, Custom link, Full screen/Normal screen",
+      buttons: "rotate, pan, roteteleft, rotateright, scrollbar, play, fullscreen",
+      buttonsToolTips: "Rotate, Move/Pan, Rotate left, Rotate right, Zoom level: , Play/Pause",
       controllerHorizontalPosition: "center",
       controllerVerticalPosition: "bottom",
       inverseNextAndPrevRotation: "yes",
@@ -83,19 +85,19 @@ let controller = {
       infoWindowBackgroundColor: "#FFFFFF",
       infoWindowScrollBarColor: "#585858",
       //----markers-----//
-      showMarkersInfo: "yes",
+      showMarkersInfo: "no",
       markerToolTipOffsetY: 2,
       toolTipWindowMaxWidth: 500,
       //----context menu----//
       showScriptDeveloper: "no",
-      contextMenuLabels: "Rotate, Move/Pan, Rotate left, Rotate right, Zoom in/Zoom out, Play/Pause, Info, Custom link, Full screen/Normal screen",
-      contextMenuBackgroundColor: "#d1cfcf",
-      contextMenuBorderColor: "#8f8d8d",
-      contextMenuSpacerColor: "#acacac",
-      contextMenuItemNormalColor: "#585858",
-      contextMenuItemSelectedColor: "#FFFFFF",
-      contextMenuItemDisabledColor: "#b7b4b4"
-
+      // contextMenuLabels: "Rotate, Move/Pan, Rotate left, Rotate right, Zoom in/Zoom out, Play/Pause, Info, Custom link, Full screen/Normal screen",
+      contextMenuLabels: "Rotate, Move/Pan, Rotate left, Rotate right, Zoom in/Zoom out, Play/Pause",
+      contextMenuBackgroundColor: "#000",
+      contextMenuBorderColor: "#000",
+      contextMenuSpacerColor: "#000",
+      contextMenuItemNormalColor: "#fff",
+      contextMenuItemSelectedColor: "#f00",
+      contextMenuItemDisabledColor: "#f00"
     });
 
     let legend = document.querySelector(".legend");
@@ -147,19 +149,22 @@ let controller = {
         pause: () => viewer.pause(),
         info: () => viewer.info(),
         fullScreen: () => {
-          viewer.controller_do.controllerOffsetY = 0
+          viewer.controller_do.controllerOffsetY = 0;
           viewer.fullScreen()
         },
-        normalScreen: () => viewer.normalScreen()
+        normalScreen: () => {
+          console.log(viewer.mainHolder_do);
+          viewer.controller_do.controllerOffsetY = -500;
+          viewer.normalScreen()}
       };
     }
     function addButtonsEvents() {
       $(".custom_play,.custom_stop").bind("mousedown touchstart", () => {
         $(".custom_play,.custom_stop").toggleClass("hide");
       })
-      // $(".customFullScreen,.customNormalScreen").bind("mousedown touchstart", () => {
-      //   $(".customFullScreen,.customNormalScreen").toggleClass("hide")
-      // })
+      $(".customFullScreen,.customNormalScreen").bind("mousedown touchstart", () => {
+        $(".customFullScreen,.customNormalScreen").toggleClass("hide")
+      })
       $(".custom_pan,.custom_rotate").bind("mousedown touchstart", () => {
         $(".custom_pan,.custom_rotate").toggleClass("hide");
       })
@@ -168,7 +173,7 @@ let controller = {
       $(".custom_zoomp").bind("mousedown touchstart", (e) => viewerFunctionality(e).zoomIn());
       $(".custom_zoomm").bind("mousedown touchstart", (e) => viewerFunctionality(e).zoomOut());
       $(".customFullScreen").bind("mousedown touchstart", (e) => viewerFunctionality(e).fullScreen());
-      // $(".customNormalScreen").bind("mousedown touchstart", (e) => viewerFunctionality(e).normalScreen());
+      $(".customNormalScreen").bind("mousedown touchstart", (e) => viewerFunctionality(e).normalScreen());
       $(".custom_pan").bind("mousedown touchstart", (e) => {
         $(".threesixty")[0].style.cursor = "grab";
         viewerFunctionality(e).pan()
@@ -199,20 +204,20 @@ let controller = {
       // build items array
       let items = [
         {
-          src: "http://maquette.planastudio.com/paralleles/uploads/galerie/images/R1.jpg",
+          src: "http://maquette.planastudio.com/givors/uploads/galerie/images/NOAHO_GIVORS_VUE_AER_01.jpg",
           w: 1800,
           h: 1200
         },
         {
-          src: "http://maquette.planastudio.com/paralleles/uploads/galerie/images/R2.jpg",
+          src: "http://maquette.planastudio.com/givors/uploads/galerie/images/NOAHO_GIVORS_VUE_PIETONNE_02.jpg",
           w: 1800,
           h: 1200
         },
-        {
-          src: "http://maquette.planastudio.com/paralleles/uploads/galerie/images/R3.jpg",
-          w: 1800,
-          h: 1200
-        }
+        // {
+        //   src: "http://maquette.planastudio.com/givors/uploads/galerie/images/R3.jpg",
+        //   w: 1800,
+        //   h: 1200
+        // }
       ];
 
       let options = {

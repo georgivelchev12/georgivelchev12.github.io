@@ -161,11 +161,12 @@ img {
   align-items: center;
   text-align: center;
   @include breakpoint(max, width, 1001px) {
-    z-index: auto !important;
+    z-index: 9999999999999999999999999999999 !important;
     position: absolute !important;
     border-right: none !important;
     justify-content: center !important;
     width: 0;
+    padding: 0;
   }
   .logo-cl {
     display: block;
@@ -269,6 +270,10 @@ img {
         }
         &.full-screen-btn:hover {
           background-image: url("https://maquette.planastudio.com/paralleles/dist/images/full_screen_red.png");
+        }
+        &.full-screen-btn.customNormalScreen{
+          background-image: url("https://maquette.planastudio.com/paralleles/dist/images/full_screen_red.png");
+
         }
         @include breakpoint(max, width, 1001px) {
           height: 37px;
@@ -408,9 +413,9 @@ img {
   &.b-2 {
     background: rgb(84, 179, 207);
   }
-  &.b-3 {
-    background: rgb(157, 130, 213);
-  }
+  // &.b-3 {
+  //   background: rgb(157, 130, 213);
+  // }
   &.b-4 {
     background: rgb(184, 103, 91);
   }
@@ -595,34 +600,25 @@ img {
 //     padding-left: 0;
 //   }
 //   .sidebar {
-//     z-index: auto;
-//     position: absolute;
-//     border-right: none;
-//     justify-content: center;
+//     z-index: 50!important;
+//     position: absolute!important;
+//     border-right: none!important;
+//     justify-content: center!important;
+//     width: 0;
 //   }
 //   .scroll-menu {
-//     position: fixed;
-//     left: 2%;
-//     display: block;
-//     z-index: 10;
-//     padding: 0;
+//     position: fixed!important;
+//     z-index: 60!important;
+//     padding: 0!important;
+//     top: 0;
+//     bottom: 0;
+    
 //   }
 //   .removeAndAddEl {
 //     display: none !important;
 //   }
-//   .inline-btn {
-//     display: flex;
-//     flex-direction: column;
-//   }
-//   .btn-round {
-//     height: 37px;
-//     width: 37px;
-//     display: inline-block;
-//     background-repeat: no-repeat;
-//     background-size: 37px;
-//     & > span {
-//       display:none;
-//     }
+//   html > div{
+//     z-index: 0 !important;
 //   }
 // }
 
@@ -630,4 +626,8 @@ img {
   to {
     transform: rotate(360deg);
   }
+}
+
+html > div > div:nth-child(3) > div > div:nth-child(14){
+  display: none;
 }
